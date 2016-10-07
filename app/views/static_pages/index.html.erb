@@ -1,0 +1,9 @@
+<%= content_for(:angular_app) do %>
+  ng-app='DjelloApp'
+<% end %>
+<%= content_for(:navbar) do %>
+  <%= render 'partials/nav.html.erb'  %>
+<% end %>
+<p>static</p>
+<ui-view>view not loading</ui-view>
+<!-- <a ui-sref="home.index">Index</a> -->

@@ -1,0 +1,7 @@
+SHOW BOARD
+
+<p>Boards</p>
+
+<select ng-options="item as item.title for item in boards track by item.id" ng-model="selected"></select>
+</select>
+<a ng-click="deleteCurrentBoard()" href="#">Delete this board</a>

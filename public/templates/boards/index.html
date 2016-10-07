@@ -1,0 +1,13 @@
+BOARDS INDEX
+<a ng-click="showNewBoardForm = true" href="#">Create a new board...</a>
+<div ng-show="showNewBoardForm">
+  <form ng-model="newBoardForm" ng-submit="createBoard()">
+    <label>Title:</label>
+    <input type="text" ng-model="newBoardForm.title">
+    <input type="submit">
+  </form>
+</div>
+
+<div ng-repeat="board in boards">
+  <a ui-sref="home.boards.show({id: board.id})">{{board.title}}</a>
+</div>

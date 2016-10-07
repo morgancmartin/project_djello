@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html<%= content_for(:angular_app) %>>
+  <head>
+    <title>Djello</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= content_for(:navbar) %>
+    <%= yield %>
+  </body>
+</html>
