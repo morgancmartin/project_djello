@@ -1,7 +1,75 @@
-SHOW BOARD
+<div class="fluid-container">
+  <div class="row">
+    <span uib-dropdown on-toggle="toggled(open)">
+      <h4 class="board-title col-md-3"
+          id="simple-dropdown"
+          uib-dropdown-toggle>
+        {{board.title}}
+      </h4>
+      <ul class="dropdown-menu title-drop"
+          uib-dropdown-menu
+          aria-labelledby="simple-dropdown"
+        <li role="menuitem">
+          <a href >
+            Do stuff...
+          </a>
+        </li>
+      </ul>
+    </span>
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <div class="lists col-md-12">
+        <div ng-repeat="list in lists"
+             class="list">
+          <edit-in-place value='{{list.title}}'
+                         id="{{list.id}}"
+                         class="col-md-10 list-title"
+          ></edit-in-place>
+          <span uib-dropdown dropdown-append-to-body>
+            <button id="btn-append-to-body"
+                    type="button"
+                    class="btn btn-default btn-sm list-options"
+                    uib-dropdown-toggle>
+              <span class="glyphicon glyphicon-option-horizontal"
+                    aria-hidden="true">
+              </span>
+            </button>
+            <ul class="dropdown-menu"
+                uib-dropdown-menu role="menu"
+                aria-labelledby="btn-append-to-body">
+              <li role="menuitem">
+                <a href
+                   ng-click="removeList(list)">
+                  Remove List...
+                </a>
+              </li>
+            </ul>
+          </span>
+        </div>
 
-<p>Boards</p>
+        <div class="new-list" ng-click="showNewListForm = true">
+          <p class="col-md-12">Add a list...</p>
+        </div>
+        <div ng-show="showNewListForm">
+          <form ng-model="newListForm" ng-submit="createList()">
+            <label>Title:</label>
+            <input type="text" ng-model="newListForm.title">
+            <input type="submit">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <span>Select Board:</span>
+        <select ng-options="item as item.title for item in boards track by item.id"
+                ng-model="selected"></select>
+        </select>
+      </div>
+      <div>
+        <a ng-click="deleteCurrentBoard()" href="#">Delete board</a>
+      </div>
+    </div>
 
-<select ng-options="item as item.title for item in boards track by item.id" ng-model="selected"></select>
-</select>
-<a ng-click="deleteCurrentBoard()" href="#">Delete this board</a>
+  </div>

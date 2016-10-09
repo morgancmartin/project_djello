@@ -1,4 +1,4 @@
-DjelloApp.factory("boardService", ["Restangular", '_', function(Restangular, _) {
+DjelloApp.factory("boardService", ["Restangular", '_', 'listService', function(Restangular, _, listService) {
 
   var _boards = [];
   var boardService = {};
@@ -31,56 +31,25 @@ DjelloApp.factory("boardService", ["Restangular", '_', function(Restangular, _) 
   };
 
   boardService.find = function(id) {
-    return Restangular.one("boards", id).get();
+    var promise = Restangular.one('boards', id).get();
+    // listService.setLists(promise);
+    listService.all(promise);
+    return promise;
   };
 
   Restangular.extendModel('boards', function(board){
     board.delete = function(){
       _deleteBoard(board);
-    }; return board;}); return boardService;
+    };
+    board.createList = function(params){
+      params.board_id = board.id;
+      return listService.create(params)
+        .then(function(response){
+          board.lists.push(response);
+          return response;
+        });
+    };
+    return board;
+  });
+  return boardService;
 }]);
-
-
-
-
-  // var _createBoard = function(params){
-  //   return Restangular.all('boards').post({
-  //     board: {
-  //       item_name: params.title,
-  //       buy_sell: params.buySell,
-  //       description: params.description,
-  //       user_id: 1              //hard-coded
-  //     }
-  //   })
-  //     .then(function(response) {
-  //       console.log(response);
-  //       _boards.unshift(response);
-  //       return _boards;
-  //     });
-  // };
-
-  // var _updateBoard = function(params) {
-  //   Restangular.one('boards', $stateParams.id).patch({
-  //     board: {
-  //       item_name: params.title,
-  //       buy_sell: params.buySell,
-  //       description: params.description,
-  //       user_id: 1              //hard-coded
-  //     }
-  //   }).then(function() {
-  //     $state.go("show", {id: $stateParams.id});
-  //   });
-  // };
-
-  // var _updateBoard = function(params) {
-  //   Restangular.one('boards', $stateParams.id).patch({
-  //     board: {
-  //       item_name: params.title,
-  //       buy_sell: params.buySell,
-  //       description: params.description,
-  //       user_id: 1              //hard-coded
-  //     }
-  //   }).then(function() {
-  //     $state.go("show", {id: $stateParams.id});
-  //   });
-  // };

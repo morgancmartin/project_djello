@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require angular
 //= require angular-devise
 //= require lodash.min
@@ -19,5 +20,7 @@
 //= require restangular
 //= require angular-devise
 //= require ui-bootstrap-tpls-2.1.4.min
+//= require bootstrap.min
+//= require xeditable.min
 //= require turbolinks
 //= require_tree .

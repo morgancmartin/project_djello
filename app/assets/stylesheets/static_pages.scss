@@ -1,3 +1,44 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.fluid-container{
+  /* margin-left: 0.5%; */
+}
+
+.navbar {
+  margin-bottom: 1%;
+  height: 40px;
+  min-height: 40px;
+  border: none;
+  border-radius: 0;
+  background-color: #026AA7;
+}
+
+#jello-img{
+  height: 1em;
+}
+
+#djello-img{
+  height: 1.5em;
+}
+
+.navbar-brand{
+  position: absolute;
+  padding-top: 0.5%;
+  left: 47%;
+  opacity: 0.5;
+  color: white !important;
+  &:hover{
+    opacity: 1;
+    color: white !important;
+  }
+}
+/*  */
+/* .brand-image{ */
+/* opacity: 0.7; */
+/* &:hover{ */
+/* opacity: 0.7; */
+/* } */
+/* } */

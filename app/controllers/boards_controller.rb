@@ -3,15 +3,16 @@ class BoardsController < ApplicationController
 
   def index
     @boards = current_user.boards
+    @boards = @boards.with_children if params[:children]
     respond_to do |format|
-      format.json { render :json => @boards, :status => 200 }
+      format.json { render json: @boards, status: 200 }
     end
   end
 
   def show
     @board = current_user.boards.find_by_id(params[:id])
     respond_to do |format|
-      format.json { render :json => @board, :status => 200 }
+      format.json { render json: @board, include: :lists, status: 200 }
     end
   end
 
@@ -19,7 +20,7 @@ class BoardsController < ApplicationController
     @board = current_user.boards.build(board_params)
     if @board.save
       respond_to do |format|
-        format.json { render :json => @board, :status => 200 }
+        format.json { render json: @board, status: 200 }
       end
     end
   end
@@ -28,7 +29,7 @@ class BoardsController < ApplicationController
     @board = current_user.boards.find_by_id(params[:id])
     if @board.destroy
       respond_to do |format|
-        format.json { render :json => @board, :status => 200 }
+        format.json { render json: @board, status: 200 }
       end
     end
   end

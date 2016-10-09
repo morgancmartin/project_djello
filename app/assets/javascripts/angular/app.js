@@ -1,8 +1,14 @@
-var DjelloApp = angular.module('DjelloApp', ['Devise', 'ui.router', 'restangular']);
+var DjelloApp = angular.module('DjelloApp', ['Devise', 'ui.router', 'restangular', 'xeditable', 'ui.bootstrap']);
 
 DjelloApp.factory('_', ['$window', function($window){
   return $window._;
 }]);
+
+DjelloApp.run(function(editableOptions, editableThemes){
+  editableOptions.theme = 'bs3';
+  editableThemes.bs3.inputClass = 'input-sm';
+  editableThemes.bs3.buttonsClass = 'btn-sm';
+});
 
 DjelloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/home/boards");
@@ -11,13 +17,20 @@ DjelloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     .state("home", {
       url: "/home",
       abstract: true,
+      // templateUrl: '/templates/nav/nav.html',
+      views: {
+        'navbar': {
+          templateUrl: '/templates/nav/nav.html',
+          controller: 'navCtrl'
+        }
+      },
       resolve: {
         boards: ['boardService', function(boardService){
           return boardService.all();
         }]
       }
     })
-    .state('home.boards', {
+    .state('home.index', {
       url: '/boards',
       views: {
         '@': {
@@ -26,7 +39,7 @@ DjelloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
         }
       }
     })
-    .state('home.boards.show', {
+    .state('home.show', {
       url: '/show/:id',
       views: {
         '@': {

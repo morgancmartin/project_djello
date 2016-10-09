@@ -1,9 +1,11 @@
 <%= content_for(:angular_app) do %>
   ng-app='DjelloApp'
 <% end %>
-<%= content_for(:navbar) do %>
-  <%= render 'partials/nav.html.erb'  %>
-<% end %>
-<p>static</p>
-<ui-view>view not loading</ui-view>
-<!-- <a ui-sref="home.index">Index</a> -->
+<div id="navbar"
+     ui-view="navbar"
+     data-root-path="<%= root_path %>"
+     data-logout-link="<%= destroy_user_session_path %>"
+>loading...</div>
+<%= image_tag('jello.gif', class: 'brand-image', id: 'jello-img') %>
+<%= image_tag('djello.png', class: 'brand-text', id: 'djello-img') %>
+<ui-view></ui-view>

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   scope :api do
     scope :v1 do
-      resources :boards, only: [:create, :show, :index, :update, :destroy]
+      resources :boards, only: [:create, :show, :index, :update, :destroy] do
+        resources :lists
+      end
     end
   end
 end

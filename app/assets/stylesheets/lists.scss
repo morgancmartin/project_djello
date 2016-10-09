@@ -1,0 +1,60 @@
+// Place all the styles related to the lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+
+.lists {
+  padding-left: 0;
+}
+
+.list {
+  @extend .col-md-4;
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  padding: 0 0 0 0;
+  color: #585858;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #E2E4E6;
+  height: 50px;
+  border-radius: 3px;
+  &:hover{
+    cursor: pointer;
+  }
+  .list-title {
+    margin-top: 2%;
+    .edit-span,
+    .edit-input {
+      @extend .col-md-12;
+      padding-top: 0px;
+      padding-left: 0px;
+    }
+    /* .edit-input { */
+    /* @extend .col-md-11; */
+    /* padding-left: 0px; */
+    /* } */
+  }
+}
+
+.list-options {
+  background-color: #E2E4E6;
+  border: none;
+  color: #B3B5B7;
+  &:hover{
+    background-color: #CDD2D4;
+  }
+}
+
+.new-list {
+  @extend .list;
+  background-color: #006BA9;
+  color: #B1CBDA;
+  font-weight: normal;
+  p {
+    margin-top: 5%;
+  }
+  &:hover {
+    background-color: #005586;
+  }
+}
