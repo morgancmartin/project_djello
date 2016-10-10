@@ -4,6 +4,13 @@
 
 @import 'bootstrap';
 
+.delete-board-link{
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
 .personal-glyph{
   opacity: 0.8;
 }
