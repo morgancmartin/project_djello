@@ -1,6 +1,6 @@
 //board show controller
 
-DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardService', 'boards', '$state', 'listService', function($scope, Restangular, board, boardService, boards, $state, listService) {
+DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardService', 'boards', '$state', 'listService', '$sce', function($scope, Restangular, board, boardService, boards, $state, listService, $sce) {
 
 
   // Targeting body for state specific styling...
@@ -43,5 +43,21 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
 
   console.log('loaded boardshowctrl');
 
+  $scope.renameBoard = function(title){
+    var params = {title: title, board: board};
+    boardService.updateBoard(params);
+  };
+
+  // $scope.createNewCard = function(title){
+
+  // };
+
+  $scope.dynamicPopover = {
+    templateUrl: 'myPopoverTemplate.html'
+  };
+
+  $scope.doStuff = function(){
+    console.log('doingstuff');
+  };
 
 }]);

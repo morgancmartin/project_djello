@@ -10,14 +10,16 @@
   </div>
   <div class="row">
     <div ng-repeat="board in boards">
-      <a class="board" ui-sref="home.show({id: board.id})"
-        <h1>{{board.title}}</h1>
-      </a>
+      <div class="board" ui-sref="home.show({id: board.id})">
+        <a>{{board.title}}</a>
+      </div>
     </div>
 
-    <a ng-click="showNewBoardForm = true" href="#" class="new-board">
-      Create a new board...
-    </a>
+    <div ng-click="showNewBoardForm = true" href="#" class="new-board">
+      <a>
+        Create a new board...
+      </a>
+    </div>
 
     <div ng-show="showNewBoardForm">
       <form ng-model="newBoardForm" ng-submit="createBoard()">

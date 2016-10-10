@@ -1,0 +1,48 @@
+// Place all the styles related to the cards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.new-card-link{
+  height: 100%;
+  line-height: 2.5em;
+  &:hover {
+    background-color: #CDD2D4;
+    text-decoration: underline;
+    a {
+     color: #4D4D4D;
+    }
+  }
+  a {
+    color: grey;
+    &:hover {
+     color: #4D4D4D;
+    }
+  }
+}
+
+.new-card-form{
+  margin-bottom: 1em;
+}
+
+.new-card-input{
+  border-radius: 3px;
+  height: 5em;
+  margin-bottom: 0.5em;
+  resize: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.new-card-button {
+  font-weight: bold;
+  width: 6em;
+  border-bottom: 1px solid black;
+}
+
+.new-card-x {
+  opacity: 0.8;
+
+}

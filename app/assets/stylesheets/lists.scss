@@ -17,13 +17,14 @@
   font-size: 1em;
   font-weight: bold;
   background-color: #E2E4E6;
-  height: 50px;
+  min-height: 5em;
   border-radius: 3px;
   &:hover{
     cursor: pointer;
   }
   .list-title {
     margin-top: 2%;
+    margin-bottom: 7%;
     .edit-span,
     .edit-input {
       @extend .col-md-12;

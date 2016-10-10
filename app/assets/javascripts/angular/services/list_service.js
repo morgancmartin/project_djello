@@ -1,4 +1,4 @@
-DjelloApp.factory("listService", ["Restangular", '_', function(Restangular, _) {
+DjelloApp.factory("listService", ["Restangular", '_', 'cardService', function(Restangular, _, cardService) {
 
   var _lists = [];
   var listService = {};
@@ -90,6 +90,15 @@ DjelloApp.factory("listService", ["Restangular", '_', function(Restangular, _) {
   Restangular.extendModel('lists', function(list){
     list.delete = function(){
       _deleteList(list);
+    };
+
+    list.createCard = function(params){
+      params.list_id = list.id;
+      return cardService.create(params)
+        .then(function(response){
+          list.cards.push(response);
+          return response;
+        });
     };
     return list;
   });

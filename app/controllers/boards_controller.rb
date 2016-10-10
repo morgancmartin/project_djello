@@ -35,12 +35,21 @@ class BoardsController < ApplicationController
   end
 
   def update
-
+    @board = current_user.boards.find_by_id(board_params[:id])
+    if @board && @board.update(board_params)
+      respond_to do |format|
+        format.json { render json: @board, status: 200 }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: @board, status: 500}
+      end
+    end
   end
 
   private
 
   def board_params
-    params.require(:board).permit(:title)
+    params.require(:board).permit(:id, :title)
   end
 end

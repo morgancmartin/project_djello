@@ -3,8 +3,7 @@ DjelloApp.directive('editInPlace', ['$rootScope', function($rootScope) {
     restrict: 'E',
     scope: {
       value: '@',
-      id: '@',
-      updateList: '&'
+      id: '@'
     },
     templateUrl: '/templates/directives/edit_in_place.html',
     link: function($scope, element, attrs){

@@ -23,6 +23,33 @@ DjelloApp.factory("boardService", ["Restangular", '_', 'listService', function(R
     });
   };
 
+  var _boardNeedsUpdating = function(board, params){
+    if(params.title && params.title !== board.title){
+      return true;
+    }
+    return false;
+  };
+
+  boardService.updateBoard = function(params){
+    var board = params.board;
+    if(_boardNeedsUpdating(board, params)){
+      params = {board: {id: board.id, title: params.title}};
+      board.patch(params)
+        .then(
+          function(result){
+            console.log('worked');
+            angular.copy(result, board);
+          },
+          function(result){
+            // couldn't think of a good way to handle
+            // this case. currently the user must refresh
+            // the page to realize that their request didn't
+            // go through
+            console.error('failed to update');
+          });
+    }
+  };
+
   boardService.all = function() {
     return Restangular.all("boards").getList().then(function(response){
       angular.copy(response, _boards);

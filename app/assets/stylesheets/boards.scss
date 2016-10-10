@@ -4,11 +4,6 @@
 
 @import 'bootstrap';
 
-/* .title-drop{ */
-/* position: absolute !important; */
-/* left: 50% !important; */
-/* } */
-
 .personal-glyph{
   opacity: 0.8;
 }
@@ -44,18 +39,25 @@
 
 .board {
   @extend .col-md-3;
-  display: inline-block;
   margin: 0px 10px 0px 10px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: bold;
+  display: inline-block;
   background-color: #056FAD;
-  height: 6em;
+  height: 7em;
   border-radius: 3px;
-  &:hover{
-    text-decoration: none;
+  a{
+    display: inline-block;
+    margin-top: 0.7em;
     color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    &:hover{
+    text-decoration: none;
+      color: white;
+    }
+  }
+  &:hover {
     background-color: #0067A3;
+    cursor: pointer;
   }
 }
 
@@ -70,18 +72,27 @@
   font-weight: bold;
   color: white !important;
   background-color: inherit !important;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .new-board{
   @extend .board;
-  color: grey;
-  font-size: 1em;
-  font-weight: normal;
-  margin: auto;
-  top: 50%;
+  a {
+    top: 3em;
+    display: inline-block;
+    color: grey;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-top: 2.5em;
+    margin-left: 3em;
+  }
   &:hover{
     background-color: #D6DADC;
-    color: grey;
+    a {
+      color: #4D4D4D
+    }
   }
   background-color: #DCE0E2;
 }
