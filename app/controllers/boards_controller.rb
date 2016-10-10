@@ -10,10 +10,11 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = current_user.boards.find_by_id(params[:id])
-    respond_to do |format|
-      format.json { render json: @board, include: :lists, status: 200 }
-    end
+    # @board = current_user.boards.find_by_id(params[:id])
+    # respond_to do |format|
+    #   format.json { render json: @board, include: :lists, status: 200 }
+    # end
+    @board = Board.includes({lists: :cards}).find(params[:id])
   end
 
   def create

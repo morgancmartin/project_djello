@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   scope :api do
     scope :v1 do
       resources :boards, only: [:create, :show, :index, :update, :destroy] do
-        resources :lists do
-          resources :cards  # probably a way to use shallow: true,
-                            # but I'm not seeing it.
-        end
+        resources :lists
+      end
+      resources :lists, only: [] do
+        resources :cards
       end
     end
   end

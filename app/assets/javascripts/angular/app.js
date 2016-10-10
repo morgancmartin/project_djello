@@ -1,14 +1,8 @@
-var DjelloApp = angular.module('DjelloApp', ['Devise', 'ui.router', 'restangular', 'xeditable', 'ui.bootstrap']);
+var DjelloApp = angular.module('DjelloApp', ['Devise', 'ui.router', 'restangular', 'ui.bootstrap', 'angularModalService']);
 
 DjelloApp.factory('_', ['$window', function($window){
   return $window._;
 }]);
-
-DjelloApp.run(function(editableOptions, editableThemes){
-  editableOptions.theme = 'bs3';
-  editableThemes.bs3.inputClass = 'input-sm';
-  editableThemes.bs3.buttonsClass = 'btn-sm';
-});
 
 DjelloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/home/boards");

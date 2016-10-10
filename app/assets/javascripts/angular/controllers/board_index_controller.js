@@ -7,9 +7,15 @@ DjelloApp.controller("boardIndexCtrl", ['$scope', 'Restangular', 'Auth', 'boards
   $scope.boards = boards;
   $scope.newBoardForm = {};
 
-  $scope.createBoard = function(){
-    console.log($scope.newBoardForm);
-    boardService.create($scope.newBoardForm);
+  $scope.createBoard = function(title){
+    var params = {title: title};
+    boardService.create(params);
+    $scope.newBoardForm.title = '';
+    $scope.showNewBoardForm = false;
+  };
+
+  $scope.dynamicPopover = {
+    templateUrl: 'myPopoverTemplate.html'
   };
 
   Auth.currentUser()

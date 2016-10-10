@@ -9,7 +9,7 @@
 }
 
 .list {
-  @extend .col-md-4;
+  @extend .col-md-3;
   display: inline-block;
   margin: 0px 10px 0px 10px;
   padding: 0 0 0 0;
@@ -19,9 +19,6 @@
   background-color: #E2E4E6;
   min-height: 5em;
   border-radius: 3px;
-  &:hover{
-    cursor: pointer;
-  }
   .list-title {
     margin-top: 2%;
     margin-bottom: 7%;
@@ -48,8 +45,10 @@
 }
 
 .new-list {
-  @extend .list;
+  @extend .col-md-12;
   background-color: #006BA9;
+  min-height: 3em;
+  /* height: 1.5em; */
   color: #B1CBDA;
   font-weight: normal;
   p {
@@ -57,5 +56,25 @@
   }
   &:hover {
     background-color: #005586;
+    cursor: pointer;
+  }
+}
+
+.list-form-container{
+  @extend .new-list;
+  border: 2px solid #E2E4E6;
+  border-radius: 3px;
+  background-color: #E2E4E6;
+  input {
+    @extend .col-md-12
+  }
+  &:hover {
+    background-color: #E2E4E6;
+  }
+  .new-list-x {
+    opacity: 0.7;
+  }
+  p {
+    font-weight: bold;
   }
 }

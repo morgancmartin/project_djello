@@ -1,0 +1,21 @@
+<div ng-show="!(showNewListForm)">
+  <div class="new-list" ng-click="showNewListForm = true">
+    <p class="col-md-12">Add a list...</p>
+  </div>
+</div>
+<div ng-show="showNewListForm" ng-blur="showNewListForm = false">
+  <div class="list-form-container">
+    <form ng-model="newListForm" class="new-list-form">
+      <input type="text" ng-model="newListForm.title">
+      <a type="submit"
+         class="btn btn-success new-list-button"
+         ng-click="createList(newListForm.title)"
+         value="Add"><strong>Save</strong>
+      </a>
+      <span class="glyphicon glyphicon-remove new-board-x col-md-offset-3"
+            aria-hidden="true"
+            ng-click="showNewListForm = false">
+      </span>
+    </form>
+  </div>
+</div>

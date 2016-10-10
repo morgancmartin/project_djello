@@ -12,14 +12,10 @@ DjelloApp.factory("listService", ["Restangular", '_', 'cardService', function(Re
 
 
   var _listNeedsUpdating = function(list, params){
-    if(params.title && params.title !== list.title){
-      return true;
-    }
-    return false;
+    return !!params.title && params.title !== list.title;
   };
 
   var _removeList = function(listPromise){
-    console.log('removing board from collection');
     listPromise.then(function(response){
       _.remove(_lists, function(list){
         return list.id === response.id;
@@ -36,12 +32,10 @@ DjelloApp.factory("listService", ["Restangular", '_', 'cardService', function(Re
     return _lists;
   };
 
-  listService.setLists = function(boardPromise){
-    boardPromise.then(function(board){
-      board.lists = Restangular
-        .restangularizeCollection(board, board.lists, 'lists');
-      angular.copy(board.lists, _lists);
-    });
+  listService.setLists = function(lists){
+    cardService.setCards(lists);
+    angular.copy(lists, _lists);
+    return _lists;
   };
 
   listService.updateList = function(params){
@@ -54,35 +48,35 @@ DjelloApp.factory("listService", ["Restangular", '_', 'cardService', function(Re
             angular.copy(result, list);
           },
           function(result){
-            // couldn't think of a good way to handle
-            // this case. currently the user must refresh
-            // the page to recognize that their request didn't
-            // go through
+            angular.copy(result, list);
             console.error('failed to update');
           });
     }
   };
 
   listService.all = function(boardPromise) {
-    return boardPromise.then(function(result){
-      console.log(result.id);
-      return Restangular.one('boards', result.id).all("lists").getList()
+    return boardPromise.then(function(board){
+      return Restangular.one('boards', board.id).all("lists").getList()
         .then(function(response){
           angular.copy(response, _lists);
+          _.forEach(_lists, function(list){
+            cardService.setCards(list, list.cards);
+          });
           return _lists;
       });
     });
   };
+  // man
 
   listService.create = function(params){
-    return Restangular.one('boards', params.board_id).all('lists').post({
+    console.log(params);
+    return Restangular.one('boards', params.board.id).all('lists').post({
       list: {
         title: params.title,
         description: params.description,
-        board_id: params.board_id
+        board_id: params.board.id
       }
     }).then(function(list){
-        console.log(list);
       _lists.push(list);
     });
   };
@@ -96,7 +90,7 @@ DjelloApp.factory("listService", ["Restangular", '_', 'cardService', function(Re
       params.list_id = list.id;
       return cardService.create(params)
         .then(function(response){
-          list.cards.push(response);
+          // list.cards.push(response);
           return response;
         });
     };

@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 20161010005022) do
   create_table "cards", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
+    t.integer  "list_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["list_id"], name: "index_cards_on_list_id", using: :btree
   end
 
   create_table "lists", force: :cascade do |t|

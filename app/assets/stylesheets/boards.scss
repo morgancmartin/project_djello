@@ -96,3 +96,25 @@
   }
   background-color: #DCE0E2;
 }
+
+.board-form-container{
+  @extend .col-md-3;
+  border: 2px solid #D6DADC;
+  border-radius: 3px;
+  .new-board-x {
+    opacity: 0.7;
+  }
+  .new-board-header {
+    display: inline-block;
+    margin-left: 30%;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+  }
+  hr {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+  p {
+    font-weight: bold;
+  }
+}

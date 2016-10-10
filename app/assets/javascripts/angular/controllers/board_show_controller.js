@@ -1,6 +1,6 @@
 //board show controller
 
-DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardService', 'boards', '$state', 'listService', '$sce', function($scope, Restangular, board, boardService, boards, $state, listService, $sce) {
+DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardService', 'boards', '$state', 'listService', '$sce', 'cardService', '$document', 'ModalService', function($scope, Restangular, board, boardService, boards, $state, listService, $sce, cardService, $document, ModalService) {
 
 
   // Targeting body for state specific styling...
@@ -12,6 +12,7 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
   $scope.selected = board;
   $scope.boardShow = true;
   $scope.lists = listService.getLists();
+  $scope.cards = cardService.getCards();
 
   $scope.$watch('selected', function(state){
     if(state){
@@ -23,15 +24,6 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
     params.board_id = board.id;
     listService.updateList(params);
   });
-
-  $scope.createList = function(){
-    $scope.board.createList($scope.newListForm)
-      .then(function(response){
-        $scope.newListForm = {};
-      }, function(response){
-        console.error(response);
-      });
-  };
 
   $scope.removeList = function(list){
     list.delete();
@@ -48,16 +40,7 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
     boardService.updateBoard(params);
   };
 
-  // $scope.createNewCard = function(title){
-
-  // };
-
   $scope.dynamicPopover = {
     templateUrl: 'myPopoverTemplate.html'
   };
-
-  $scope.doStuff = function(){
-    console.log('doingstuff');
-  };
-
 }]);

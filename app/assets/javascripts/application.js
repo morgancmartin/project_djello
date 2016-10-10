@@ -21,6 +21,6 @@
 //= require angular-devise
 //= require ui-bootstrap-tpls-2.1.4.min
 //= require bootstrap.min
-//= require xeditable.min
+//= require angular-modal-service.min
 //= require turbolinks
 //= require_tree .

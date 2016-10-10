@@ -2,12 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'bootstrap';
 
+.card {
+  @extend .col-md-11;
+  display: inline-block;
+  margin-left: 3%;
+  background-color: #FFFFFF;
+  min-height: 3em;
+  border-radius: 3px;
+  margin-bottom: 1em;
+  font-weight: normal;
+  padding: 0 0.3em 0 0.3em;
+  &:hover {
+    cursor: pointer;
+    background-color: #EDEFF0;
+  }
+}
 
 .new-card-link{
   height: 100%;
   line-height: 2.5em;
   &:hover {
+    cursor: pointer;
     background-color: #CDD2D4;
     text-decoration: underline;
     a {

@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  before_action :set_board
+  before_action :set_list
 
   def create
     @board = find_board_from_current_user(list_params[:board_id])
@@ -11,13 +13,10 @@ class ListsController < ApplicationController
   end
 
   def index
-    puts 'PARAMS'
-    params
-    @board = find_board_from_current_user(params[:board_id])
     @lists = @board.lists if @board
     if @lists
       respond_to do |format|
-        format.json { render json: @lists, status: 200 }
+        format.json { render json: @lists, include: :cards,  status: 200 }
       end
     end
   end
@@ -29,35 +28,35 @@ class ListsController < ApplicationController
   end
 
   def update
-    @board = find_board_from_current_user(params[:board_id])
-    if @board
-      @list = @board.lists.find_by_id(list_params[:id])
-      puts 'title'
-      puts @list.title
+    respond_to do |format|
       if @list && @list.update(list_params)
-        respond_to do |format|
-          format.json { render json: @list, status: 200 }
-        end
+        format.json { render json: @list, status: 200 }
       else
-        respond_to do |format|
-          format.json { render json: @list, status: 500}
-        end
+        format.json { render json: @list, status: 422 }
       end
     end
   end
 
   def destroy
-    @board = find_board_from_current_user(params[:board_id])
-    @list = @board.lists.find_by_id(params[:id])
-    if @list.destroy
-      respond_to do |format|
+    respond_to do |format|
+      if @list.destroy
         format.json { render json: @list, status: 200 }
+      else
+        format.json { render json: @list, status: 422 }
       end
     end
   end
 
 
   private
+
+  def set_board
+    @board = find_board_from_current_user(params[:board_id])
+  end
+
+  def set_list
+    @list = @board.lists.find_by_id(params[:id])
+  end
 
   def list_params
     params.require(:list).permit(:id, :title, :description, :board_id)

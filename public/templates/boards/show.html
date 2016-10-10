@@ -10,71 +10,12 @@
     </h4>
   </div>
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-10">
       <div class="lists col-md-12">
-        <div ng-repeat="list in lists"
+        <list list="list" ng-repeat="list in lists"
              class="list">
-          <edit-in-place value='{{list.title}}'
-                         id="{{list.id}}"
-                         class="col-md-10 list-title"
-          ></edit-in-place>
-          <span uib-dropdown dropdown-append-to-body>
-            <button id="btn-append-to-body"
-                    type="button"
-                    class="btn btn-default btn-sm list-options"
-                    uib-dropdown-toggle>
-              <span class="glyphicon glyphicon-option-horizontal"
-                    aria-hidden="true">
-              </span>
-            </button>
-            <ul class="dropdown-menu"
-                uib-dropdown-menu role="menu"
-                aria-labelledby="btn-append-to-body">
-              <li role="menuitem">
-                <a href
-                   ng-click="removeList(list)">
-                  Remove List...
-                </a>
-              </li>
-            </ul>
-          </span>
-          <div ng-show="!(showNewCardForm)">
-            <div ng-click="showNewCardForm = true" class="col-md-12 new-card-link">
-              <a>Add a card...</a>
-            </div>
-          </div>
-          <div ng-show="showNewCardForm">
-            <div class="col-md-12">
-              <form class="new-card-form"
-                    ng-model="newCardForm">
-                <textarea class="new-card-input col-md-12"
-                          ng-model="newCardForm.title">
-                </textarea>
-                <a type="submit"
-                   class="btn btn-success new-card-button"
-                   ng-click="createNewCard(newCardForm.title)"
-                   value="Add"><strong>Submit</strong>
-                </a>
-                <span class="glyphicon glyphicon-remove new-card-x col-md-offset-1"
-                      aria-hidden="true"
-                      ng-click="showNewCardForm = false">
-                </span>
-              </form>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="new-list" ng-click="showNewListForm = true">
-          <p class="col-md-12">Add a list...</p>
-        </div>
-        <div ng-show="showNewListForm">
-          <form ng-model="newListForm" ng-submit="createList()">
-            <label>Title:</label>
-            <input type="text" ng-model="newListForm.title">
-            <input type="submit">
-          </form>
-        </div>
+        </list>
+        <new-list-form class="col-md-3" board="board"></new-list-form>
       </div>
     </div>
     <div>
@@ -94,14 +35,14 @@
 
 
 
-  <script type="text/ng-template" id="myPopoverTemplate.html">
-    <form class="form-group" ng-submit="renameBoard(boardRenameForm.title)">
-      <label>Name</label>
-      <input type="text"
-             ng-model="boardRenameForm.title"
-             ng-value="board.title"
-             class="form-control">
-      <br>
-      <input type="submit" class="btn btn-success" value="Rename"></input>
-    </form>
-  </script>
+<script type="text/ng-template" id="myPopoverTemplate.html">
+  <form class="form-group" ng-submit="renameBoard(boardRenameForm.title)">
+    <label>Name</label>
+    <input type="text"
+           ng-model="boardRenameForm.title"
+           ng-value="board.title"
+           class="form-control">
+    <br>
+    <input type="submit" class="btn btn-success" value="Rename"></input>
+  </form>
+</script>
