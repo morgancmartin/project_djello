@@ -58,6 +58,6 @@ DjelloApp.config(
 }]);
 
 // Errors
-DjelloApp.run(function($rootScope){
+DjelloApp.run(['$rootScope', function($rootScope){
   $rootScope.$on("$stateChangeError", console.log.bind(console));
-});
+}]);

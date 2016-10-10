@@ -94,3 +94,5 @@ test:
 #   username: djello
 #   password: password1
 #   # password: <%= ENV['DJELLO_DATABASE_PASSWORD'] %>
+production:
+  adapter: postgresql

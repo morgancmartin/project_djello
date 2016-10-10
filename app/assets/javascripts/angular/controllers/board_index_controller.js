@@ -1,6 +1,3 @@
-//board index controller
-
-
 DjelloApp.controller("boardIndexCtrl", ['$scope', 'Restangular', 'Auth', 'boards', 'boardService', function($scope, Restangular, Auth, boards, boardService) {
 
   angular.element('body').removeClass('board-show');

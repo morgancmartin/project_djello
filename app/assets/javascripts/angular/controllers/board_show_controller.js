@@ -1,5 +1,3 @@
-//board show controller
-
 DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardService', 'boards', '$state', 'listService', '$sce', 'cardService', '$document', 'ModalService', function($scope, Restangular, board, boardService, boards, $state, listService, $sce, cardService, $document, ModalService) {
 
 
@@ -24,10 +22,6 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
     params.board_id = board.id;
     listService.updateList(params);
   });
-
-  $scope.removeList = function(list){
-    list.delete();
-  };
 
   $scope.deleteCurrentBoard = function(){
     $scope.board.delete();
