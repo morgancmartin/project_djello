@@ -12,9 +12,37 @@
   <div class="row">
     <div class="col-md-10">
       <div class="lists col-md-12">
-        <list list="list" ng-repeat="list in lists"
+        <div ng-repeat="list in lists"
              class="list">
-        </list>
+          <edit-in-place value='{{list.title}}'
+                         id="{{list.id}}"
+                         class="col-md-10 list-title"
+          ></edit-in-place>
+          <span uib-dropdown dropdown-append-to-body>
+            <button id="btn-append-to-body"
+                    type="button"
+                    class="btn btn-default btn-sm list-options"
+                    uib-dropdown-toggle>
+              <span class="glyphicon glyphicon-option-horizontal"
+                    aria-hidden="true">
+              </span>
+            </button>
+            <ul class="dropdown-menu"
+                uib-dropdown-menu role="menu"
+                aria-labelledby="btn-append-to-body">
+              <li role="menuitem">
+                <a href
+                   ng-click="removeList(list)">
+                  Remove List...
+                </a>
+              </li>
+            </ul>
+          </span>
+
+          <list-card class="card" ng-repeat="card in cards[list.id]" card="card" ></list-card>
+
+          <new-card-form class="col-md-12" list="list"></new-card-form>
+        </div>
         <new-list-form class="col-md-3" board="board"></new-list-form>
       </div>
     </div>
@@ -26,7 +54,7 @@
         </select>
       </div>
       <div>
-        <a class="delete-board-link" ng-click="deleteCurrentBoard()" href="#">Delete board</a>
+        <a ng-click="deleteCurrentBoard()" href="#">Delete board</a>
       </div>
     </div>
   </div>

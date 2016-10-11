@@ -43,7 +43,12 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
         list_id: params.list_id
       }
     }).then(function(card){
+      console.log(card);
+      if(!_cards[params.list_id]){
+        _cards[params.list_id] = [];
+      }
       _cards[params.list_id].push(card);
+      console.log(_cards[params.list_id]);
       return card;
     });
   };
