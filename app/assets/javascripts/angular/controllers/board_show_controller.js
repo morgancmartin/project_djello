@@ -27,6 +27,10 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
     $scope.board.delete();
   };
 
+  $scope.removeList = function(list){
+    list.delete();
+  };
+
   console.log('loaded boardshowctrl');
 
   $scope.renameBoard = function(title){
