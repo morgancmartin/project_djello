@@ -66,19 +66,20 @@ DjelloApp.factory("listService", ["Restangular", '_', 'cardService', function(Re
       });
     });
   };
-  // man
 
   listService.create = function(params){
-    console.log(params);
-    return Restangular.one('boards', params.board.id).all('lists').post({
-      list: {
-        title: params.title,
-        description: params.description,
-        board_id: params.board.id
-      }
-    }).then(function(list){
-      _lists.push(list);
-    });
+    if(params.title){
+      console.log(params);
+      return Restangular.one('boards', params.board.id).all('lists').post({
+        list: {
+          title: params.title,
+          description: params.description,
+          board_id: params.board.id
+        }
+      }).then(function(list){
+        _lists.push(list);
+      });
+    }
   };
 
   Restangular.extendModel('lists', function(list){

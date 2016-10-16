@@ -73,12 +73,14 @@ DjelloApp.factory("boardService", ["Restangular", '_', 'listService', function(R
       _deleteBoard(board);
     };
     board.createList = function(params){
-      params.board = board;
-      return listService.create(params)
-        .then(function(response){
-          // board.lists.push(response);
-          return response;
-        });
+      if(params.title){
+        params.board = board;
+        return listService.create(params)
+          .then(function(response){
+            // board.lists.push(response);
+            return response;
+          });
+      }
     };
     return board;
   });
