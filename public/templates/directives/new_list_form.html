@@ -3,10 +3,11 @@
     <p class="col-md-12">Add a list...</p>
   </div>
 </div>
-<div ng-show="showNewListForm" ng-blur="showNewListForm = false">
+<div ng-if="showNewListForm" ng-blur="focusOut()">
   <div class="list-form-container">
     <form ng-model="newListForm" class="new-list-form">
-      <input type="text" ng-model="newListForm.title">
+      <input type="text" ng-model="newListForm.title" id="newListInput"
+      >
       <a type="submit"
          class="btn btn-success new-list-button"
          ng-click="createList(newListForm.title)"

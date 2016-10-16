@@ -2,15 +2,28 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">{{card.title}}</h4>
+        <button type="button" class="close" ng-click="close('Cancel')"
+                data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <span class="glyphicon glyphicon-modal-window"
+              aria-hidden="true">
+        </span>
+        <div class="header">
+          <edit-in-place value='{{card.title}}'
+                         id="{{card.id}}"
+                         class="modal-title"
+                         attr-type="card"
+          ></edit-in-place>
+
+
+          <p class="modal-sub-header">In list <span class="underlined">{{list.title}}</span></p>
+        </div>
       </div>
       <div class="modal-body">
-        <p>{{card.description}}</p>
+        <edit-description-form card="card" list="list"></edit-description-form>
       </div>
       <div class="modal-footer">
-        <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No</button>
-        <button type="button" ng-click="close('Yes')" class="btn btn-primary" data-dismiss="modal">Yes</button>
       </div>
     </div>
   </div>

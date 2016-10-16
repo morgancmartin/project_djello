@@ -11,5 +11,6 @@ json.lists @board.lists do |list|
     json.title card.title
     json.description card.description
     json.list_id card.list_id
+    json.id card.id
   end
 end

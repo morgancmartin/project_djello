@@ -1,0 +1,33 @@
+<div ng-show="!(showNewBoardForm)">
+  <div ng-click="showNewBoardForm = true" href="#" class="new-board">
+    <a>
+      Create a new board...
+    </a>
+  </div>
+</div>
+
+<div ng-show="showNewBoardForm">
+  <div class="board-form-container">
+    <form class="new-board-form"
+          ng-model="newBoardForm">
+      <p class="new-board-header">New Board</p>
+      <span class="glyphicon glyphicon-remove new-board-x col-md-offset-3"
+            aria-hidden="true"
+            ng-click="showNewBoardForm = false">
+      </span>
+      <hr>
+      <p>Title</p>
+      <input type="text" class="col-md-12"
+             ng-model="newBoardForm.title"
+             ng-blur="showNewBoardForm = false"
+             id="newBoardInput"
+      >
+      <a type="submit"
+         class="btn btn-success new-board-button"
+         ng-click="createBoard(newBoardForm.title)"
+         value="Add"><strong>Submit</strong>
+      </a>
+    </form>
+
+  </div>
+</div>

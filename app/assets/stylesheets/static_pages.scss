@@ -30,10 +30,16 @@
   left: 47%;
   opacity: 0.5;
   color: white !important;
+  transition: opacity 85ms;
+  transition-timing-function: ease-in;
   &:hover{
     opacity: 1;
     color: white !important;
   }
+}
+
+.underlined {
+  text-decoration: underline;
 }
 /*  */
 /* .brand-image{ */

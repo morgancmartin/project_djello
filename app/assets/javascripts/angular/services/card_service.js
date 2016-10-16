@@ -26,7 +26,6 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
       if(!_cards[list.id]){
         _cards[list.id] = [];
       }
-      console.log(list.cards);
       angular.copy(list.cards, _cards[list.id]);
       console.log(_cards[list.id]);
     });
@@ -52,6 +51,57 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
       return card;
     });
   };
+
+  var _findCardById = function(id){
+    console.log(_cards);
+    var card;
+    _.find(_cards, function(cards){
+      if(!card){
+        card = _.find(cards, function(card){
+          return id === card.id;
+        });
+      }
+    });
+    console.log(card);
+    return card;
+  };
+
+  var _cardNeedsUpdating = function(card, params){
+    return !!params.title && params.title !== card.title ||
+      !!params.description && params.description !== card.description;
+  };
+
+
+  cardService.updateCard = function(params){
+    var card = _findCardById(params.id);
+    if(_cardNeedsUpdating(card, params)){
+      console.log(card);
+      params.list_id = card.list_id;
+      console.log(params);
+      card.update(params)
+        .then(
+          function(result){
+            angular.copy(result, card);
+          },
+          function(result){
+            angular.copy(result, card);
+            console.error('failed to update');
+          });
+    }
+  };
+
+
+  Restangular.extendModel('cards', function(card){
+    card.update = function(params){
+      console.log(params);
+      return Restangular
+        .one('lists', params.list_id)
+        .one('cards', params.id)
+        .patch(params);
+    };
+
+    return card;
+  });
 
   return cardService;
 }]);

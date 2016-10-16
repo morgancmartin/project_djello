@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :get_list
+  before_action :set_list, :set_card
 
   def create
     @card = Card.new(card_params)
@@ -10,13 +10,27 @@ class CardsController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @card && @card.update(card_params)
+        format.json { render json: @card, status: 200 }
+      else
+        format.json { render json: @card, status: 422 }
+      end
+    end
+  end
+
 
 
 
 
   private
 
-  def get_list
+  def set_card
+    @card = @list.cards.find_by_id(params[:id])
+  end
+
+  def set_list
     @list = find_list_from_current_user(params[:list_id])
   end
 

@@ -3,12 +3,15 @@
     <a>Add a card...</a>
   </div>
 </div>
-<div ng-show="showNewCardForm">
-  <div class="col-md-12">
+<div ng-if="showNewCardForm">
+  <div class="new-card-form-container">
     <form class="new-card-form"
           ng-model="newCardForm">
-      <textarea class="new-card-input col-md-12"
-                ng-model="newCardForm.title">
+      <textarea class="new-card-input"
+                ng-model="newCardForm.title"
+                id="newCardInput"
+                ng-blur="focusOut()"
+      >
       </textarea>
       <a type="submit"
          class="btn btn-success new-card-button"

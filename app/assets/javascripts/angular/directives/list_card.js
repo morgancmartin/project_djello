@@ -3,7 +3,8 @@ DjelloApp.directive('listCard', ['ModalService', function(ModalService) {
     restrict: 'E',
     templateUrl: '/templates/directives/list-card.html',
     scope: {
-      card: '='
+      card: '=',
+      list: '='
     },
     link: function($scope, element, attrs){
       $scope.showModal = function(card) {
@@ -11,7 +12,8 @@ DjelloApp.directive('listCard', ['ModalService', function(ModalService) {
           templateUrl: '/templates/cards/modal.html',
           controller: 'ModalController',
           inputs: {
-            card: $scope.card
+            card: $scope.card,
+            list: $scope.list
           }
         }).then(function(modal){
           modal.element.modal();
@@ -20,7 +22,6 @@ DjelloApp.directive('listCard', ['ModalService', function(ModalService) {
           });
         });
       };
-
       element.bind('click', $scope.showModal);
     }
   };

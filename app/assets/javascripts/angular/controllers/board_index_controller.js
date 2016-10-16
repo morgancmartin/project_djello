@@ -11,6 +11,13 @@ DjelloApp.controller("boardIndexCtrl", ['$scope', 'Restangular', 'Auth', 'boards
     $scope.showNewBoardForm = false;
   };
 
+  $scope.$watch('showNewBoardForm', function(value){
+    if(value){
+      console.log(angular.element('#newBoardInput')[0]);
+      angular.element('#newBoardInput')[0].focus();
+    }
+  });
+
   $scope.dynamicPopover = {
     templateUrl: 'myPopoverTemplate.html'
   };

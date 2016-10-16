@@ -3,7 +3,8 @@ DjelloApp.directive('editInPlace', ['$rootScope', function($rootScope) {
     restrict: 'E',
     scope: {
       value: '@',
-      id: '@'
+      id: '@',
+      attrType: '@'
     },
     templateUrl: '/templates/directives/edit_in_place.html',
     link: function($scope, element, attrs){
@@ -21,7 +22,8 @@ DjelloApp.directive('editInPlace', ['$rootScope', function($rootScope) {
           id: parseInt($scope.id),
           title: newProps
         };
-        $rootScope.$broadcast('list.updated', params);
+        var message = $scope.attrType + '.updated';
+        $rootScope.$broadcast(message, params);
       });
       $scope.offEdit = function(){
         $scope.editing = false;

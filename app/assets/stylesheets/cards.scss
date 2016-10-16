@@ -43,7 +43,12 @@
   margin-bottom: 1em;
 }
 
+.new-card-container{
+  width: 100%;
+}
+
 .new-card-input{
+  width: 100%;
   border-radius: 3px;
   height: 5em;
   margin-bottom: 0.5em;
@@ -63,3 +68,69 @@
   opacity: 0.8;
 
 }
+
+.modal {
+  .glyphicon {
+    display: inline-block;
+    float: left;
+    font-size: 1.2em;
+    color: grey;
+    margin-right: 1em;
+    margin-top: 0.4em;
+  }
+  .header {
+    display: inline-block;
+  }
+  .modal-content{
+    background-color: #EDEFF0;
+  }
+  .modal-title {
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #4D4D4D;
+    span {
+      cursor: text;
+    }
+  }
+  .modal-sub-header {
+    color: grey;
+  }
+
+  .modal-body {
+    .description {
+      height: 2em;
+      color: grey;
+      width: 80%;
+      margin-left: 3em;
+      padding-left: 1em;
+      padding-top: 0.3em;
+      border-radius: 3px;
+      text-decoration: underline;
+      &:hover{
+        background-color: #D6DADC;
+        cursor: pointer;
+        color: #4D4D4D;
+      }
+    }
+    textarea {
+      @extend .description;
+      width: 80%;
+      height: 5em;
+      background-color: #E6E8E9;
+      outline: none;
+      border: 1px solid #C4C5C6;
+      resize: none;
+      &:hover {
+        background-color: #E6E8E9;
+        cursor: text;
+      }
+    }
+    .description-button {
+      @extend .new-card-button;
+    }
+    .description-x {
+      @extend .new-card-x;
+    }
+  }
+}
+
