@@ -20,6 +20,15 @@ class CardsController < ApplicationController
     end
   end
 
+  def destroy
+    respond_to do |format|
+      if @card.destroy
+        format.json { render json: @card, status: 200 }
+      else
+        format.json { render json: @card, status: 422 }
+      end
+    end
+  end
 
 
 

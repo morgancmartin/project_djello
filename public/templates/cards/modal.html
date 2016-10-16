@@ -10,7 +10,7 @@
               aria-hidden="true">
         </span>
         <div class="header">
-          <edit-in-place value='{{card.title}}'
+          <edit-in-place value="{{card.title}}"
                          id="{{card.id}}"
                          class="modal-title"
                          attr-type="card"
@@ -24,6 +24,7 @@
         <edit-description-form card="card" list="list"></edit-description-form>
       </div>
       <div class="modal-footer">
+        <a class="btn btn-default" href ng-click="markCompleted()">Mark this card completed...</a>
       </div>
     </div>
   </div>

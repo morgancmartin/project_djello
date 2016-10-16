@@ -67,14 +67,17 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
   };
 
   var _cardNeedsUpdating = function(card, params){
-    return !!params.title && params.title !== card.title ||
-      !!params.description && params.description !== card.description;
+    console.log(card);
+    console.log(params);
+    return (!!params.title && params.title !== card.title) ||
+      (!!params.description && params.description !== card.description);
   };
 
 
   cardService.updateCard = function(params){
+    console.log(params);
     var card = _findCardById(params.id);
-    if(_cardNeedsUpdating(card, params)){
+    if(card && _cardNeedsUpdating(card, params)){
       console.log(card);
       params.list_id = card.list_id;
       console.log(params);
@@ -90,6 +93,24 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
     }
   };
 
+  var _removeCard = function(cardPromise){
+    cardPromise.then(function(response){
+      _.forEach(_cards, function(list){
+        _.remove(list, function(card){
+          return card.id === response.id;
+        });
+      });
+    });
+  };
+
+  var _deleteCard = function(card){
+    var response =
+        Restangular
+        .one('lists', card.list_id)
+        .one('cards', card.id)
+        .remove();
+    _removeCard(response);
+  };
 
   Restangular.extendModel('cards', function(card){
     card.update = function(params){
@@ -98,6 +119,9 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
         .one('lists', params.list_id)
         .one('cards', params.id)
         .patch(params);
+    };
+    card.delete = function(){
+      _deleteCard(card);
     };
 
     return card;

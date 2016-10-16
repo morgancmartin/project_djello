@@ -8,6 +8,7 @@ DjelloApp.directive('editDescriptionForm', ['cardService', '$timeout', function(
     },
     link: function($scope, element, attrs){
       $scope.description = $scope.card.description;
+      console.log($scope.list);
       $scope.updateDescription = function(description){
         var params = {description: description,
                       list_id: $scope.list.id,

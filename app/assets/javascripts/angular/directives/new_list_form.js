@@ -9,6 +9,7 @@ DjelloApp.directive('newListForm', ['$timeout', function($timeout) {
     link: function($scope, element, attrs){
       $scope.createList = function(title){
         var params = {title: title};
+        console.log(params);
         if(title){
           $scope.board.createList(params)
             .then(function(response){

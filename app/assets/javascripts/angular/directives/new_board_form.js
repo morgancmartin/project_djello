@@ -22,6 +22,11 @@ DjelloApp.directive('newBoardForm', ['$timeout', 'boardService', function($timeo
           });
         }
       });
+      $scope.focusOut = function(){
+        $timeout(function(){
+          $scope.showNewBoardForm = false;
+        }, 125);
+      };
     }
   };
 }]);

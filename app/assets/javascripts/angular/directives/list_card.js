@@ -18,7 +18,9 @@ DjelloApp.directive('listCard', ['ModalService', function(ModalService) {
         }).then(function(modal){
           modal.element.modal();
           modal.close.then(function(result){
+            angular.element.find('.modal-backdrop')[0].remove();
             $scope.message = 'You said ' + result;
+
           });
         });
       };

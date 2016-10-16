@@ -12,13 +12,11 @@ DjelloApp.directive('newCardForm', ['$timeout', function($timeout) {
         $scope.newCardForm = {};
         $scope.showNewCardForm = false;
       };
-
       $scope.focusOut = function(){
         $timeout(function(){
           $scope.showNewCardForm = false;
         }, 125);
       };
-
       $scope.$watch('showNewCardForm', function(value){
         if(value){
           $timeout(function() {

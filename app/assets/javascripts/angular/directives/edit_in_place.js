@@ -18,12 +18,16 @@ DjelloApp.directive('editInPlace', ['$rootScope', function($rootScope) {
         inputElement[0].setSelectionRange(0, $scope.value.length);
       };
       $scope.$watch('value', function(newProps, oldProps){
-        var params = {
-          id: parseInt($scope.id),
-          title: newProps
-        };
-        var message = $scope.attrType + '.updated';
-        $rootScope.$broadcast(message, params);
+        if(newProps !== oldProps){
+          var params = {
+            id: parseInt($scope.id),
+            title: newProps
+          };
+          var message = $scope.attrType + '.updated';
+          console.log('broadcasting ' + message);
+          console.log(params);
+          $rootScope.$broadcast(message, params);
+        }
       });
       $scope.offEdit = function(){
         $scope.editing = false;

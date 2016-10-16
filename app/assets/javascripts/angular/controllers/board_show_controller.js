@@ -19,12 +19,16 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
   });
 
   $scope.$on('list.updated', function(eventName, params){
-    params.board_id = board.id;
-    listService.updateList(params);
+    if(params.title || params.description){
+      params.board_id = board.id;
+      listService.updateList(params);
+    }
   });
 
   $scope.$on('card.updated', function(eventName, params){
-    cardService.updateCard(params);
+    if(params.title || params.description){
+      cardService.updateCard(params);
+    }
   });
 
   $scope.deleteCurrentBoard = function(){

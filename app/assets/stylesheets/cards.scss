@@ -66,7 +66,7 @@
 
 .new-card-x {
   opacity: 0.8;
-
+  cursor: pointer;
 }
 
 .modal {
@@ -130,6 +130,18 @@
     }
     .description-x {
       @extend .new-card-x;
+    }
+  }
+  .modal-footer{
+    a{
+      margin-left: 3em;
+      text-align: left;
+      font-weight: bold;
+      border: 1px solid #EDEFF0;
+      &:hover {
+        background-color: #298FCA;
+        color: #FFFFFF;
+      }
     }
   }
 }
