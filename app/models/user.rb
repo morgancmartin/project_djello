@@ -10,7 +10,7 @@ class User < ApplicationRecord
   after_create :add_welcome_board
 
   def add_welcome_board
-    @board = boards.create(title: 'Welcome Board(Click to rename)')
+    @board = boards.create(title: 'Welcome Board')
     @list = @board.lists.create(title: 'Basics(Click to rename)')
     @list.cards.create(title: 'Welcome to Djello!')
     @list.cards.create(title: 'This is a card.')
