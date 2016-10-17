@@ -133,8 +133,11 @@
     }
   }
   .modal-footer{
-    a{
-      margin-left: 3em;
+    .btn{
+      /* margin-left: 3em; */
+      min-width: 10em;
+      height: 3em;
+      float: left;
       text-align: left;
       font-weight: bold;
       border: 1px solid #EDEFF0;
@@ -142,6 +145,19 @@
         background-color: #298FCA;
         color: #FFFFFF;
       }
+      p{
+        margin-top: 0.3em;
+      }
+      span {
+        margin-top: 0.5em;
+        font-size: 1em;
+      }
+    }
+    #mark-completed-btn{
+      float: left;
+    }
+    #show-member-input-btn{
+      float: right;
     }
   }
 }

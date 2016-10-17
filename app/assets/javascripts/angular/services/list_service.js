@@ -10,6 +10,9 @@ DjelloApp.factory("listService", ["Restangular", '_', 'cardService', function(Re
     return list;
   };
 
+  listService.findListById = function(id){
+    return _findListById(id);
+  };
 
   var _listNeedsUpdating = function(list, params){
     return !!params.title && params.title !== list.title;

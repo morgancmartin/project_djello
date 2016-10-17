@@ -11,7 +11,6 @@ DjelloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
     .state("home", {
       url: "/home",
       abstract: true,
-      // templateUrl: '/templates/nav/nav.html',
       views: {
         'navbar': {
           templateUrl: '/templates/nav/nav.html',
@@ -44,6 +43,9 @@ DjelloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
       resolve: {
         board: ['boardService', '$stateParams', function(boardService, $stateParams){
           return boardService.find($stateParams.id);
+        }],
+        members: ['memberService', function(memberService){
+          return memberService.all();
         }]
       }
     });

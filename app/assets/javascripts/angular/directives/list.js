@@ -8,7 +8,6 @@ DjelloApp.directive('list', [function() {
     },
     link: function($scope, element, attrs){
       $scope.removeList = function(list){
-        console.log('hello andur');
         list.delete();
       };
     }

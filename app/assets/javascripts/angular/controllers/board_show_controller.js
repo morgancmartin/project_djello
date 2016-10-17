@@ -1,4 +1,4 @@
-DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardService', 'boards', '$state', 'listService', '$sce', 'cardService', '$document', function($scope, Restangular, board, boardService, boards, $state, listService, $sce, cardService, $document) {
+DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardService', 'boards', '$state', 'listService', '$sce', 'cardService', '$document', '$timeout', function($scope, Restangular, board, boardService, boards, $state, listService, $sce, cardService, $document, $timeout) {
 
 
   // Targeting body for state specific styling...
@@ -41,7 +41,19 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
 
   $scope.renameBoard = function(title){
     var params = {title: title, board: board};
+    $scope.boardRenamePopoverIsOpen = false;
     boardService.updateBoard(params);
+  };
+
+  $scope.focusBoardRenameInput = function(){
+    $timeout(function() {
+      var element = angular.element.find('#boardRenameInput')[0];
+      console.log(element);
+      element.focus();
+      var strLength = $scope.board.title.length * 2;
+      element.setSelectionRange(strLength, strLength);
+      element.select();
+    }, 150);
   };
 
   $scope.dynamicPopover = {

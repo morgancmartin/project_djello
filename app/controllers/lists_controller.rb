@@ -3,7 +3,6 @@ class ListsController < ApplicationController
   before_action :set_list
 
   def create
-    @board = find_board_from_current_user(list_params[:board_id])
     @list = List.new(list_params)
     if @board && @list.save
       respond_to do |format|
@@ -52,6 +51,9 @@ class ListsController < ApplicationController
 
   def set_board
     @board = find_board_from_current_user(params[:board_id])
+    puts 'STUFF'
+    puts current_user
+    puts params[:board_id]
   end
 
   def set_list

@@ -1,29 +1,21 @@
-<div class="container index-container">
-  <div class="row">
-    <div class="personal-container col-md-3">
+<div class="row index-container">
+
+  <div class="personal-container col-md-12">
+    <div class="col-md-3">
       <p class="glyphicon glyphicon-user personal-glyph col-md-1"
-        aria-hidden="true">
+         aria-hidden="true">
       </p>
       <p id="personal-boards-header" class="col-md-10">Personal Boards</p>
     </div>
-
   </div>
-  <div class="row">
-    <div ng-repeat="board in boards">
+  <div class="col-md-12">
+    <div class="col-md-3" ng-repeat="board in boards">
       <div class="board" ui-sref="home.show({id: board.id})">
         <a>{{board.title}}</a>
       </div>
     </div>
-
-    <new-board-form></new-board-form>
-
-    <!-- <div ng-show="showNewBoardForm"> -->
-    <!-- <form ng-model="newBoardForm" ng-submit="createBoard()"> -->
-    <!-- <label>Title:</label> -->
-    <!-- <input type="text" ng-model="newBoardForm.title"> -->
-    <!-- <input type="submit"> -->
-    <!-- </form> -->
-    <!-- </div> -->
+    <new-board-form class="col-md-3"></new-board-form>
   </div>
-  </div>
+
+</div>
 </div>

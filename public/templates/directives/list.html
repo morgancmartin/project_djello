@@ -25,6 +25,11 @@
   </ul>
 </span>
 
-<list-card class="card" ng-repeat="card in cards[list.id]" card="card" list="list"></list-card>
+<list-card class="card"
+           ng-repeat="card in cards[list.id]"
+           card="card"
+           list="list"
+>
+</list-card>
 
 <new-card-form class="col-md-12" list="list"></new-card-form>

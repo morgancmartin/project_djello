@@ -3,17 +3,6 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
   var cardService = {};
   var _cards = {};
 
-
-  // cardService.all = function(listPromise) {
-  //   return listPromise.then(function(list){
-  //     return Restangular.one('lists', list.id).all("cards").getList()
-  //       .then(function(response){
-  //         angular.copy(response, list.cards);
-  //         return list.cards;
-  //       });
-  //   });
-  // };
-
   var _restangularizeCards = function(lists){
     _.forEach(lists, function(list){
       Restangular.restangularizeCollection(list, list.cards, 'cards');
@@ -26,8 +15,16 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
       if(!_cards[list.id]){
         _cards[list.id] = [];
       }
+      _addListToCards(list.cards, list);
       angular.copy(list.cards, _cards[list.id]);
-      console.log(_cards[list.id]);
+    });
+  };
+
+  var _addListToCards = function(cards, list){
+    _.forEach(list.cards, function(card){
+      card.list = function(){
+        return list;
+      };
     });
   };
 
@@ -66,6 +63,7 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
     return card;
   };
 
+
   var _cardNeedsUpdating = function(card, params){
     console.log(card);
     console.log(params);
@@ -73,6 +71,9 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
       (!!params.description && params.description !== card.description);
   };
 
+  // var _getCardsBoard = function(card){
+  //   var list = listService.findListById(card.list_id);
+  // };
 
   cardService.updateCard = function(params){
     console.log(params);
@@ -123,7 +124,6 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
     card.delete = function(){
       _deleteCard(card);
     };
-
     return card;
   });
 

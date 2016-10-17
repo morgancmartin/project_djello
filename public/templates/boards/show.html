@@ -1,9 +1,12 @@
 <div class="fluid-container">
   <div class="row">
     <h4 class="board-title col-md-2"
+        ng-click="focusBoardRenameInput()"
         popover-placement="bottom-left"
         uib-popover-template="dynamicPopover.templateUrl"
         popover-title="Rename Board"
+        popover-trigger="'outsideClick'"
+        popover-is-open="boardRenamePopoverIsOpen"
         type="button"
     >
       {{board.title}}
@@ -26,7 +29,7 @@
         </select>
       </div>
       <div>
-        <a ng-click="deleteCurrentBoard()" href="#">Delete board</a>
+        <a ng-click="deleteCurrentBoard()" class="delete-board-link" href="#">Delete board</a>
       </div>
     </div>
   </div>
@@ -39,6 +42,7 @@
   <form class="form-group" ng-submit="renameBoard(boardRenameForm.title)">
     <label>Name</label>
     <input type="text"
+           id="boardRenameInput"
            ng-model="boardRenameForm.title"
            ng-value="board.title"
            class="form-control">

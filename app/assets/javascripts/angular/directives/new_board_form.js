@@ -1,4 +1,4 @@
-DjelloApp.directive('newBoardForm', ['$timeout', 'boardService', function($timeout, boardService) {
+DjelloApp.directive('newBoardForm', ['$timeout', 'boardService', '$state', function($timeout, boardService, $state) {
   return {
     restrict: 'E',
     templateUrl: '/templates/directives/new_board_form.html',
@@ -8,15 +8,16 @@ DjelloApp.directive('newBoardForm', ['$timeout', 'boardService', function($timeo
     link: function($scope, element, attrs){
       $scope.createBoard = function(title){
         var params = {title: title};
-        boardService.create(params);
-        $scope.newBoardForm.title = '';
-        $scope.showNewBoardForm = false;
+        boardService.create(params).then(function(board){
+          console.log(board);
+          $scope.newBoardForm.title = '';
+          $scope.showNewBoardForm = false;
+          $state.go("home.show", {id: board.id});
+        });
       };
 
       $scope.$watch('showNewBoardForm', function(value){
-        console.log(value);
         if(value){
-          console.log(element.find('#newBoardInput')[0]);
           $timeout(function() {
             element.find('#newBoardInput')[0].focus();
           });

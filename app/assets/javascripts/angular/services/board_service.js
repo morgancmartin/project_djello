@@ -18,8 +18,9 @@ DjelloApp.factory("boardService", ["Restangular", '_', 'listService', function(R
   };
 
   boardService.create = function(params){
-    Restangular.all('boards').post(params).then(function(board){
+    return Restangular.all('boards').post(params).then(function(board){
       _boards.push(board);
+      return board;
     });
   };
 
@@ -60,9 +61,18 @@ DjelloApp.factory("boardService", ["Restangular", '_', 'listService', function(R
     });
   };
 
+  var _addBoardToLists = function(board, lists){
+    _.forEach(lists, function(list){
+      list.board = function(){
+        return board;
+      };
+    });
+  };
+
   boardService.find = function(id) {
     return Restangular.one('boards', id).get().then(function(board){
       Restangular.restangularizeCollection(board, board.lists, 'lists');
+      _addBoardToLists(board, board.lists);
       listService.setLists(board.lists);
       return board;
     });
