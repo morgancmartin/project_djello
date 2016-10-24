@@ -1,24 +1,25 @@
-# README
+# DJELLO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Djello! This is a full stack trello clone application
 
-Things you may want to cover:
+Click here to see it on [heroku](https://vast-cove-13883.herokuapp.com/users/sign_in)
 
-* Ruby version
 
-* System dependencies
+Once you've logged in, you will be taken to your boards page, from which you can...
 
-* Configuration
+## Do things like...
+* Create new boards
+* Enter a new board, taking you to that board's lists
+* You can create and delete new lists
+* And create cards within those lists...
+* Click on the cards to edit their descriptions
 
-* Database creation
+## Technological Highlights
+* Ruby on Rails back-end framework
+* AngularJS Front End framework
+* AJAX request to retrieve objects
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+========
+Created by [Morgan Martin](https://github.com/morgancmartin)  
+A project for the [Viking Code School](http://vikingcodeschool.com)  
+[www.morganmart.in](http://www.morganmart.in)
