@@ -8,16 +8,16 @@ Click here to see it on [heroku](https://vast-cove-13883.herokuapp.com/users/sig
 Once you've logged in, you will be taken to your boards page, from which you can...
 
 ## Do things like...
-* Create new boards
-* Enter a new board, taking you to that board's lists
-* You can create and delete new lists
-* And create cards within those lists...
-* Click on the cards to edit their descriptions
+* **Create new boards**
+* **Enter a new board, taking you to that board's lists**
+* **You can create and delete new lists**
+* **And create cards within those lists...**
+* **Click on the cards to edit their descriptions**
 
 ## Technological Highlights
-* Ruby on Rails back-end framework
-* AngularJS Front End framework
-* AJAX request to retrieve objects
+* **Ruby on Rails back-end framework**
+* **AngularJS Front End framework**
+* **AJAX request to retrieve objects**
 
 ========
 Created by [Morgan Martin](https://github.com/morgancmartin)  
