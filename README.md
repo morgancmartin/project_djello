@@ -20,6 +20,5 @@ Once you've logged in, you will be taken to your boards page, from which you can
 * **AJAX request to retrieve objects**
 
 ========
-Created by [Morgan Martin](https://github.com/morgancmartin)  
-A project for the [Viking Code School](http://vikingcodeschool.com)  
+Created by [Morgan Martin](https://github.com/morgancmartin)
 [www.morganmart.in](http://www.morganmart.in)
