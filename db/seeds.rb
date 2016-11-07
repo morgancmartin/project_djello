@@ -7,16 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-puts "seeding..."
-
-puts "creating user"
-
-first_user =
-  User.create(
-  email: 'morganm5201@gmail.com',
-  password: 'password',
-  password_confirmation: 'password',
-  name: 'Morgan Martin')
-
-puts 'creating welcome board'
-first_user.boards.create(title: 'Welcome Board')
