@@ -97,15 +97,31 @@
   }
 
   .modal-body {
+    margin-left: 2.5em;
+    #members-icons {
+      margin-bottom: 1.7em;
+      .member-icon {
+        height: 2em;
+        width: 2em;
+        background-color: #D6DADC;
+        border-radius: 3px;
+        &:hover {
+          background-color: #CDD2D4;
+          cursor: pointer;
+        }
+      }
+    }
     .description {
       height: 2em;
       color: grey;
       width: 80%;
-      margin-left: 3em;
       padding-left: 1em;
       padding-top: 0.3em;
       border-radius: 3px;
       text-decoration: underline;
+      .glyphicon {
+        font-size: 1em;
+      }
       &:hover{
         background-color: #D6DADC;
         cursor: pointer;

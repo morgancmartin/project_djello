@@ -1,8 +1,13 @@
 <div class="description"
-     ng-show="!showDescriptionForm"
-     ng-click="showDescriptionForm = true">
+  ng-show="!showDescriptionForm"
+  ng-click="showDescriptionForm = true">
   <p ng-show="card.description">{{card.description}}</p>
-  <p ng-show="!card.description">Edit the description...</p>
+  <p ng-show="!card.description">
+    <span class="glyphicon glyphicon-align-justify"
+      aria-hidden="true">
+    </span>
+    Edit the description...
+  </p>
 </div>
 <div ng-if="showDescriptionForm" ng-focus="showDescriptionForm">
   <textarea id="descriptionInput" ng-model="description"

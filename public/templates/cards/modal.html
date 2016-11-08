@@ -19,7 +19,11 @@
         </div>
       </div>
       <div class="modal-body">
+        <members-icons members="card.users"></members-icons>
         <edit-description-form card="card" list="list"></edit-description-form>
+        <div ng-repeat="member in boardMembers" >
+          {{member.name}}
+        </div>
       </div>
       <div class="modal-footer">
         <a id="mark-completed-btn" class="btn btn-default" href ng-click="markCompleted()">
@@ -50,7 +54,7 @@
 
 
   <script type="text/ng-template" id="memberPopoverTemplate.html">
-    <form class="form-group" name="memberForm">
+    <form class="form-group" name="memberForm" autocomplete="off">
       <input type="text"
              id="memberInput"
              name="memberInput"
@@ -58,7 +62,7 @@
              ng-model="selected"
              typeahead-input-formatter="$model.name"
              typeahead-on-select="addMember($item)"
-             uib-typeahead="member as member.name for member in members | filter:$viewValue | limitTo:8"
+             uib-typeahead="member as member.name for member in boardMembers | filter:$viewValue | limitTo:8"
              class="form-control">
     </form>
   </script>

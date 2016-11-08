@@ -1,5 +1,6 @@
 json.title @board.title
 json.id @board.id
+json.users @board.users
 
 json.lists @board.lists do |list|
   json.title list.title
@@ -12,5 +13,6 @@ json.lists @board.lists do |list|
     json.description card.description
     json.list_id card.list_id
     json.id card.id
+    json.users card.users
   end
 end

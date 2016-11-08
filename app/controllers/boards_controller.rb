@@ -10,7 +10,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = Board.includes({lists: :cards}).find(params[:id])
+    @board = Board.includes(:users, lists: [cards: [:users]]).find(params[:id])
   end
 
   def create

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'static_pages#index'
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   scope :api do
     scope :v1 do

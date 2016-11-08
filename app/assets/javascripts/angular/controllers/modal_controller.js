@@ -1,9 +1,12 @@
-DjelloApp.controller('ModalController', ['$scope', 'close', 'card', 'list', '$timeout', 'cardService', 'memberService', '_', function($scope, close, card, list, $timeout, cardService, memberService, _) {
+DjelloApp.controller('ModalController', ['$scope', 'close', 'card', 'list', '$timeout', 'cardService', 'memberService', '_', 'boardService', function($scope, close, card, list, $timeout, cardService, memberService, _, boardService) {
 
   $scope.card = card;
   $scope.list = list;
+  $scope.boardMembers = [];
 
-  $scope.members = memberService.getMembers();
+  boardService.find(list.board_id).then(function(board){
+    angular.copy(board.users, $scope.boardMembers);
+  });
 
   $scope.markCompleted = function(){
     $scope.card.delete();

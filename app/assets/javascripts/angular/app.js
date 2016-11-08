@@ -43,10 +43,10 @@ DjelloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
       resolve: {
         board: ['boardService', '$stateParams', function(boardService, $stateParams){
           return boardService.find($stateParams.id);
-        }],
-        members: ['memberService', function(memberService){
-          return memberService.all();
         }]
+        // members: ['memberService', function(memberService){
+        //   return memberService.all();
+        // }]
       }
     });
 }]);

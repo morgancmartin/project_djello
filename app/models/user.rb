@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_and_belongs_to_many :boards, join_table: :board_members
+  has_and_belongs_to_many :cards, join_table: :card_members
   has_many :lists, through: :boards
 
   after_create :add_welcome_board
