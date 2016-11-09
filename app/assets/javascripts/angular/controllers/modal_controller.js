@@ -22,13 +22,18 @@ DjelloApp.controller('ModalController', ['$scope', 'close', 'card', 'list', '$ti
     }
   });
 
-  $scope.addMember = function($item){
+  $scope.toggleMember = function($item){
     var params = {
       member_id: $item.id,
-      board_id: card.list().board().id
+      card_id: card.id
     };
-    if(params.member_id && params.board_id){
-      memberService.addMemberToBoard(params);
+    if(params.member_id && params.card_id){
+      memberService.toggleCardMember(params).then(function(response){
+        if(response){
+          card.refresh();
+          console.log(card.users);
+        }
+      });
     }
   };
 

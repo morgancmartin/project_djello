@@ -61,7 +61,7 @@
              ng-show="showMemberInput"
              ng-model="selected"
              typeahead-input-formatter="$model.name"
-             typeahead-on-select="addMember($item)"
+             typeahead-on-select="toggleMember($item)"
              uib-typeahead="member as member.name for member in boardMembers | filter:$viewValue | limitTo:8"
              class="form-control">
     </form>

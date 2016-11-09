@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_and_belongs_to_many :cards, join_table: :card_members
   has_many :lists, through: :boards
 
+  validates_presence_of :name, :email, :password
+
   after_create :add_welcome_board
 
   def add_welcome_board
@@ -16,5 +18,23 @@ class User < ApplicationRecord
     @list.cards.create(title: 'Welcome to Djello!')
     @list.cards.create(title: 'This is a card.')
     @list.cards.create(title: "Click on a card to see what's behind it")
+  end
+
+  def toggle_board_ownership(board)
+    if self.boards.include?(board)
+      self.boards.delete(board)
+    else
+      self.boards << board
+    end
+    board
+  end
+
+  def toggle_card_ownership(card)
+    if self.cards.include?(card)
+      self.cards.delete(card)
+    else
+      self.cards << card
+    end
+    card
   end
 end

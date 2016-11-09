@@ -39,12 +39,10 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
         list_id: params.list_id
       }
     }).then(function(card){
-      console.log(card);
       if(!_cards[params.list_id]){
         _cards[params.list_id] = [];
       }
       _cards[params.list_id].push(card);
-      console.log(_cards[params.list_id]);
       return card;
     });
   };
@@ -113,6 +111,10 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
     _removeCard(response);
   };
 
+  cardService.find = function(id) {
+    return Restangular.one('cards', id).get();
+  };
+
   Restangular.extendModel('cards', function(card){
     card.update = function(params){
       console.log(params);
@@ -120,6 +122,15 @@ DjelloApp.factory("cardService", ["Restangular", '_', function(Restangular, _) {
         .one('lists', params.list_id)
         .one('cards', params.id)
         .patch(params);
+    };
+    card.refresh = function(){
+      console.log('hai');
+      cardService.find(card.id).then(function(updatedCard){
+        console.log('haihai');
+        card = _findCardById(card.id);
+        angular.copy(updatedCard, card);
+        console.log(card);
+      });
     };
     card.delete = function(){
       _deleteCard(card);

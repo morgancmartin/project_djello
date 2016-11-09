@@ -1,0 +1,106 @@
+@import 'bootstrap';
+@font-face {
+  font-family: 'facit-bold';
+  src: url(font-path('ufonts.com_facit-bold-opentype.otf'));
+}
+@font-face {
+  font-family: 'facit-regular';
+  src: url(font-path('ufonts.com_facit-regular-opentype.otf'));
+}
+@font-face {
+  font-family: 'facit-light';
+  src: url(font-path('ufonts.com_facit-light-opentype.otf'));
+}
+@font-face {
+  font-family: 'facit-extralight';
+  src: url(font-path('ufonts.com_facit-extralight-opentype.otf'));
+}
+
+#login-container {
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  font-family: 'facit-light';
+  #account-already {
+    margin-top: 3em;
+    color: #999;
+    font-size: 1.6em;
+    a {
+      color: #999;
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        color: #4d4d4d;
+      }
+    }
+  }
+  #remember-container {
+    margin-top: 2em;
+    input[type=checkbox] {
+      width: 0.5em;
+      margin-right: 0.5em;
+    }
+  }
+  input[type=submit] {
+    height: 2.2em;
+    width: 5em;
+    font-size: 1.6em;
+    font-family: 'facit-bold';
+    background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 0 #3f6f21;
+    &:hover {
+      background: linear-gradient(to bottom, #5aac44 0, #519839 100%);
+    }
+  }
+  h2 {
+    font-family: 'facit-bold';
+    font-size: 2.8em;
+    line-height: 1em;
+    color: #4D4D4D;
+    margin-bottom: 0.5em;
+  }
+  #remember-field {
+    margin-bottom: 0;
+  }
+  .field {
+    margin-bottom: 6em;
+    label {
+      /* letter-spacing: 0.06em; */
+      font-size: 1.5em;
+      font-weight: 300;
+      line-height: 1em;
+      color: #4D4D4D;
+      margin-bottom: 0.5em;
+    }
+    input {
+      @extend .col-md-9;
+      outline: #EDEFF0;
+      padding-left: 0.3em;
+      line-height: 2em;
+      font-size: 1.6em;
+      background-color: #EDEFF0;
+      border-radius: 4px;
+      border: 1px solid #cdd2d4;
+      &:focus {
+        border: 1px solid #A5ACB0;
+        &::-webkit-input-placeholder {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  .actions {
+    display: inline-block;
+    width: 100%;
+  }
+  #sign-up-link {
+    margin-top: 2em;
+    line-height: 2em;
+    font-size: 1.6em;
+    a {
+      text-decoration: underline;
+    }
+  }
+}

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :lists, only: [] do
         resources :cards
       end
+      resources :cards
       resources :users
     end
   end

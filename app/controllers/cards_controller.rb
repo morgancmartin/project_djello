@@ -1,5 +1,12 @@
 class CardsController < ApplicationController
-  before_action :set_list, :set_card
+  before_action :set_list, :set_card, only: [:create, :update, :destroy]
+
+  def show
+    @card = Card.find(params[:id])
+    respond_to do |format|
+      format.json { render json: @card, status: 200 }
+    end
+  end
 
   def create
     @card = Card.new(card_params)

@@ -9,12 +9,24 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:id])
-    @board = Board.find_by_id(params[:board_id])
-    if @user && @board
-      @user.boards << @board
+    @resource = toggle_board if params[:board_id]
+    @resource = toggle_card  if params[:card_id]
+    if @user && @resource
       respond_to do |format|
-        format.json { render json: @board, status: 200 }
+        format.json { render json: @resource, status: 200 }
       end
     end
+  end
+
+  private
+
+  def toggle_board
+    @board = Board.find_by_id(params[:board_id])
+    @user.toggle_board_ownership(@board)
+  end
+
+  def toggle_card
+    @card = Card.find_by_id(params[:card_id])
+    @user.toggle_card_ownership(@card)
   end
 end

@@ -20,5 +20,11 @@ DjelloApp.factory("memberService", ["Restangular", '_', 'boardService', function
     }
   };
 
+  memberService.toggleCardMember = function(params){
+    return Restangular
+      .one('users', params.member_id)
+      .patch(params);
+  };
+
   return memberService;
 }]);
