@@ -5,6 +5,6 @@ class Card < ApplicationRecord
   after_create :add_first_user
 
   def add_first_user
-    self.users << list.board.users.first
+    list.board.users.first.cards << self
   end
 end

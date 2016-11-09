@@ -8,8 +8,7 @@ class User < ApplicationRecord
   has_and_belongs_to_many :cards, join_table: :card_members
   has_many :lists, through: :boards
 
-  validates_presence_of :name, :email, :password
-
+  validates :name, :email, :password, presence: true
   after_create :add_welcome_board
 
   def add_welcome_board

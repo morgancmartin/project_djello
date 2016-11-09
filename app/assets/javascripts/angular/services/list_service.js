@@ -94,7 +94,7 @@ DjelloApp.factory("listService", ["Restangular", '_', 'cardService', function(Re
       params.list_id = list.id;
       return cardService.create(params)
         .then(function(response){
-          // list.cards.push(response);
+          list.cards.push(response);
           return response;
         });
     };
