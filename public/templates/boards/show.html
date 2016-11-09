@@ -11,16 +11,7 @@
     >
       {{board.title}}
     </h4>
-  </div>
-  <div class="row">
-    <div class="col-md-10">
-      <div class="lists col-md-12">
-        <list cards="cards" list="list" ng-repeat="list in lists"
-             class="list">
-        </list>
-        <new-list-form class="col-md-3" board="board"></new-list-form>
-      </div>
-    </div>
+
     <div>
       <div>
         <span>Select Board:</span>
@@ -32,6 +23,17 @@
         <a ng-click="deleteCurrentBoard()" class="delete-board-link" href="#">Delete board</a>
       </div>
     </div>
+
+  </div>
+  <div class="row">
+      <div class="lists" id="style-2">
+      <!-- <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20"> -->
+        <list cards="cards" list="list" ng-repeat="list in lists"
+          class="list">
+        </list>
+        <!-- </perfect-scrollbar> -->
+        <new-list-form class="new-list-form" board="board"></new-list-form>
+      </div>
   </div>
 </div>
 

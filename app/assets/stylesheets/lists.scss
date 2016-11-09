@@ -4,45 +4,108 @@
 
 @import 'bootstrap';
 
-.lists {
-  padding-left: 0;
+body {
+  overflow: hidden;
 }
 
-.list {
-  @extend .col-md-3;
-  display: inline-block;
-  margin: 0px 10px 0px 10px;
-  padding: 0 0 0 0;
-  color: #585858;
-  font-size: 1em;
-  font-weight: bold;
-  background-color: #E2E4E6;
-  min-height: 5em;
-  border-radius: 3px;
-  .dropdown {
-    border: none;
-    button {
-      background: #E2E4E6;
-      border: none;
-      span {
+.fixer {
+  @extend .glyphicon;
+  visibility: hidden;
+}
+
+.lists {
+  padding-left: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-left: 2%;
+  width: 96%;
+  height: 83vh;
+  .new-list-form{
+    display: inline-block;
+    min-height: 3em;
+    width: 20em;
+    vertical-align: top;
+    .new-list {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      background-color: #006BA9;
+      color: #B1CBDA;
+      input {
+        color: grey;
+      }
+      font-weight: normal;
+      p {
+        margin-top: 5%;
+      }
+      &:hover {
+        background-color: #005586;
+        cursor: pointer;
       }
     }
   }
-  .list-title {
-    margin-top: 2%;
-    margin-bottom: 7%;
-    .edit-span,
-    .edit-input {
-      @extend .col-md-12;
-      padding-top: 0px;
-      padding-left: 0px;
-    }
-    /* .edit-input { */
-    /* @extend .col-md-11; */
-    /* padding-left: 0px; */
-    /* } */
+  &::-webkit-scrollbar-track {
+	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	  border-radius: 10px;
+	  background-color: #0067A3;
   }
+  &::-webkit-scrollbar {
+	  width: 13px;
+  }
+  &::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	  background-color: #66A4C7;
+  }
+  #thing {
+    width: 20em;
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+    padding: 0 0 0 0;
+    color: #585858;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #E2E4E6;
+    min-height: 3em;
+    border-radius: 3px;
+  }
+  .list {
+    width: 20em;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 10px 0px 0px;
+    padding: 0 0 0 0;
+    color: #585858;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #E2E4E6;
+    min-height: 3em;
+    border-radius: 3px;
+    .dropdown {
+      border: none;
+      button {
+        background: #E2E4E6;
+        border: none;
+      }
+    }
+    .list-title {
+      margin-top: 2%;
+      margin-bottom: 7%;
+      .edit-span,
+      .edit-input {
+        @extend .col-md-12;
+        padding-top: 0px;
+        padding-left: 0px;
+      }
+      /* .edit-input { */
+      /* @extend .col-md-11; */
+      /* padding-left: 0px; */
+      /* } */
+    }
+  }
+
 }
+
 
 .list-options {
   background-color: #E2E4E6;
@@ -53,24 +116,6 @@
   }
 }
 
-.new-list {
-  @extend .col-md-12;
-  background-color: #006BA9;
-  min-height: 3em;
-  /* height: 1.5em; */
-  color: #B1CBDA;
-  input {
-    color: grey;
-  }
-  font-weight: normal;
-  p {
-    margin-top: 5%;
-  }
-  &:hover {
-    background-color: #005586;
-    cursor: pointer;
-  }
-}
 
 .list-form-container{
   @extend .new-list;
@@ -78,7 +123,7 @@
   border-radius: 3px;
   background-color: #E2E4E6;
   input {
-    @extend .col-md-12
+    /* @extend .col-md-12 */
   }
   &:hover {
     background-color: #E2E4E6;

@@ -10,12 +10,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
-    puts "CARD"
-    p @card
-    puts "LIST"
-    p @list
-    puts "SAVE?"
-    if @list && @card.save!
+    if @list && @card.save
       respond_to do |format|
         format.json { render json: @card, status: 200 }
       end

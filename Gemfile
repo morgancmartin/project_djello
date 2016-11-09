@@ -37,6 +37,7 @@ gem 'angular_rails_csrf'
 gem 'devise'
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular-devise'
+  gem 'rails-assets-angular-perfect-scrollbar'
 end
 
 gem 'bower-rails', '~> 0.11.0'
