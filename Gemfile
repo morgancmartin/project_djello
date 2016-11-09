@@ -38,6 +38,7 @@ gem 'devise'
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular-devise'
   gem 'rails-assets-angular-perfect-scrollbar'
+  gem 'rails-assets-angular-animate'
 end
 
 gem 'bower-rails', '~> 0.11.0'

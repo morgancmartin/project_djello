@@ -1,5 +1,5 @@
 <div ng-show="!(showNewCardForm)">
-  <div ng-click="showNewCardForm = true" class="col-md-12 new-card-link">
+  <div ng-click="showNewCardForm = true" class="new-card-link">
     <a>Add a card...</a>
   </div>
 </div>
@@ -13,15 +13,17 @@
                 ng-blur="focusOut()"
       >
       </textarea>
-      <a type="submit"
-         class="btn btn-success new-card-button"
-         ng-click="createNewCard(list, newCardForm.title)"
-         value="Add"><strong>Submit</strong>
-      </a>
-      <span class="glyphicon glyphicon-remove new-card-x col-md-offset-1"
-            aria-hidden="true"
-            ng-click="showNewCardForm = false">
-      </span>
     </form>
+    <div id="submission-container">
+      <a type="submit"
+        class="btn btn-success new-card-button"
+        ng-click="createNewCard(list, newCardForm.title)"
+        value="Add"><strong>Submit</strong>
+      </a>
+      <span class="glyphicon glyphicon-remove new-card-x"
+        aria-hidden="true"
+        ng-click="showNewCardForm = false">
+      </span>
+    </div>
   </div>
 </div>

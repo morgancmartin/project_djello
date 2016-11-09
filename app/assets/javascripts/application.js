@@ -25,5 +25,6 @@
 //= perfect-scrollbar.min
 //= perfect-scrollbar.with-mousewheel.min
 //= require angular-perfect-scrollbar
+//= require angular-animate
 //= require turbolinks
 //= require_tree .

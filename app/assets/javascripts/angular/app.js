@@ -1,4 +1,4 @@
-var DjelloApp = angular.module('DjelloApp', ['Devise', 'ui.router', 'restangular', 'ui.bootstrap', 'angularModalService', 'perfect_scrollbar']);
+var DjelloApp = angular.module('DjelloApp', ['Devise', 'ui.router', 'restangular', 'ui.bootstrap', 'angularModalService', 'perfect_scrollbar', 'ngAnimate']);
 
 DjelloApp.factory('_', ['$window', function($window){
   return $window._;

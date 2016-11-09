@@ -35,7 +35,6 @@ DjelloApp.directive('newListForm', ['$timeout', function($timeout) {
           $scope.showNewListForm = false;
         }, 125);
       };
-
     }
   };
 }]);
