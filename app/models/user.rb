@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   def add_welcome_board
     @board = boards.create(title: 'Welcome Board')
-    @list = @board.lists.create(title: 'Basics')
+    @list = @board.lists.create(title: 'Basics(Click to rename)')
     @list.cards.create(title: 'Welcome to Djello!')
     @list.cards.create(title: 'This is a card.')
     @list.cards.create(title: "Click on a card to see what's behind it")
