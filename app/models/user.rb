@@ -17,6 +17,10 @@ class User < ApplicationRecord
     @list.cards.create(title: 'Welcome to Djello!')
     @list.cards.create(title: 'This is a card.')
     @list.cards.create(title: "Click on a card to see what's behind it")
+    @board.lists.create(title: 'Make')
+    @board.lists.create(title: 'as many')
+    @board.lists.create(title: 'lists as')
+    @board.lists.create(title: 'you need!')
   end
 
   def toggle_board_ownership(board)
