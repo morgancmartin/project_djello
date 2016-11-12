@@ -5,14 +5,14 @@
 ></edit-in-place>
 
 <span uib-dropdown dropdown-append-to-body>
-  <button id="btn-append-to-body"
+  <a id="btn-append-to-body"
           type="button"
           class="btn btn-default btn-sm list-options"
           uib-dropdown-toggle>
     <span class="glyphicon glyphicon-option-horizontal"
           aria-hidden="true">
     </span>
-  </button>
+  </a>
   <ul class="dropdown-menu"
       uib-dropdown-menu role="menu"
       aria-labelledby="btn-append-to-body">
@@ -25,11 +25,12 @@
   </ul>
 </span>
 
-<list-card class="card"
-           ng-repeat="card in cards[list.id]"
-           card="card"
-           list="list"
->
-</list-card>
-
-<new-card-form class="col-md-12 new-card-container" list="list"></new-card-form>
+<div class="card-container">
+  <list-card class="card"
+    ng-repeat="card in cards[list.id]"
+    card="card"
+    list="list"
+  >
+  </list-card>
+  <new-card-form class="col-md-12 new-card-container" list="list"></new-card-form>
+</div>

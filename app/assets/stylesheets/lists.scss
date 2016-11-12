@@ -4,8 +4,11 @@
 
 @import 'bootstrap';
 
+html, body {
+  height: 100%;
+}
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .fixer {
@@ -16,10 +19,11 @@ body {
 .lists {
   padding-left: 0;
   overflow-x: auto;
+  overflow-y: hidden;
   white-space: nowrap;
   margin-left: 2%;
   width: 96%;
-  height: 83vh;
+  height: 85vh;
   .new-list-form{
     display: inline-block;
     min-height: 3em;
@@ -69,11 +73,13 @@ body {
     background-color: #E2E4E6;
     min-height: 3em;
     border-radius: 3px;
-    .dropdown {
+    .list-options {
+      background-color: #E2E4E6;
       border: none;
-      button {
-        background: #E2E4E6;
-        border: none;
+      color: #B3B5B7 !important;
+      outline: none;
+      &:hover{
+        background-color: #CDD2D4;
       }
     }
     .list-title {
@@ -85,24 +91,30 @@ body {
         padding-top: 0px;
         padding-left: 0px;
       }
-      /* .edit-input { */
-      /* @extend .col-md-11; */
-      /* padding-left: 0px; */
-      /* } */
+    }
+    .card-container{
+      max-height: 75vh;
+      overflow-y: auto;
+      width: 100%;
+      &::-webkit-scrollbar-track {
+	      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	      border-radius: 10px;
+	      background-color: rgb(214, 218, 220);
+      }
+      &::-webkit-scrollbar {
+	      width: 13px;
+      }
+      &::-webkit-scrollbar-thumb {
+	      border-radius: 10px;
+	      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	      background-color: rgb(196, 201, 204);
+      }
     }
   }
 
 }
 
 
-.list-options {
-  background-color: #E2E4E6;
-  border: none;
-  color: #B3B5B7;
-  &:hover{
-    background-color: #CDD2D4;
-  }
-}
 
 
 .list-form-container{
