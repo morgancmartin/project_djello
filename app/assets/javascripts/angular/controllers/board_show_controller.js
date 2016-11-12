@@ -12,12 +12,6 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
   $scope.lists = listService.getLists();
   $scope.cards = cardService.getCards();
 
-  $scope.$watch('selected', function(state){
-    if(state){
-      $state.go('home.show', {id: state.id});
-    }
-  });
-
   $scope.$on('list.updated', function(eventName, params){
     if(params.title || params.description){
       params.board_id = board.id;

@@ -1,11 +1,37 @@
-DjelloApp.controller("navCtrl", ['$scope', 'Restangular', 'Auth', 'boards', 'boardService', '$compile', function($scope, Restangular, Auth, boards, boardService, $compile) {
+DjelloApp.controller("navCtrl", ['$scope', 'Restangular', 'Auth', 'boards', 'boardService', '$compile', '$state', '$timeout', function($scope, Restangular, Auth, boards, boardService, $compile, $state, $timeout) {
 
-  $scope.rootPath = angular.element('#navbar').data('root-path');
-  $scope.jelloImg = angular.element('#jello-img').remove();
-  $scope.djelloImg = angular.element('#djello-img').remove();
-  angular.element('#my-brand').prepend($scope.djelloImg);
-  angular.element('#my-brand').prepend($scope.jelloImg);
-  $scope.logoutLink = angular.element('#navbar').data('logout-link');
+  $scope.boards = boards;
+  $scope.showBoardsDropdown = false;
+  $scope.toggleDropdown = function($event) {
+    if(!$scope.justToggled){
+      $scope.showBoardsDropdown = !$scope.showBoardsDropdown;
+      if($scope.showBoardsDropdown){
+        $timeout(function(){
+          angular.element('#boards-dropdown').focus();
+        }, 125);
+      } else {
+        $scope.justToggled = true;
+        $timeout(function(){
+          $scope.justToggled = false;
+        }, 125);
+      }
+    }
+  };
+
+  (function() {
+    $scope.rootPath = angular.element('#navbar').data('root-path');
+    $scope.jelloImg = angular.element('#jello-img').remove();
+    $scope.djelloImg = angular.element('#djello-img').remove();
+    angular.element('#my-brand').prepend($scope.djelloImg);
+    angular.element('#my-brand').prepend($scope.jelloImg);
+    angular.element('#boards-button').prepend($scope.jelloImg.clone());
+    $scope.logoutLink = angular.element('#navbar').data('logout-link');
+  })();
+
+  $scope.goToBoard = function(boardId){
+    $state.go('home.show', {id: boardId});
+    $scope.toggleDropdown();
+  };
 
   Auth.currentUser()
     .then(function(user) {

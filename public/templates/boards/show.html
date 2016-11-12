@@ -20,13 +20,9 @@
 
     <div>
       <div>
-        <span>Select Board:</span>
-        <select ng-options="item as item.title for item in boards track by item.id"
-                ng-model="selected"></select>
-        </select>
-      </div>
-      <div>
-        <a ng-click="deleteCurrentBoard()" class="delete-board-link" href="#">Delete board</a>
+        <a ng-click="deleteCurrentBoard()" class="delete-board-link" href="#">
+          Delete board
+        </a>
       </div>
     </div>
 
@@ -53,6 +49,10 @@
            ng-value="board.title"
            class="form-control">
     <br>
-    <input type="submit" class="btn btn-success" value="Rename"></input>
+    <!-- <input type="submit" class="btn rename-button" value="Rename"></input> -->
+      <a type="submit"
+        class="btn btn-success rename-button"
+        value="Rename"><strong>Submit</strong>
+      </a>
   </form>
 </script>

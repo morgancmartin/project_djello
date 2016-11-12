@@ -7,8 +7,6 @@ DjelloApp.directive('list', [function() {
       cards: '='
     },
     link: function($scope, element, attrs){
-      console.log($scope.list);
-      console.log($scope.cards);
       $scope.removeList = function(list){
         list.delete();
       };

@@ -113,6 +113,18 @@
   .new-board-x {
     opacity: 0.7;
   }
+  .new-board-button {
+    display: inline-block;
+    color: white;
+    margin-top: 1em;
+    width: 6em;
+    box-shadow: 0 1px 0 #3F6F21;
+    background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
+    &:hover {
+      color: white;
+      background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
+    }
+  }
   .new-board-header {
     display: inline-block;
     margin-left: 30%;
@@ -125,5 +137,19 @@
   }
   p {
     font-weight: bold;
+  }
+}
+
+.rename-button {
+  display: inline-block;
+  color: white;
+  // height: 4em;
+  margin-top: 1em;
+  width: 6em;
+  box-shadow: 0 1px 0 #3F6F21;
+  background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
+  &:hover {
+    color: white;
+    background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
   }
 }
