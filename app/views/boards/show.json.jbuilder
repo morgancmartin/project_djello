@@ -7,6 +7,7 @@ json.lists @board.lists do |list|
   json.description list.description
   json.board_id list.board_id
   json.id list.id
+  json.created_at list.created_at
 
   json.cards list.cards do |card|
     json.title card.title
