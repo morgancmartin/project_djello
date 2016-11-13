@@ -6,6 +6,7 @@ DjelloApp.directive('newBoardForm', ['$timeout', 'boardService', '$state', funct
       list: '='
     },
     link: function($scope, element, attrs){
+
       $scope.createBoard = function(title){
         var params = {title: title};
         boardService.create(params).then(function(board){
@@ -23,11 +24,23 @@ DjelloApp.directive('newBoardForm', ['$timeout', 'boardService', '$state', funct
           });
         }
       });
+
       $scope.focusOut = function(){
         $timeout(function(){
           $scope.showNewBoardForm = false;
         }, 125);
       };
+
+      $scope.attachEnterKeyListener = function(){
+        element.find("#newBoardInput").keypress(function(event) {
+          if (event.which == 13) {
+            event.preventDefault();
+            $scope.createBoard($scope.newBoardForm.title);
+          }
+        });
+      };
+
+      $scope.attachEnterKeyListener();
     }
   };
 }]);

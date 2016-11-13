@@ -2,17 +2,17 @@ DjelloApp.controller("navCtrl", ['$scope', 'Restangular', 'Auth', 'boards', 'boa
 
   $scope.boards = boards;
   $scope.showBoardsDropdown = false;
-  $scope.toggleDropdown = function($event) {
-    if(!$scope.justToggled){
+  $scope.toggleBoardsDropdown = function($event) {
+    if(!$scope.justToggledBoards){
       $scope.showBoardsDropdown = !$scope.showBoardsDropdown;
       if($scope.showBoardsDropdown){
         $timeout(function(){
           angular.element('#boards-dropdown').focus();
         }, 125);
       } else {
-        $scope.justToggled = true;
+        $scope.justToggledBoards = true;
         $timeout(function(){
-          $scope.justToggled = false;
+          $scope.justToggledBoards = false;
         }, 125);
       }
     }
@@ -30,7 +30,7 @@ DjelloApp.controller("navCtrl", ['$scope', 'Restangular', 'Auth', 'boards', 'boa
 
   $scope.goToBoard = function(boardId){
     $state.go('home.show', {id: boardId});
-    $scope.toggleDropdown();
+    $scope.toggleBoardsDropdown();
   };
 
   Auth.currentUser()
