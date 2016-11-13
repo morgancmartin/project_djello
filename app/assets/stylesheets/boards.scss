@@ -26,50 +26,75 @@
 
 .index-container{
   margin-top: 3%;
-  margin-left: 1.5% !important;
-  margin-right: 1.5% !important;
-}
+  padding-left: 0.5em;
+  padding-left: 0.5em;
 
-.edit-in-place span {
+  .edit-in-place span {
     cursor: pointer;
-}
+  }
 
-.edit-in-place input {
+  .edit-in-place input {
     display: none;
-}
+  }
 
-.edit-in-place.active span {
+  .edit-in-place.active span {
     display: none;
-}
+  }
 
-.edit-in-place.active input {
+  .edit-in-place.active input {
     display: inline-block;
-}
+  }
 
-.board {
-  width: 100%;
-  padding: 0 1em 0 1em;
-  margin-bottom: 1.5em;
-  display: inline-block;
-  background-color: #056FAD;
-  height: 7em;
-  border-radius: 3px;
-  a{
+  .board-container{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .board {
+    width: 100%;
+    padding: 0 1em 0 1em;
+    margin-bottom: 1.5em;
     display: inline-block;
-    margin-top: 0.7em;
-    color: white;
-    font-size: 1.2em;
-    font-weight: bold;
-    &:hover{
-    text-decoration: none;
+    background-color: #056FAD;
+    height: 6.8em;
+    border-radius: 3px;
+    a{
+      display: inline-block;
+      margin-top: 0.5em;
       color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      &:hover{
+        text-decoration: none;
+        color: white;
+      }
+    }
+    &:hover {
+      background-color: #0067A3;
+      cursor: pointer;
     }
   }
-  &:hover {
-    background-color: #0067A3;
-    cursor: pointer;
+
+  .new-board{
+    @extend .board;
+    a {
+      top: 3em;
+      display: inline-block;
+      color: grey;
+      font-size: 1.1em;
+      font-weight: normal;
+      margin-top: 2.5em;
+      margin-left: 3em;
+    }
+    &:hover{
+      background-color: #D6DADC;
+      a {
+        color: #4D4D4D
+      }
+    }
+    background-color: #DCE0E2;
   }
 }
+
 
 .board-show{
   background-color: #0079BF;
@@ -85,26 +110,6 @@
   &:hover{
     cursor: pointer;
   }
-}
-
-.new-board{
-  @extend .board;
-  a {
-    top: 3em;
-    display: inline-block;
-    color: grey;
-    font-size: 1.1em;
-    font-weight: normal;
-    margin-top: 2.5em;
-    margin-left: 3em;
-  }
-  &:hover{
-    background-color: #D6DADC;
-    a {
-      color: #4D4D4D
-    }
-  }
-  background-color: #DCE0E2;
 }
 
 .board-form-container{
