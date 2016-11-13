@@ -40,9 +40,8 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
   };
 
   $scope.focusBoardRenameInput = function(){
-    $tcard.createdimeout(function() {
+    $timeout(function() {
       var element = angular.element.find('#boardRenameInput')[0];
-      console.log(element);
       element.focus();
       var strLength = $scope.board.title.length * 2;
       element.setSelectionRange(strLength, strLength);
