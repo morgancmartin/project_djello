@@ -13,15 +13,20 @@
   }
 }
 
-.personal-glyph{
-  opacity: 0.8;
+.edit-in-place span {
+  cursor: pointer;
 }
 
-#personal-boards-header{
-  line-height: 24px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #4D4D4D;
+.edit-in-place input {
+  display: none;
+}
+
+.edit-in-place.active span {
+  display: none;
+}
+
+.edit-in-place.active input {
+  display: inline-block;
 }
 
 .index-container{
@@ -29,21 +34,25 @@
   padding-left: 0.5em;
   padding-right: 1.5em;
 
-  .edit-in-place span {
-    cursor: pointer;
+  .personal-column{
+    padding-left: 0 !important;
+    .personal-container{
+      padding-left: 0 !important;
+      .personal-glyph{
+        opacity: 0.8;
+        line-height: 1.1em;
+      }
+
+      #personal-boards-header{
+        line-height: 1em;
+        font-size: 16px;
+        font-weight: bold;
+        color: #4D4D4D;
+      }
+    }
   }
 
-  .edit-in-place input {
-    display: none;
-  }
 
-  .edit-in-place.active span {
-    display: none;
-  }
-
-  .edit-in-place.active input {
-    display: inline-block;
-  }
 
   .board-container{
     padding-left: 0.5em;

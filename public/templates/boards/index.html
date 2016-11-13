@@ -1,13 +1,17 @@
 <div class="row index-container">
-  <div class="personal-container col-md-12">
-    <div class="col-md-3">
+  <div class="col-md-12">
+
+  <div class="col-md-12 personal-column">
+    <div class="col-md-3 personal-container">
       <p class="glyphicon glyphicon-user personal-glyph col-md-1"
         aria-hidden="true">
       </p>
       <p id="personal-boards-header" class="col-md-10">Personal Boards</p>
     </div>
   </div>
-  <div class="col-md-12">
+
+
+
     <div class="col-md-3 board-container" ng-repeat="board in boards">
       <div class="board" ui-sref="home.show({id: board.id})">
         <a>{{board.title}}</a>
