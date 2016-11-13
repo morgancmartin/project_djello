@@ -7,9 +7,9 @@ DjelloApp.directive('newListForm', ['$timeout', function($timeout) {
       board: '='
     },
     link: function($scope, element, attrs){
+
       $scope.createList = function(title){
-        var params = {title: title};
-        console.log(params);
+        var params = { title: title };
         if(title){
           $scope.board.createList(params)
             .then(function(response){
@@ -20,6 +20,7 @@ DjelloApp.directive('newListForm', ['$timeout', function($timeout) {
             });
         }
       };
+
       $scope.$watch('showNewListForm', function(value){
         if(value){
           $timeout(function() {
@@ -27,14 +28,24 @@ DjelloApp.directive('newListForm', ['$timeout', function($timeout) {
           });
         }
       });
-      $scope.off = function(){
-        console.log('off');
-      };
+
       $scope.focusOut = function(){
         $timeout(function(){
           $scope.showNewListForm = false;
         }, 125);
       };
+
+
+      $scope.attachEnterKeyListener = function(){
+        element.find("#newListInput").keypress(function(event) {
+          if (event.which == 13) {
+            event.preventDefault();
+            $scope.createList($scope.newListForm.title);
+          }
+        });
+      };
+      $scope.attachEnterKeyListener();
+
     }
   };
 }]);
