@@ -1,5 +1,6 @@
 DjelloApp.controller('ModalController', ['$scope', 'close', 'card', 'list', '$timeout', 'cardService', 'memberService', '_', 'boardService', function($scope, close, card, list, $timeout, cardService, memberService, _, boardService) {
 
+  $scope.close = close;
   $scope.card = card;
   $scope.list = list;
   $scope.boardMembers = [];

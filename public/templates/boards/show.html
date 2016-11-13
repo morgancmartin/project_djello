@@ -28,12 +28,15 @@
 
   </div>
   <div class="row">
-      <div class="lists" id="style-2">
-        <list cards="cards" list="list" ng-repeat="list in lists | orderBy: 'created_at'"
-          class="list">
-        </list>
-        <new-list-form class="new-list-form" board="board"></new-list-form>
-      </div>
+    <div class="lists" id="style-2">
+      <list cards="cards" list="list"
+        ng-repeat="list in lists | orderBy: 'created_at'"
+        class="list"
+        data-list-id="{{list.id}}"
+      >
+      </list>
+      <new-list-form class="new-list-form" board="board"></new-list-form>
+    </div>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-DjelloApp.directive('newCardForm', ['$timeout', function($timeout) {
+DjelloApp.directive('newCardForm', ['$timeout', '$rootScope', function($timeout, $rootScope) {
   return {
     restrict: 'E',
     templateUrl: '/templates/directives/new_card_form.html',
@@ -11,7 +11,8 @@ DjelloApp.directive('newCardForm', ['$timeout', function($timeout) {
         var params = { title: title };
         list.createCard(params);
         $scope.newCardForm = {};
-        $scope.showNewCardForm = false;
+        element.find('.new-card-input').val('');
+        $rootScope.$broadcast('scroll.list', list.id);
       };
 
       $scope.focusOut = function(){
@@ -24,12 +25,13 @@ DjelloApp.directive('newCardForm', ['$timeout', function($timeout) {
         if(value){
           $timeout(function() {
             element.find('#newCardInput')[0].focus();
-            $scope.attachEnterListener();
+            $scope.attachEnterKeyListener();
+            $rootScope.$broadcast('scroll.list', $scope.list.id);
           });
         }
       });
 
-      $scope.attachEnterListener = function(){
+      $scope.attachEnterKeyListener = function(){
         element.find("#newCardInput").keypress(function(event) {
           if (event.which == 13) {
             event.preventDefault();

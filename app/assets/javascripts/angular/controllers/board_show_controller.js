@@ -1,4 +1,4 @@
-DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardService', 'boards', '$state', 'listService', '$sce', 'cardService', '$document', '$timeout', function($scope, Restangular, board, boardService, boards, $state, listService, $sce, cardService, $document, $timeout) {
+DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardService', 'boards', '$state', 'listService', '$sce', 'cardService', '$document', '$timeout', '$rootScope', function($scope, Restangular, board, boardService, boards, $state, listService, $sce, cardService, $document, $timeout, $rootScope) {
 
 
   // Targeting body for state specific styling...
@@ -40,7 +40,7 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
   };
 
   $scope.focusBoardRenameInput = function(){
-    $timeout(function() {
+    $tcard.createdimeout(function() {
       var element = angular.element.find('#boardRenameInput')[0];
       console.log(element);
       element.focus();
