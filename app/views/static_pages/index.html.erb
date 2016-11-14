@@ -1,13 +1,16 @@
 <%= content_for(:angular_app) do %>
   ng-app='DjelloApp'
 <% end %>
-<div id="navbar"
+<nav id="navbar"
+  class="row"
   ui-view="navbar"
   data-root-path="<%= root_path %>"
   data-logout-link="<%= destroy_user_session_path %>"
 >
-  loading...
-</div>
+</nav>
+
+
+
 <%= image_tag('jello.gif', class: 'brand-image', id: 'jello-img') %>
 <%= image_tag('djello.png', class: 'brand-text', id: 'djello-img') %>
 <ui-view></ui-view>

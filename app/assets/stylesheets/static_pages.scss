@@ -3,44 +3,55 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body {
-  overflow: initial;
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
 }
 
-.navbar {
+@mixin fontSize($size) {
+  font-size: calculateRem($size);
+}
+
+
+#navbar {
+  padding: calculateRem(5px);
   margin-bottom: 1%;
-  height: 40px;
-  min-height: 40px;
+  height: calculateRem(40px);
   border: none;
   border-radius: 0;
   background-color: #026AA7;
-}
-
-#boards-button {
-  position: absolute;
-  user-select: none;
-  width: 6.8em;
-  height: 73%;
-  margin-top: 0.4em;
-  left: 0.5%;
-  background-color: #4791BC;
-  background: -webkit-linear-gradient(top,rgba(255,255,255,.3) 0,rgba(255,255,255,.2) 100%);
-  border-radius: 3px;
-  cursor: pointer;
-  &:hover {
-    background: linear-gradient(to bottom,rgba(255,255,255,.4) 0,rgba(255,255,255,.3) 100%);
+  .cell {
+    height: 100%;
+    padding: 0 0 0 0;
   }
-  #jello-img {
-    margin-left: 5%;
-  }
-  a {
-    margin-left: 1%;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 30px;
+  #boards-button {
+    user-select: none;
+    height: 100%;
+    background: -webkit-linear-gradient(top,rgba(255,255,255,.3) 0,rgba(255,255,255,.2) 100%);
+    border-radius: 3px;
+    cursor: pointer;
     &:hover {
-      text-decoration: none;
+      background: linear-gradient(to bottom,rgba(255,255,255,.4) 0,rgba(255,255,255,.3) 100%);
+    }
+    .row {
+      height: 100%;
+    }
+    #board-button-img-container {
+      margin-left: calculateRem(5px);
+      height: 70%;
+      #jello-img {
+        height: 80%;
+      }
+    }
+    span {
+      color: white;
+      margin-right: 0;
+      font-size: calculateRem(13px);
+      line-height: calculateRem(30px);
+      font-weight: bold;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
@@ -91,31 +102,71 @@ body {
   }
 }
 
-#jello-img{
-  height: 1em;
-}
+/* #user-button { */
+/*   user-select: none; */
+/*   width: 14em; */
+/*   height: 2.2em; */
+/*   margin-top: 0.4em; */
+/*   background-color: #4791BC; */
+/*   background: -webkit-linear-gradient(top,rgba(255,255,255,.3) 0,rgba(255,255,255,.2) 100%); */
+/*   border-radius: 3px; */
+/*   cursor: pointer; */
+/*   &:hover { */
+/*     background: linear-gradient(to bottom,rgba(255,255,255,.4) 0,rgba(255,255,255,.3) 100%); */
+/*   } */
+/*   #user-name { */
+/*     display: inline-block; */
+/*     height: 90%; */
+/*     width: 90%; */
+/*     vertical-align: middle; */
 
-#djello-img{
-  height: 1.5em;
-}
+/*     a { */
+/*       text-align: center; */
+/*       color: white; */
+/*       font-weight: bold; */
+/*       font-size: 14px; */
+/*       /\* line-height: 30px; *\/ */
+/*       &:hover { */
+/*         text-decoration: none; */
+/*       } */
+/*     } */
+/*   } */
+/*   #user-spacer { */
+/*     margin-top: 0; */
+/*     display: inline-block; */
+/*     height: 100%; */
+/*     width: 5%; */
+/*     background-color: green; */
+/*   } */
+/* } */
 
-.navbar-brand{
-  position: absolute;
-  padding-top: 0.5%;
-  left: 47%;
-  opacity: 0.5;
-  color: white !important;
-  transition: opacity 85ms;
-  transition-timing-function: ease-in;
-  &:hover{
-    opacity: 1;
-    color: white !important;
-  }
-}
 
-.underlined {
-  text-decoration: underline;
-}
+
+/* #jello-img{ */
+/*   height: 1em; */
+/* } */
+
+/* #djello-img{ */
+/*   height: 1.5em; */
+/* } */
+
+/* .navbar-brand{ */
+/*   position: absolute; */
+/*   padding-top: 0.5%; */
+/*   left: 47%; */
+/*   opacity: 0.5; */
+/*   color: white !important; */
+/*   transition: opacity 85ms; */
+/*   transition-timing-function: ease-in; */
+/*   &:hover{ */
+/*     opacity: 1; */
+/*     color: white !important; */
+/*   } */
+/* } */
+
+/* .underlined { */
+/*   text-decoration: underline; */
+/* } */
 /*  */
 /* .brand-image{ */
 /* opacity: 0.7; */
