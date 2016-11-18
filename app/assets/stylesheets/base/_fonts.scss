@@ -16,49 +16,49 @@
 }
 
 // facitweb 38px giant
-.facit-giant {
+@mixin facit-giant {
   font-family: 'facit-regular';
   font-size: 2.375rem;
 }
 
 // facitweb 36px biggest
-.facit-biggest {
+@mixin facit-biggest {
   font-family: 'facit-bold';
   font-size: 1.9rem;
 }
 
 // facitweb 29px bigger
-.facit-bigger {
+@mixin facit-bigger {
   font-family: 'facit-regular';
   font-size: 1.55rem;
 }
 
 // facitweb 20px normal
-.facit-normal {
+@mixin facit-normal {
   font-family: 'facit-regular';
   font-size: 1.06rem;
 }
 
 // facitweb 18px smaller
-.facit-smaller {
+@mixin facit-smaller {
   font-family: 'facit-regular';
   font-size: 0.96rem;
 }
 
 // facitweb 16px smallest
-.facit-smallest {
+@mixin facit-smallest {
   font-family: 'facit-regular';
   font-size: 0.85rem;
 }
 
 // sans-serif 14px big
-.facit-big {
+@mixin facit-big {
   font-family: 'facit-regular';
   font-size: 0.74rem;
 }
 
 // sans-serif 12px small
-.facit-small {
+@mixin facit-small {
   font-family: 'facit-regular';
   font-size: 0.64rem;
 }

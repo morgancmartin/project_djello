@@ -1,16 +1,16 @@
 #login-container {
-  margin-top: 20vh;
-  margin-bottom: 20vh;
   font-family: 'facit-light';
 }
 
 .form-header {
+  @include facit-biggest;
+  font-family: 'facit-bold';
   color: $main-grey;
   margin-bottom: 1.2rem;
 }
 
 label, .big-input, p  {
-  @extend .facit-normal;
+  @include facit-normal;
   font-family: 'facit-light';
   font-weight: 500;
   color: $main-grey;
@@ -44,8 +44,8 @@ label, .big-input, p  {
 }
 
 .big-submit {
-  @extend .submit-btn;
-  @extend .facit-normal;
+  @include submit-btn;
+  @include facit-normal;
   margin-top: 1rem;
   font-family: 'facit-bold';
   font-weight: bold;
@@ -71,3 +71,28 @@ label, .big-input, p  {
     }
   }
 }
+
+@media only screen
+  and ( min-width: 413px)
+  and ( max-width: 1600px){
+  #login-container {
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    font-family: 'facit-light';
+  }
+}
+
+@media only screen
+and (max-width: 412px){
+
+  #login-container {
+    margin-top: 0;
+    padding: 0 0 0 0;
+    max-width: 100%;
+  }
+
+  .big-input {
+    width: 100%;
+  }
+}
+

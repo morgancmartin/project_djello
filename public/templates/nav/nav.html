@@ -1,19 +1,55 @@
-<div class="cell five" >
-  <boards-button
-    jello-img="jelloImg"
-    toggle-boards-dropdown="toggleBoardsDropdown()"
-    class="cell two">
-  </boards-button>
-  <boards-dropdown
-    boards="boards"
-    show-boards-dropdown="showBoardsDropdown"
-    toggle-boards-dropdown="toggleBoardsDropdown()">
-  </boards-dropdown>
-</div>
-<div class="cell two" >
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div id="boards-button" ng-click="toggleBoardsDropdown()">
+        <a>Boards</a>
+      </div>
+      <div id="boards-dropdown" ng-show="showBoardsDropdown"
+        tabindex="0"
+        ng-blur="toggleBoardsDropdown()"
+      >
+        <div class="board-listing" ng-repeat="board in boards"
+          ng-click="goToBoard(board.id)"
+        >
+          <div class="board-listing-spacer"></div>
+          <p>{{ board.title }}</p>
+        </div>
+      </div>
+      <a href="{{rootPath}}" class="navbar-brand">
+        <div id="my-brand">
+        </div>
+      </a>
+    </div>
 
-</div>
-
-<div class="cell five" >
-
-</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <div id="user-button" ng-click="">
+            <div id="user-spacer"></div>
+            <div id="user-name">
+              <a class="navbar-link">
+                <p>{{currentUser.name}}</p>
+              </a>
+            </div>
+          </div>
+        </li>
+        <!-- <p class="navbar-text">Welcome {{currentUser.name}}</p> -->
+        <li>
+        <a rel="nofollow" data-method="delete" href="{{logoutLink}}">Logout</a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

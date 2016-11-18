@@ -1,5 +1,5 @@
-.submit-btn {
-  @extend .facit-normal;
+@mixin submit-btn {
+  @include facit-normal;
   font-family: 'facit-bold';
   font-weight: bold;
   background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
@@ -12,6 +12,17 @@
   }
 }
 
-.default-checkbox {
+@mixin boot-col-no-padding {
+  .col-md-1,.col-md-2,
+  .col-md-3, .col-md-4,
+  .col-md-5, .col-md-6,
+  .col-md-7, .col-md-8,
+  .col-md-9, .col-md-10,
+  .col-md-11, .col-md-12{
+    padding: 0 0 0 0;
+  }
+}
+
+@mixin default-checkbox {
 
 }
