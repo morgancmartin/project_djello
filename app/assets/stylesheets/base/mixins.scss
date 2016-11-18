@@ -1,0 +1,17 @@
+.submit-btn {
+  @extend .facit-normal;
+  font-family: 'facit-bold';
+  font-weight: bold;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 0 #3f6f21;
+  &:hover {
+    background: linear-gradient(to bottom, #5aac44 0, #519839 100%);
+  }
+}
+
+.default-checkbox {
+
+}

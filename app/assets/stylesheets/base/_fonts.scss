@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'facit-bold';
+  src: url(font-path('ufonts.com_facit-bold-opentype.otf'));
+}
+@font-face {
+  font-family: 'facit-regular';
+  src: url(font-path('ufonts.com_facit-regular-opentype.otf'));
+}
+@font-face {
+  font-family: 'facit-light';
+  src: url(font-path('ufonts.com_facit-light-opentype.otf'));
+}
+@font-face {
+  font-family: 'facit-extralight';
+  src: url(font-path('ufonts.com_facit-extralight-opentype.otf'));
+}
+
+// facitweb 38px giant
+.facit-giant {
+  font-family: 'facit-regular';
+  font-size: 2.375rem;
+}
+
+// facitweb 36px biggest
+.facit-biggest {
+  font-family: 'facit-bold';
+  font-size: 1.9rem;
+}
+
+// facitweb 29px bigger
+.facit-bigger {
+  font-family: 'facit-regular';
+  font-size: 1.55rem;
+}
+
+// facitweb 20px normal
+.facit-normal {
+  font-family: 'facit-regular';
+  font-size: 1.06rem;
+}
+
+// facitweb 18px smaller
+.facit-smaller {
+  font-family: 'facit-regular';
+  font-size: 0.96rem;
+}
+
+// facitweb 16px smallest
+.facit-smallest {
+  font-family: 'facit-regular';
+  font-size: 0.85rem;
+}
+
+// sans-serif 14px big
+.facit-big {
+  font-family: 'facit-regular';
+  font-size: 0.74rem;
+}
+
+// sans-serif 12px small
+.facit-small {
+  font-family: 'facit-regular';
+  font-size: 0.64rem;
+}

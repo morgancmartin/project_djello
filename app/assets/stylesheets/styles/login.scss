@@ -1,0 +1,73 @@
+#login-container {
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  font-family: 'facit-light';
+}
+
+.form-header {
+  color: $main-grey;
+  margin-bottom: 1.2rem;
+}
+
+label, .big-input, p  {
+  @extend .facit-normal;
+  font-family: 'facit-light';
+  font-weight: 500;
+  color: $main-grey;
+}
+.field {
+  margin-bottom: 1.2rem;
+  label {
+    margin-bottom: 0.4rem;
+  }
+}
+
+.big-input {
+  width: 80%;
+  outline: $off-blue;
+  padding-left: 0.3rem;
+  padding: 0.5rem 0.5rem;
+  background-color: $off-blue;
+  border-radius: 4px;
+  border: 1px solid #cdd2d4;
+  &:focus {
+    border: 1px solid #A5ACB0;
+    &::-webkit-input-placeholder {
+      opacity: 0.6;
+    }
+  }
+}
+
+.actions {
+  display: inline-block;
+  width: 100%;
+}
+
+.big-submit {
+  @extend .submit-btn;
+  @extend .facit-normal;
+  margin-top: 1rem;
+  font-family: 'facit-bold';
+  font-weight: bold;
+  height: 2.55rem;
+  width: 5.575rem;
+  padding: 0.6rem 1.3rem;
+}
+
+.remember-container {
+  margin-top: 2rem;
+  .default-checkbox {
+    margin-right: 0.5rem;
+  }
+}
+
+.no-account-cta {
+  margin-top: 2rem;
+  a {
+    text-decoration: underline;
+    color: #5e98ba;
+    &:hover {
+      color: #265773;
+    }
+  }
+}

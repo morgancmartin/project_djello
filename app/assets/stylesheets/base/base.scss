@@ -1,0 +1,23 @@
+html {
+  font-size: 20px;
+}
+
+body, form {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'facit-light';
+}
+
+#navbar, body {
+  width: 100%;
+}
+
+a {
+  color: #8C8C8C;
+  font-family: 'facit-light';
+
+  &:hover {
+    color: #4D4D4D;
+  }
+}

@@ -1,33 +1,33 @@
 <div class="col-md-8 col-md-offset-2" id="login-container">
   <div class="col-md-8 col-md-offset-2">
-    <h2>Log in to Djello</h2>
+    <h2 class="form-header facit-biggest">Log in to Djello</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, placeholder: "e.g., #{Faker::Internet.email}" %>
+        <%= f.email_field :email, placeholder: "e.g., #{Faker::Internet.email}", class: 'big-input' %>
       </div>
 
       <div class="field" id="last-field">
         <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off", placeholder: "e.g., #{"\u2022" * 12}" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "e.g., #{"\u2022" * 12}", class: 'big-input' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Log in", class: 'col-md-12' %>
+        <%= f.submit "Log in", class: 'col-md-12 big-submit' %>
       </div>
 
-      <div class="field" id="remember-field">
+      <div class="field remember-container">
         <% if devise_mapping.rememberable? -%>
-          <div id="remember-container">
+          <div>
             <%= f.label :remember_me, id: 'remember-label' %>
-            <%= f.check_box :remember_me %>
+            <%= f.check_box :remember_me, class: 'default-checkbox' %>
           </div>
         <% end -%>
       </div>
 
-      <p id="sign-up-link">
+      <p class="no-account-cta">
         Don't have an account? <%= link_to "Create a Djello account", new_registration_path(resource_name) %>
       </p>
 
