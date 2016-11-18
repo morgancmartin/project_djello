@@ -1,18 +1,18 @@
 <div class="col-md-8 col-md-offset-2" id="sign-up-container">
   <div class="col-md-8 col-md-offset-2">
-    <h2>Create a Djello Account</h2>
+    <h2 class="form-header">Create a Djello Account</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-control') do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
         <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, placeholder: "e.g., #{Faker::Name.name}" %>
+        <%= f.text_field :name, autofocus: true, placeholder: "e.g., #{Faker::Name.name}", class: 'big-input' %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, placeholder: "e.g., #{Faker::Internet.email}" %>
+        <%= f.email_field :email, placeholder: "e.g., #{Faker::Internet.email}", class: 'big-input' %>
       </div>
 
       <div class="field">
@@ -20,16 +20,16 @@
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", placeholder: "e.g., #{"\u2022" * 12}" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "e.g., #{"\u2022" * 12}", class: 'big-input' %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "e.g., #{"\u2022" * 12}" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "e.g., #{"\u2022" * 12}", class: 'big-input' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Create New Account" %>
+        <%= f.submit "Create New Account", class: 'col-md-12 bigger-submit' %>
       </div>
     <% end %>
 
