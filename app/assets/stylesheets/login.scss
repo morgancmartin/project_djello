@@ -1,5 +1,23 @@
-// #sign-up-container {
-//   margin-top: 30vh;
+// @import 'bootstrap';
+// @font-face {
+//   font-family: 'facit-bold';
+//   src: url(font-path('ufonts.com_facit-bold-opentype.otf'));
+// }
+// @font-face {
+//   font-family: 'facit-regular';
+//   src: url(font-path('ufonts.com_facit-regular-opentype.otf'));
+// }
+// @font-face {
+//   font-family: 'facit-light';
+//   src: url(font-path('ufonts.com_facit-light-opentype.otf'));
+// }
+// @font-face {
+//   font-family: 'facit-extralight';
+//   src: url(font-path('ufonts.com_facit-extralight-opentype.otf'));
+// }
+
+// #login-container {
+//   margin-top: 20vh;
 //   margin-bottom: 20vh;
 //   font-family: 'facit-light';
 //   #account-already {
@@ -15,9 +33,16 @@
 //       }
 //     }
 //   }
+//   #remember-container {
+//     margin-top: 2em;
+//     input[type=checkbox] {
+//       width: 0.5em;
+//       margin-right: 0.5em;
+//     }
+//   }
 //   input[type=submit] {
-//     height: 2.5em;
-//     width: 12em;
+//     height: 2.2em;
+//     width: 5em;
 //     font-size: 1.6em;
 //     font-family: 'facit-bold';
 //     background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
@@ -35,6 +60,9 @@
 //     line-height: 1em;
 //     color: #4D4D4D;
 //     margin-bottom: 0.5em;
+//   }
+//   #remember-field {
+//     margin-bottom: 0;
 //   }
 //   .field {
 //     margin-bottom: 6em;
@@ -61,6 +89,18 @@
 //           opacity: 0.6;
 //         }
 //       }
+//     }
+//   }
+//   .actions {
+//     display: inline-block;
+//     width: 100%;
+//   }
+//   #sign-up-link {
+//     margin-top: 2em;
+//     line-height: 2em;
+//     font-size: 1.6em;
+//     a {
+//       text-decoration: underline;
 //     }
 //   }
 // }
