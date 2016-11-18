@@ -47,11 +47,6 @@ gem 'bower-rails', '~> 0.11.0'
 # sprockets to appease the rails gods
 gem 'sprockets', '3.6.3'
 
-# bootstrap
-gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
