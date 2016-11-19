@@ -1,6 +1,14 @@
-<div id="boards-button" ng-click="toggleBoardsDropdown()">
-  <div class="row align-center">
-    <div id="board-button-img-container" class="cell four"></div>
-    <span class="cell seven justify-end">Boards</span>
+<div class="nav-btn" id="boards-button" ng-click="toggleBoardsDropdown()">
+  <div class="image-container" >
+  </div>
+  <span class='nav-btn-text'>Boards</span>
+</div>
+<div class="nav-btn-dropdown" id="boards-dropdown" ng-show="showBoardsDropdown"
+  tabindex="0"
+  ng-blur="toggleBoardsDropdown()">
+  <div class="board-listing" ng-repeat="board in boards"
+    ng-click="goToBoard(board.id)">
+    <div class="board-listing-spacer"></div>
+    <p class="board-listing-text">{{ board.title }}</p>
   </div>
 </div>

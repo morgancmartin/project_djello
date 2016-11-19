@@ -23,6 +23,17 @@
   }
 }
 
+@mixin big-submit {
+  @include submit-btn;
+  @include facit-normal;
+  margin-top: 1rem;
+  font-family: 'facit-bold';
+  font-weight: bold;
+  height: 2.55rem;
+  width: 5.575rem;
+  padding: 0.6rem 1.3rem;
+}
+
 @mixin default-checkbox {
 
 }

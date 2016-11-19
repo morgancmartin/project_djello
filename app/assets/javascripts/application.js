@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap.min
 //= require angular
 //= require angular-devise
 //= require lodash.min
@@ -20,7 +20,6 @@
 //= require restangular
 //= require angular-devise
 //= require ui-bootstrap-tpls-2.1.4.min
-//= require bootstrap.min
 //= require angular-modal-service.min
 //= perfect-scrollbar.min
 //= perfect-scrollbar.with-mousewheel.min

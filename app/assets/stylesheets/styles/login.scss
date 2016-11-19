@@ -15,6 +15,7 @@ label, .big-input, p  {
   font-weight: 500;
   color: $main-grey;
 }
+
 .field {
   margin-bottom: 1.2rem;
   label {
@@ -44,14 +45,7 @@ label, .big-input, p  {
 }
 
 .big-submit {
-  @include submit-btn;
-  @include facit-normal;
-  margin-top: 1rem;
-  font-family: 'facit-bold';
-  font-weight: bold;
-  height: 2.55rem;
-  width: 5.575rem;
-  padding: 0.6rem 1.3rem;
+  @include big-submit;
 }
 
 .remember-container {

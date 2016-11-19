@@ -1,0 +1,158 @@
+.navbar {
+  margin-bottom: 1%;
+  border: none;
+  border-radius: 0;
+  background-color: #026AA7;
+  height: 1.5rem;
+  min-height: 1.5rem;
+  padding: 0.25rem 0.25rem;
+  box-sizing: content-box;
+  .navbar-header {
+    height: 100%;
+  }
+}
+
+.navbar-brand {
+  height: 100%;
+  width: 4.4rem;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  left: 50%;
+  margin-left: -2.5rem;
+  top: 5px;
+  text-align: center;
+  padding: 0.2rem 0.1rem;
+}
+
+.brand-image-container {
+  position: relative;
+  #djello-img {
+    width: 70%;
+  }
+  #jello-img {
+    width: 30%;
+  }
+  #djello-img, #jello-img {
+    display: inline-block;
+    opacity: 0.7;
+    transition: opacity ease-in 85ms;
+    height: 100%;
+  }
+  &:hover {
+    #djello-img, #jello-img {
+      opacity: 1;
+    }
+  }
+}
+
+// these are set because they start out in the body and are then respositioned using javascript. without this, the user sees a giant transparent jello for a split second on page load
+#djello-img, #jello-img{
+  height: 1rem;
+}
+
+.nav-btn {
+  @include sans-serif-big;
+  color: white;
+  font-weight: bold;
+  padding: 0.2rem 0.3rem;
+  height: 100%;
+  background-color: #4791BC;
+  background: -webkit-linear-gradient(top,rgba(255,255,255,.3) 0,
+                                      rgba(255,255,255,.2) 100%);
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(to bottom,rgba(255,255,255,.4) 0,
+                                rgba(255,255,255,.3) 100%);
+  }
+}
+
+#boards-button {
+  width: 5rem;
+  text-align: center;
+  .image-container {
+    position: relative;
+    width: 25%;
+    display: inline-block;
+    #jello-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .nav-btn-text {
+    display: inline-block;
+    width: 65%;
+  }
+}
+
+.nav-btn-dropdown {
+  background-color: #FFFFFF;
+  padding: 0.4rem 0.4rem;
+  z-index: 1;
+  width: 14rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  .board-listing {
+    display: inline-block;
+    width: 100%;
+    .board-listing-text {
+      @include sans-serif-big;
+      display: inline-block;
+      vertical-align: center;
+      overflow: hidden;
+      color: black;
+      font-weight: 700;
+      text-align: center;
+      white-space: no-wrap;
+      text-overflow: elipsis;
+    }
+  }
+}
+
+#boards-dropdown {
+  position: absolute;
+  left: -0.5rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,.4);
+  border-radius: 0 3px 3px 0;
+  top: 40px;
+  max-height: 300px;
+  margin: 0.3rem;
+  outline: none;
+  .board-listing {
+    margin-top: 0.2rem;
+    height: 2rem;
+    opacity: 0.8;
+    background-color: #C7E1F1;
+    z-index: 2;
+    border-radius: 3px;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    .board-listing-spacer {
+      display: inline-block;
+      height: 100%;
+      border-radius: 3px 0 0 3px;
+      width: 15%;
+      background-color: #0079BF;
+    }
+    .board-listing-text {
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media only screen
+and (max-width: 412px){
+  #boards-button{
+    width: 2rem;
+    .nav-btn-text {
+      display: none;
+    }
+    .image-container {
+      width: 100%;
+    }
+  }
+}

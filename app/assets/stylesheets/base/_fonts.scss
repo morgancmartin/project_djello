@@ -52,13 +52,13 @@
 }
 
 // sans-serif 14px big
-@mixin facit-big {
-  font-family: 'facit-regular';
-  font-size: 0.74rem;
+@mixin sans-serif-big {
+  font-family: 'sans-serif';
+  font-size: 0.7rem;
 }
 
 // sans-serif 12px small
-@mixin facit-small {
-  font-family: 'facit-regular';
-  font-size: 0.64rem;
+@mixin sans-serif-small {
+  font-family: 'sans-serif';
+  font-size: 0.6rem;
 }

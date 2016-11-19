@@ -1,7 +1,8 @@
 <%= content_for(:angular_app) do %>
   ng-app='DjelloApp'
 <% end %>
-<nav id="navbar"
+<nav
+  id="navbar"
   class="row"
   ui-view="navbar"
   data-root-path="<%= root_path %>"

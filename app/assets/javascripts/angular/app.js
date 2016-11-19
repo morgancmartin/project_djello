@@ -13,7 +13,7 @@ DjelloApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvide
       abstract: true,
       views: {
         'navbar': {
-          templateUrl: '/templates/nav/nav.html',
+          templateUrl: '/templates/nav/navbar.html',
           controller: 'navCtrl'
         }
       },

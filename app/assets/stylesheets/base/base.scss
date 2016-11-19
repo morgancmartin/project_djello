@@ -9,8 +9,9 @@ body, form {
   font-family: 'facit-light';
 }
 
-#navbar, body {
+#navbar, body, .row {
   width: 100%;
+  margin: auto;
 }
 
 a {
@@ -20,4 +21,8 @@ a {
   &:hover {
     color: #4D4D4D;
   }
+}
+
+a, p, h1, h2, h3, span, img {
+  user-select: none;
 }
