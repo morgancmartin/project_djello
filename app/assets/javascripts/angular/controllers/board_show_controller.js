@@ -4,6 +4,7 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
   // Targeting body for state specific styling...
   // open to ideas on this
   angular.element('body').addClass('board-show');
+  angular.element('.boards-view').addClass('board-wrapper');
 
   $scope.board = board;
   $scope.boards = boards;

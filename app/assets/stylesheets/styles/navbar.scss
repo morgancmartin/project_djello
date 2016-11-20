@@ -1,5 +1,4 @@
 .nav {
-  margin-bottom: 1%;
   border: none;
   border-radius: 0;
   background-color: #026AA7;
@@ -110,7 +109,12 @@
       background-color: #0079BF;
     }
     .board-listing-text {
+      display: inline-block;
       margin-left: 1rem;
+      width: 70%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
