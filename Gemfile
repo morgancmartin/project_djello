@@ -3,6 +3,17 @@ source 'https://rubygems.org'
 # ADDED GEMS
 gem 'faker'
 gem 'hirb'
+gem 'devise'
+gem 'angularjs-rails'
+gem 'angular_rails_csrf'
+gem 'font-awesome-rails'
+gem 'bower-rails', '~> 0.11.0'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular-devise'
+  gem 'rails-assets-angular-perfect-scrollbar'
+  gem 'rails-assets-angular-animate'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -32,17 +43,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-gem 'angularjs-rails'
-gem 'angular_rails_csrf'
-gem 'devise'
-source 'https://rails-assets.org' do
-  gem 'rails-assets-angular-devise'
-  gem 'rails-assets-angular-perfect-scrollbar'
-  gem 'rails-assets-angular-animate'
-end
-
-gem 'bower-rails', '~> 0.11.0'
 
 # sprockets to appease the rails gods
 gem 'sprockets', '3.6.3'

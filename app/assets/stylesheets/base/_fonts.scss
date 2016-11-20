@@ -51,6 +51,12 @@
   font-size: 0.85rem;
 }
 
+// sans-serif 16px bigger
+@mixin sans-serif-bigger {
+  font-family: 'sans-serif';
+  font-size: 0.8rem;
+}
+
 // sans-serif 14px big
 @mixin sans-serif-big {
   font-family: 'sans-serif';

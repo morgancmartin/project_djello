@@ -1,31 +1,29 @@
-<div ng-show="!(showNewBoardForm)">
-  <div ng-click="showNewBoardForm = true" href="#" class="new-board">
-    <a>
-      Create a new board...
-    </a>
+<div class="board-form-container" ng-show="!(showNewBoardForm)"
+  ng-click="showNewBoardForm = true">
+  <p class="board-text">Create a new board...</p>
+</div>
+
+<form class="new-board-form" ng-model="newBoardForm"
+  tabindex="1"
+  ng-blur="focusOut()"
+  ng-show="showNewBoardForm">
+  <div class="board-form-header">
+    <p class="popup-title">Create Board</p>
+    <span class="glyphicon glyphicon-remove new-board-x"
+      aria-hidden="true"
+      ng-click="showNewBoardForm = false">
+    </span>
   </div>
-</div>
-
-<div ng-show="showNewBoardForm" class="board-form-container">
-    <form class="new-board-form"
-          ng-model="newBoardForm">
-      <p class="new-board-header">New Board</p>
-      <span class="glyphicon glyphicon-remove new-board-x col-md-offset-3"
-            aria-hidden="true"
-            ng-click="showNewBoardForm = false">
-      </span>
-      <hr>
-      <p>Title</p>
-      <input type="text" class="col-md-12"
-             ng-model="newBoardForm.title"
-             ng-blur="focusOut()"
-             id="newBoardInput"
-      >
-      <a type="submit"
-         class="btn btn-success new-board-button"
-         ng-click="createBoard(newBoardForm.title)"
-         value="Add"><strong>Submit</strong>
-      </a>
-    </form>
-
-</div>
+  <hr class="popup-hr">
+  <p class="popup-label">Title</p>
+  <input type="text" class="popup-input"
+    ng-model="newBoardForm.title"
+    ng-blur="focusOut()"
+    id="newBoardInput">
+  <div type="submit"
+    class="submit-btn"
+    ng-click="createBoard(newBoardForm.title)"
+    value="Add">
+    Create
+  </div>
+</form>

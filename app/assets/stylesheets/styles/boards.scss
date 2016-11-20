@@ -26,80 +26,6 @@
   display: inline-block;
 }
 
-.index-container{
-  margin-top: 3%;
-  padding-left: 0.5em;
-  padding-right: 1.5em;
-
-  .personal-column{
-    padding-left: 0 !important;
-    .personal-container{
-      padding-left: 0 !important;
-      .personal-glyph{
-        opacity: 0.8;
-        line-height: 1.1em;
-      }
-
-      #personal-boards-header{
-        line-height: 1em;
-        font-size: 16px;
-        font-weight: bold;
-        color: #4D4D4D;
-      }
-    }
-  }
-
-
-
-  .board-container{
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-  .board {
-    width: 100%;
-    padding: 0 1em 0 1em;
-    margin-bottom: 1.5em;
-    display: inline-block;
-    background-color: #056FAD;
-    height: 6.8em;
-    border-radius: 3px;
-    a{
-      display: inline-block;
-      margin-top: 0.5em;
-      color: white;
-      font-size: 1.1em;
-      font-weight: bold;
-      &:hover{
-        text-decoration: none;
-        color: white;
-      }
-    }
-    &:hover {
-      background-color: #0067A3;
-      cursor: pointer;
-    }
-  }
-
-  .new-board{
-    @extend .board;
-    a {
-      top: 3em;
-      display: inline-block;
-      color: grey;
-      font-size: 1.1em;
-      font-weight: normal;
-      margin-top: 2.5em;
-      margin-left: 3em;
-    }
-    &:hover{
-      background-color: #D6DADC;
-      a {
-        color: #4D4D4D
-      }
-    }
-    background-color: #DCE0E2;
-  }
-}
 
 
 .board-show{
@@ -115,39 +41,6 @@
   background-color: inherit !important;
   &:hover{
     cursor: pointer;
-  }
-}
-
-.board-form-container{
-  border: 2px solid #D6DADC;
-  border-radius: 3px;
-  .new-board-x {
-    opacity: 0.7;
-  }
-  .new-board-button {
-    display: inline-block;
-    color: white;
-    margin-top: 1em;
-    width: 6em;
-    box-shadow: 0 1px 0 #3F6F21;
-    background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
-    &:hover {
-      color: white;
-      background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
-    }
-  }
-  .new-board-header {
-    display: inline-block;
-    margin-left: 30%;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-  }
-  hr {
-    margin-top: 0;
-    margin-bottom: 0.5em;
-  }
-  p {
-    font-weight: bold;
   }
 }
 

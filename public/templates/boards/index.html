@@ -1,20 +1,15 @@
-<div class="row index-container">
-  <div class="col-md-12">
-
-  <div class="col-md-12 personal-column">
-    <div class="col-md-3 personal-container">
-      <p class="glyphicon glyphicon-user personal-glyph col-md-1"
-        aria-hidden="true">
-      </p>
-      <p id="personal-boards-header" class="col-md-10">Personal Boards</p>
-    </div>
+<div class="index-container">
+  <p class="glyphicon glyphicon-user personal-glyph"
+    aria-hidden="true">
+  </p>
+  <div class="personal-container">
+    <p id="personal-boards-header" class="">Personal Boards</p>
   </div>
 
-    <div class="col-md-3 board-container" ng-repeat="board in boards">
-      <div class="board" ui-sref="home.show({id: board.id})">
-        <a>{{board.title}}</a>
-      </div>
+  <div class="boards-container">
+    <div class="board" ng-repeat="board in boards" ui-sref="home.show({id: board.id})">
+      <p class="board-text">{{board.title}}</p>
     </div>
-    <new-board-form class="col-md-3"></new-board-form>
+    <new-board-form class="new-board"></new-board-form>
   </div>
 </div>

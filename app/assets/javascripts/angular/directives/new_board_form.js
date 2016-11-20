@@ -27,7 +27,10 @@ DjelloApp.directive('newBoardForm', ['$timeout', 'boardService', '$state', funct
 
       $scope.focusOut = function(){
         $timeout(function(){
-          $scope.showNewBoardForm = false;
+          if (document.activeElement !== element.find('#newBoardInput')[0] &&
+              document.activeElement !== element.find('.new-board-form')[0]){
+            $scope.showNewBoardForm = false;
+          }
         }, 125);
       };
 
