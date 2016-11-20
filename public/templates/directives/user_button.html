@@ -7,6 +7,12 @@
 <div class="nav-btn-dropdown" id="user-btn-dropdown" ng-show="showUserDropdown"
   tabindex="0"
   ng-blur="toggleUserDropdown()">
-  <span class="user-dropdown-text">sup</span>
+  <span class="user-dropdown-text">{{currentUser.name}}</span>
   <hr>
+  <div class="user-listings">
+    <div class="user-dropdown-listing" ng-click="logout()">
+      <span>Logout</span>
+      <!-- <a rel="nofollow" data-method="delete" href="{{logoutLink}}">Logout</a> -->
+    </div>
+  </div>
 </div>

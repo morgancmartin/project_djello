@@ -1,4 +1,4 @@
-DjelloApp.directive('userButton', ['Auth', '$timeout', function(Auth, $timeout) {
+DjelloApp.directive('userButton', ['Auth', '$timeout', '$window', function(Auth, $timeout, $window) {
 
   var initializeName = function(name){
     var names = name.split(' ');
@@ -19,11 +19,16 @@ DjelloApp.directive('userButton', ['Auth', '$timeout', function(Auth, $timeout) 
           console.error(response);
         });
 
+      $scope.logout = function() {
+        Auth.logout().then(function(oldUser){
+          $window.location.reload();
+        });
+      };
+
       $scope.toggleUserDropdown = function($event) {
         if(!$scope.justToggledDropdown){
           $scope.showUserDropdown = !$scope.showUserDropdown;
           if($scope.showUserDropdown){
-            console.log('focusing');
             $timeout(function(){
               angular.element('#user-btn-dropdown').focus();
             }, 125);
