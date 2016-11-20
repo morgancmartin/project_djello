@@ -229,4 +229,15 @@ and (max-width: 412px){
       width: 100%;
     }
   }
+
+  #user-button {
+    width: 1.43rem;
+    #user-initial-spacer {
+      width: 100%;
+      border-radius: 3px 3px 3px 3px;
+    }
+    .nav-btn-text {
+      display: none;
+    }
+  }
 }
