@@ -11,10 +11,4 @@ DjelloApp.controller("navCtrl", ['$scope', 'Restangular', 'Auth', 'boards', 'boa
     $scope.logoutLink = angular.element('nav').data('logout-link');
   })();
 
-  Auth.currentUser()
-    .then(function(user) {
-      $scope.currentUser = user;
-    }, function(response) {
-      console.error(response);
-    });
 }]);

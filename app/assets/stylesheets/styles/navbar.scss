@@ -1,4 +1,4 @@
-.navbar {
+.nav {
   margin-bottom: 1%;
   border: none;
   border-radius: 0;
@@ -12,16 +12,20 @@
   }
 }
 
-.navbar-brand {
+.navbar-header {
   height: 100%;
+  width: 100%;
+}
+
+.navbar-brand {
+  height: 1.5rem;
   width: 4.4rem;
-  margin: auto;
   position: absolute;
   bottom: 0;
   display: block;
   left: 50%;
   margin-left: -2.5rem;
-  top: 5px;
+  top: 3px;
   text-align: center;
   padding: 0.2rem 0.1rem;
 }
@@ -50,6 +54,64 @@
 // these are set because they start out in the body and are then respositioned using javascript. without this, the user sees a giant transparent jello for a split second on page load
 #djello-img, #jello-img{
   height: 1rem;
+}
+
+
+.nav-btn-dropdown {
+  background-color: #FFFFFF;
+  padding: 0.4rem 0.4rem;
+  z-index: 1;
+  width: 14rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,.4);
+  border-radius: 0 3px 3px 0;
+  top: 40px;
+  max-height: 300px;
+  margin: 0.3rem;
+  outline: none;
+  .board-listing {
+    display: inline-block;
+    width: 100%;
+    .board-listing-text {
+      @include sans-serif-big;
+      display: inline-block;
+      vertical-align: center;
+      overflow: hidden;
+      color: black;
+      font-weight: 700;
+      text-align: center;
+      white-space: no-wrap;
+      text-overflow: elipsis;
+    }
+  }
+}
+
+#boards-dropdown {
+  position: absolute;
+  left: -0.5rem;
+  .board-listing {
+    margin-top: 0.2rem;
+    height: 2rem;
+    opacity: 0.8;
+    background-color: #C7E1F1;
+    z-index: 2;
+    border-radius: 3px;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    .board-listing-spacer {
+      display: inline-block;
+      height: 100%;
+      border-radius: 3px 0 0 3px;
+      width: 15%;
+      background-color: #0079BF;
+    }
+    .board-listing-text {
+      margin-left: 1rem;
+    }
+  }
 }
 
 .nav-btn {
@@ -87,60 +149,53 @@
   }
 }
 
-.nav-btn-dropdown {
-  background-color: #FFFFFF;
-  padding: 0.4rem 0.4rem;
-  z-index: 1;
-  width: 14rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-  .board-listing {
-    display: inline-block;
-    width: 100%;
-    .board-listing-text {
-      @include sans-serif-big;
-      display: inline-block;
-      vertical-align: center;
-      overflow: hidden;
-      color: black;
-      font-weight: 700;
-      text-align: center;
-      white-space: no-wrap;
-      text-overflow: elipsis;
+#user-button {
+  padding: 0;
+  width: 8.4rem;
+  text-align: center;
+  height: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  right: 2rem;
+  margin-right: 0.25rem;
+  top: 0.25rem;
+  #user-initial-spacer {
+    @include sans-serif-small;
+    border-radius: 3px 0 0 3px;
+    height: 100%;
+    width: 17%;
+    background-color: #D6DADC;
+    color: #4d4d4d;
+    display: block;
+    float: left;
+    .user-button-initials {
+      position: relative;
+      top: 25%;
     }
   }
+  .nav-btn-text {
+    position: relative;
+    top: 20%;
+    display: inline-block;
+    width: 70%;
+  }
+
 }
 
-#boards-dropdown {
+#user-btn-dropdown {
+  padding: 0.5rem;
   position: absolute;
-  left: -0.5rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,.4);
-  border-radius: 0 3px 3px 0;
-  top: 40px;
-  max-height: 300px;
-  margin: 0.3rem;
-  outline: none;
-  .board-listing {
+  right: 0.1rem;
+  text-align: center;
+  .user-dropdown-text {
+    @include sans-serif-big;
+    color: #8c8c8c;
+    z-index: 1;
+  }
+  hr {
     margin-top: 0.2rem;
-    height: 2rem;
-    opacity: 0.8;
-    background-color: #C7E1F1;
-    z-index: 2;
-    border-radius: 3px;
-    cursor: pointer;
-    &:hover {
-      opacity: 1;
-    }
-    .board-listing-spacer {
-      display: inline-block;
-      height: 100%;
-      border-radius: 3px 0 0 3px;
-      width: 15%;
-      background-color: #0079BF;
-    }
-    .board-listing-text {
-      margin-left: 1rem;
-    }
+    margin-bottom: 0.2rem;
   }
 }
 

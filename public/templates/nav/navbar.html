@@ -1,37 +1,19 @@
-<nav class="navbar navbar-default">
+<nav class="nav">
     <div class="navbar-header">
-      <button type="button"
-        class="navbar-toggle collapsed"
-        data-toggle="collapse"
-        data-target="#bs-example-navbar-collapse-1"
-        aria-expanded="false">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <boards-button jello-img="jelloImg" boards="boards"></boards-button>
       <a href="{{rootPath}}" class="navbar-brand">
         <div class="brand-image-container" >
         </div>
       </a>
+      <user-button current-user="currentUser"></user-button>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <!-- <li> -->
-        <!-- <div id="user-button" ng-click=""> -->
-        <!-- <div id="user-spacer"></div> -->
-        <!-- <div id="user-name"> -->
-        <!-- <a class="navbar-link"> -->
-        <!-- <p>{{currentUser.name}}</p> -->
-        <!-- </a> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- </li> -->
-        <li>
-          <a rel="nofollow" data-method="delete" href="{{logoutLink}}">Logout</a>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
+    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+    <!-- <ul class="nav navbar-nav navbar-right"> -->
+    <!-- <li> -->
+    <!-- <a rel="nofollow" data-method="delete" href="{{logoutLink}}">Logout</a> -->
+    <!-- </li> -->
+    <!-- </ul> -->
+    <!-- </div> -->
 </nav>

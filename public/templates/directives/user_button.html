@@ -1,0 +1,12 @@
+<div class="nav-btn" id="user-button" ng-click="toggleUserDropdown()">
+  <div id="user-initial-spacer">
+    <span class="user-button-initials">{{initials}}</span>
+  </div>
+  <span class="nav-btn-text">{{currentUser.name}}</span>
+</div>
+<div class="nav-btn-dropdown" id="user-btn-dropdown" ng-show="showUserDropdown"
+  tabindex="0"
+  ng-blur="toggleUserDropdown()">
+  <span class="user-dropdown-text">sup</span>
+  <hr>
+</div>
