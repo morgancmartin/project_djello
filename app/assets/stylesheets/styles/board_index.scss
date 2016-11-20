@@ -38,7 +38,7 @@
   padding: 0.4rem 0.6rem;
   background-color: #0067A3;
   margin-right: 0.8rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
   border-radius: 3px;
   background-size: cover;
   background-position: center center;
@@ -133,4 +133,27 @@
   @include sans-serif-big;
   cursor: pointer;
   margin-top: 1.5rem;
+}
+
+@media only screen
+and (max-width: 412px){
+
+  .boards-view {
+    padding: 0.4rem;
+  }
+
+  .index-container {
+    padding-top: 0.7rem;
+  }
+
+  .personal-container {
+    width: 80%;
+  }
+
+  .boards-container {
+    .board {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
 }
