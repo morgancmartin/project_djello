@@ -90,6 +90,46 @@
 #boards-dropdown {
   position: absolute;
   left: -0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  &::-webkit-scrollbar-button {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c4c9cc;
+    border: 1px none #ffffff;
+    border-radius: 47px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #c4c9cc;
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background: #c4c9cc;
+  }
+  &::-webkit-scrollbar-track {
+    background: #d6dadc;
+    border: 1px none #ffffff;
+    border-radius: 49px;
+  }
+  &::-webkit-scrollbar-track:hover {
+    background: #d6dadc;
+  }
+  &::-webkit-scrollbar-track:active {
+    background: #d6dadc;
+  }
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+
+
   .board-listing {
     margin-top: 0.2rem;
     height: 2rem;
@@ -110,7 +150,8 @@
     }
     .board-listing-text {
       display: inline-block;
-      margin-left: 1rem;
+      text-align: left;
+      margin-left: 0.5rem;
       width: 70%;
       white-space: nowrap;
       overflow: hidden;

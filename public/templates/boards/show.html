@@ -1,24 +1,24 @@
 <div class="board-wrapper">
-
+  <div class="board-header">
+    <h4 class="board-title"
+      ng-click="focusBoardRenameInput()"
+      popover-placement="bottom-left"
+      uib-popover-template="dynamicPopover.templateUrl"
+      popover-title="Rename Board"
+      popover-trigger="'outsideClick'"
+      popover-is-open="boardRenamePopoverIsOpen"
+      type="button">
+      {{board.title}}
+    </h4>
+    <a ng-click="deleteCurrentBoard()" class="delete-board-link" href="#">
+      Delete board
+    </a>
+  </div>
 </div>
 <!-- <div class="row"> -->
-<!-- <h4 class="board-title col-md-2" -->
-<!-- ng-click="focusBoardRenameInput()" -->
-<!-- popover-placement="bottom-left" -->
-<!-- uib-popover-template="dynamicPopover.templateUrl" -->
-<!-- popover-title="Rename Board" -->
-<!-- popover-trigger="'outsideClick'" -->
-<!-- popover-is-open="boardRenamePopoverIsOpen" -->
-<!-- type="button" -->
-<!-- > -->
-<!-- {{board.title}} -->
-<!-- </h4> -->
 
 <!-- <div> -->
 <!-- <div> -->
-<!-- <a ng-click="deleteCurrentBoard()" class="delete-board-link" href="#"> -->
-<!-- Delete board -->
-<!-- </a> -->
 <!-- </div> -->
 <!-- </div> -->
 
