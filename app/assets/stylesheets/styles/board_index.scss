@@ -136,6 +136,16 @@
 }
 
 @media only screen
+  and (max-width: 768px){
+  .boards-container {
+    .board {
+      width: 11.344rem;
+    }
+  }
+
+}
+
+@media only screen
 and (max-width: 412px){
 
   .boards-view {

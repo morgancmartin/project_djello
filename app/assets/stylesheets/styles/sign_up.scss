@@ -2,10 +2,20 @@
   @include big-submit;
   @include submit-btn;
   @include facit-normal;
-  width: 12.545rem;
+  padding: 0.6rem 1.3rem;
+  height: 2.55rem;
+  width: 12.5rem;
   margin-bottom: 1.2rem;
 }
 
 .account-already {
   @extend .no-account-cta;
+}
+
+@media only screen
+and (max-width: 768px){
+  #sign-up-container {
+    margin: 10vh auto;
+    width: 80%;
+  }
 }
