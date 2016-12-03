@@ -7,6 +7,7 @@ DjelloApp.directive('boardTitlePopover', ['$timeout', 'boardService', function($
     },
     link: function($scope, element, attrs){
       $scope.showPopover = false;
+      $scope.originalTitle = $scope.board.title;
 
       console.log($scope.board);
       $scope.$watch('showPopover', function(value){
@@ -34,7 +35,9 @@ DjelloApp.directive('boardTitlePopover', ['$timeout', 'boardService', function($
         console.log($scope.board.title);
         var params = {title: $scope.board.title, board: $scope.board};
         $scope.showPopover = false;
-        boardService.updateBoard(params);
+        boardService.updateBoard(params).then(function() {
+          $scope.originalTitle = $scope.board.title;
+        });
       };
     }
   };
