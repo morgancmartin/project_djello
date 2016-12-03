@@ -45,20 +45,6 @@
   top: 80px;
 }
 
-.popover-title-container {
-  text-align: center;
-  width: 100%;
-  border-bottom: 1px solid #D6DADC;
-  margin-bottom: 0.5rem;
-  color: #8c8c8c;
-}
-
-.popover-title {
-  @include sans-serif-big;
-  display: inline-block;
-  margin: auto;
-  padding: 0 0 0.5rem 0;
-}
 
 .delete-board-link{
   @extend .board-title;

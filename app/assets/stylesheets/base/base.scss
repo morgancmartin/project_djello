@@ -26,17 +26,3 @@ a {
 a, p, h1, h2, h3, h4, span, img {
   user-select: none;
 }
-
-.popover-title {
-  background-color: inherit;
-  border-bottom: none;
-}
-
-.popover-x {
-  margin-top: 0.2rem;
-  float: right;
-  opacity: 0.5;
-  &:hover {
-    opacity: 1;
-  }
-}
