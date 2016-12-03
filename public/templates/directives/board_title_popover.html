@@ -1,9 +1,14 @@
 <h4 class="board-title" ng-click="showPopover = true">{{originalTitle}}</h4>
 <div class="board-title-popover" ng-show="showPopover"
   tabindex="0"
-  ng-blur="togglePopover()">
-  <span>Rename Board</span>
-  <hr>
+  ng-blur="focusOut()">
+  <div class="popover-title-container">
+    <span class="popover-title">Rename Board</span>
+    <span class="glyphicon glyphicon-remove popover-x"
+      aria-hidden="true"
+      ng-click="showPopover = false">
+    </span>
+  </div>
   <span>Name</span>
   <input type="text" class="popup-input"
     ng-model="board.title"

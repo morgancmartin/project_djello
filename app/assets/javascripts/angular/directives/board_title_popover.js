@@ -23,6 +23,7 @@ DjelloApp.directive('boardTitlePopover', ['$timeout', 'boardService', function($
       });
 
       $scope.focusOut = function(){
+        console.log(document.activeElement);
         $timeout(function(){
           if (document.activeElement !== element.find('#boardTitleInput')[0] &&
               document.activeElement !== element.find('.board-title-popover')[0]){
