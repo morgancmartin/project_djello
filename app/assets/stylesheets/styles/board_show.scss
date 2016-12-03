@@ -23,7 +23,7 @@
   @include sans-serif-biggest;
   margin: 0;
   display: inline-block;
-  max-width: 10rem;
+  max-width: 15rem;
   padding: 0 0.5rem;
   color: #f6f6f6;
   overflow: hidden;
@@ -100,3 +100,16 @@
 /* background: linear-gradient(to bottom,#5AAC44 0,#519839 100%); */
 /* } */
 /* } */
+
+@media only screen
+  and (max-width: 768px){
+
+}
+
+@media only screen
+and (max-width: 412px){
+  .board-title {
+    @include sans-serif-bigger;
+    max-width: 7.5rem;
+  }
+}
