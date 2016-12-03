@@ -40,6 +40,17 @@ DjelloApp.directive('boardTitlePopover', ['$timeout', 'boardService', function($
           $scope.originalTitle = $scope.board.title;
         });
       };
+
+      $scope.attachEnterKeyListener = function(){
+        element.find(".popup-input").keypress(function(event) {
+          if (event.which == 13) {
+            event.preventDefault();
+            $scope.renameBoard();
+          }
+        });
+      };
+
+      $scope.attachEnterKeyListener();
     }
   };
 }]);
