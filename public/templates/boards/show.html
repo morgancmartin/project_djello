@@ -1,16 +1,6 @@
 <div class="board-wrapper">
   <div class="board-header">
-    <board-title-popover board-title="board.title"></board-title-popover>
-    <!-- <h4 class="board-title" -->
-    <!-- ng-click="focusBoardRenameInput()" -->
-    <!-- popover-placement="bottom-left" -->
-    <!-- uib-popover-template="dynamicPopover.templateUrl" -->
-    <!-- popover-title="Rename Board" -->
-    <!-- popover-trigger="'outsideClick'" -->
-    <!-- popover-is-open="boardRenamePopoverIsOpen" -->
-    <!-- type="button"> -->
-    <!-- {{board.title}} -->
-    <!-- </h4> -->
+    <board-title-popover board="board"></board-title-popover>
     <a ng-click="deleteCurrentBoard()" class="delete-board-link" href="#">
       Delete board
     </a>
@@ -27,20 +17,3 @@
     <!-- </div> -->
   </div>
 </div>
-
-<script type="text/ng-template" id="myPopoverTemplate.html">
-  <form class="form-group" ng-submit="renameBoard(boardRenameForm.title)">
-    <label>Name</label>
-    <input type="text"
-           id="boardRenameInput"
-           ng-model="boardRenameForm.title"
-           ng-value="board.title"
-           class="form-control">
-    <br>
-    <!-- <input type="submit" class="btn rename-button" value="Rename"></input> -->
-      <a type="submit"
-        class="btn btn-success rename-button"
-        value="Rename"><strong>Submit</strong>
-      </a>
-  </form>
-</script>

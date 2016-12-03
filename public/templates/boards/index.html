@@ -7,7 +7,7 @@
   </div>
 
   <div class="boards-container">
-    <div class="board" ng-repeat="board in boards" ui-sref="home.show({id: board.id})">
+    <div class="board" ng-repeat="board in boards | orderBy:'created_at'" ui-sref="home.show({id: board.id})">
       <p class="board-text">{{board.title}}</p>
     </div>
     <new-board-form class="new-board"></new-board-form>

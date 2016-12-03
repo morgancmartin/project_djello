@@ -34,16 +34,5 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
     list.delete();
   };
 
-  $scope.renameBoard = function(title){
-    var params = {title: title, board: board};
-    $scope.boardRenamePopoverIsOpen = false;
-    boardService.updateBoard(params);
-  };
-
-
-  $scope.dynamicPopover = {
-    templateUrl: 'myPopoverTemplate.html'
-  };
-
   console.log('loaded boardshowctrl');
 }]);

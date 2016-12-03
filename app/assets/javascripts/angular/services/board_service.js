@@ -32,8 +32,9 @@ DjelloApp.factory("boardService", ["Restangular", '_', 'listService', function(R
   };
 
   boardService.updateBoard = function(params){
+    console.log(params);
     var board = params.board;
-    if(_boardNeedsUpdating(board, params)){
+    // if(_boardNeedsUpdating(board, params)){
       params = {board: {id: board.id, title: params.title}};
       board.patch(params)
         .then(
@@ -48,7 +49,7 @@ DjelloApp.factory("boardService", ["Restangular", '_', 'listService', function(R
             // go through
             console.error('failed to update');
           });
-    }
+    // }
   };
 
   boardService.all = function() {

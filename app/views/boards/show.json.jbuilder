@@ -1,6 +1,7 @@
 json.title @board.title
 json.id @board.id
 json.users @board.users
+json.updated_at @board.updated_at
 
 json.lists @board.lists do |list|
   json.title list.title
