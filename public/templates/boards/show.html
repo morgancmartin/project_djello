@@ -1,43 +1,32 @@
 <div class="board-wrapper">
   <div class="board-header">
-    <h4 class="board-title"
-      ng-click="focusBoardRenameInput()"
-      popover-placement="bottom-left"
-      uib-popover-template="dynamicPopover.templateUrl"
-      popover-title="Rename Board"
-      popover-trigger="'outsideClick'"
-      popover-is-open="boardRenamePopoverIsOpen"
-      type="button">
-      {{board.title}}
-    </h4>
+    <board-title-popover board-title="board.title"></board-title-popover>
+    <!-- <h4 class="board-title" -->
+    <!-- ng-click="focusBoardRenameInput()" -->
+    <!-- popover-placement="bottom-left" -->
+    <!-- uib-popover-template="dynamicPopover.templateUrl" -->
+    <!-- popover-title="Rename Board" -->
+    <!-- popover-trigger="'outsideClick'" -->
+    <!-- popover-is-open="boardRenamePopoverIsOpen" -->
+    <!-- type="button"> -->
+    <!-- {{board.title}} -->
+    <!-- </h4> -->
     <a ng-click="deleteCurrentBoard()" class="delete-board-link" href="#">
       Delete board
     </a>
   </div>
+  <div class="board-content" >
+    <!-- <div class="lists" id="style-2"> -->
+    <!-- <list cards="cards" list="list" -->
+    <!-- ng-repeat="list in lists | orderBy: 'created_at'" -->
+    <!-- class="list" -->
+    <!-- data-list-id="{{list.id}}" -->
+    <!-- > -->
+    <!-- </list> -->
+    <!-- <new-list-form class="new-list-form" board="board"></new-list-form> -->
+    <!-- </div> -->
+  </div>
 </div>
-<!-- <div class="row"> -->
-
-<!-- <div> -->
-<!-- <div> -->
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- </div> -->
-
-<!-- <div class="row"> -->
-<!-- <div class="lists" id="style-2"> -->
-<!-- <list cards="cards" list="list" -->
-<!-- ng-repeat="list in lists | orderBy: 'created_at'" -->
-<!-- class="list" -->
-<!-- data-list-id="{{list.id}}" -->
-<!-- > -->
-<!-- </list> -->
-<!-- <new-list-form class="new-list-form" board="board"></new-list-form> -->
-<!-- </div> -->
-<!-- </div> -->
-
-
-
 
 <script type="text/ng-template" id="myPopoverTemplate.html">
   <form class="form-group" ng-submit="renameBoard(boardRenameForm.title)">

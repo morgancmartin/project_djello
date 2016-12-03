@@ -71,6 +71,7 @@ DjelloApp.factory("boardService", ["Restangular", '_', 'listService', function(R
 
   boardService.find = function(id) {
     return Restangular.one('boards', id).get().then(function(board){
+      console.log(board);
       Restangular.restangularizeCollection(board, board.lists, 'lists');
       _addBoardToLists(board, board.lists);
       listService.setLists(board.lists);

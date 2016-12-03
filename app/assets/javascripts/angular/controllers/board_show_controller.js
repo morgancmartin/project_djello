@@ -40,15 +40,6 @@ DjelloApp.controller('boardShowCtrl', ['$scope', 'Restangular', 'board', 'boardS
     boardService.updateBoard(params);
   };
 
-  $scope.focusBoardRenameInput = function(){
-    $timeout(function() {
-      var element = angular.element.find('#boardRenameInput')[0];
-      element.focus();
-      var strLength = $scope.board.title.length * 2;
-      element.setSelectionRange(strLength, strLength);
-      element.select();
-    }, 150);
-  };
 
   $scope.dynamicPopover = {
     templateUrl: 'myPopoverTemplate.html'

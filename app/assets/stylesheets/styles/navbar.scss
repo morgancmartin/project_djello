@@ -58,18 +58,11 @@
 
 
 .nav-btn-dropdown {
-  background-color: #FFFFFF;
-  padding: 0.4rem 0.4rem;
-  z-index: 1;
-  width: 14rem;
+  @include popover;
   overflow-x: hidden;
   overflow-y: auto;
-  box-shadow: 0 3px 6px rgba(0,0,0,.4);
-  border-radius: 0 3px 3px 0;
   top: 40px;
   max-height: 300px;
-  margin: 0.3rem;
-  outline: none;
   .board-listing {
     display: inline-block;
     width: 100%;

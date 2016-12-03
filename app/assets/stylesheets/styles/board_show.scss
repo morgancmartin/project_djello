@@ -38,18 +38,26 @@
   }
 }
 
+.board-title-popover {
+  @include popover;
+  position: absolute;
+  max-height: 300px;
+  top: 80px;
+}
+
 .delete-board-link{
   @extend .board-title;
   color: #F6F6F6;
   &:hover {
     color: white;
+    text-decoration: none;
   }
 }
 
 /* .edit-in-place span { */
 /* cursor: pointer; */
 /* } */
-/*  */
+
 /* .edit-in-place input { */
 /* display: none; */
 /* } */

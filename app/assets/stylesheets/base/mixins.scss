@@ -38,3 +38,14 @@
 }
 
 @mixin default-checkbox {}
+
+@mixin popover {
+  background-color: #FFFFFF;
+  padding: 0.4rem 0.4rem;
+  z-index: 1;
+  width: 15rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,.4);
+  border-radius: 0 3px 3px 0;
+  margin: 0.3rem;
+  outline: none;
+}

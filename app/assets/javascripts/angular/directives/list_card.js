@@ -1,7 +1,7 @@
 DjelloApp.directive('listCard', ['ModalService', '$rootScope', '$timeout', function(ModalService, $rootScope, $timeout) {
   return {
     restrict: 'E',
-    templateUrl: '/templates/directives/list-card.html',
+    templateUrl: '/templates/directives/list_card.html',
     scope: {
       card: '=',
       list: '='

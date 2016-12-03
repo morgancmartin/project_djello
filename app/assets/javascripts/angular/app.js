@@ -63,3 +63,4 @@ DjelloApp.config(
 DjelloApp.run(['$rootScope', function($rootScope){
   $rootScope.$on("$stateChangeError", console.log.bind(console));
 }]);
+
