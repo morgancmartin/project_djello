@@ -1,6 +1,6 @@
 DjelloApp.directive('editInPlace', ['$rootScope', function($rootScope) {
   return {
-    restrict: 'E',
+    restrict: 'A',
     scope: {
       value: '@',
       id: '@',

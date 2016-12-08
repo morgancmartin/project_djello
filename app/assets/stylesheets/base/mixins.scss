@@ -110,3 +110,28 @@
     width: 6.189rem;
   }
 }
+
+.edit-in-place {
+  span {
+    cursor: pointer;
+  }
+
+  textarea {
+    display: none;
+    line-height: 1rem;
+    outline: none;
+    border: none;
+  }
+
+  &.active {
+    span {
+      display: none;
+    }
+
+    textarea {
+      display: block;
+      resize: none;
+      height: 20px;
+    }
+  }
+}

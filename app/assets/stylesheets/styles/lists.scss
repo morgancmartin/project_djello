@@ -2,156 +2,166 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// @import 'bootstrap';
-
-// html, body {
-//   height: 100%;
-// }
-// body {
-//   /* overflow: hidden; */
-// }
-
-// .fixer {
-//   @extend .glyphicon;
-//   visibility: hidden;
-// }
-
-// .lists {
-//   padding-left: 0;
-//   overflow-x: auto;
-//   overflow-y: hidden;
-//   white-space: nowrap;
-//   margin-left: 2%;
-//   width: 96%;
-//   height: 85vh;
-//   .new-list-form{
-//     display: inline-block;
-//     min-height: 3em;
-//     width: 20em;
-//     vertical-align: top;
-//     .new-list {
-//       width: 100%;
-//       height: 100%;
-//       display: inline-block;
-//       background-color: #006BA9;
-//       color: #B1CBDA;
-//       input {
-//         color: grey;
-//       }
-//       font-weight: normal;
-//       p {
-//         margin-top: 5%;
-//       }
-//       &:hover {
-//         background-color: #005586;
-//         cursor: pointer;
-//       }
-//     }
-//   }
-//   &::-webkit-scrollbar-track {
-// 	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-// 	  border-radius: 10px;
-// 	  background-color: #0067A3;
-//   }
-//   &::-webkit-scrollbar {
-// 	  width: 13px;
-//   }
-//   &::-webkit-scrollbar-thumb {
-// 	  border-radius: 10px;
-// 	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-// 	  background-color: #66A4C7;
-//   }
-//   .list {
-//     width: 20em;
-//     display: inline-block;
-//     vertical-align: top;
-//     margin: 0px 10px 0px 0px;
-//     padding: 0 0 0 0;
-//     color: #585858;
-//     font-size: 1em;
-//     font-weight: bold;
-//     background-color: #E2E4E6;
-//     min-height: 3em;
-//     border-radius: 3px;
-//     .list-options {
-//       background-color: #E2E4E6;
-//       border: none;
-//       color: #B3B5B7 !important;
-//       outline: none;
-//       &:hover{
-//         background-color: #CDD2D4;
-//       }
-//     }
-//     .list-title {
-//       margin-top: 2%;
-//       margin-bottom: 7%;
-//       .edit-span,
-//       .edit-input {
-//         @extend .col-md-12;
-//         padding-top: 0px;
-//         padding-left: 0px;
-//       }
-//     }
-//     .card-container{
-//       max-height: 75vh;
-//       overflow-y: auto;
-//       width: 100%;
-//       &::-webkit-scrollbar-track {
-// 	      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-// 	      border-radius: 10px;
-// 	      background-color: rgb(214, 218, 220);
-//       }
-//       &::-webkit-scrollbar {
-// 	      width: 13px;
-//       }
-//       &::-webkit-scrollbar-thumb {
-// 	      border-radius: 10px;
-// 	      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-// 	      background-color: rgb(196, 201, 204);
-//       }
-//     }
-//   }
-
-// }
 
 
+/* .fixer { */
+/* @extend .glyphicon; */
+/* visibility: hidden; */
+/* } */
 
+.lists-container {
+  padding-left: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-left: 2%;
+  width: 96%;
+  height: 85vh;
+  &::-webkit-scrollbar-track {
+	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	  border-radius: 10px;
+	  background-color: #0067A3;
+  }
+  &::-webkit-scrollbar {
+	  width: 13px;
+  }
+  &::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	  background-color: #66A4C7;
+  }
+}
 
-// .list-form-container{
-//   /* @extend .new-list; */
-//   border: 2px solid #E2E4E6;
-//   min-height: 5em;
-//   display: inline-block;
-//   white-space: normal;
-//   border-radius: 3px;
-//   background-color: #E2E4E6;
-//   a {
-//     color: white;
-//     margin-top: 1em;
-//     box-shadow: 0 1px 0 #3F6F21;
-//     background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
-//     &:hover {
-//       color: white;
-//       background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
-//     }
-//   }
-//   input {
-//     /* @extend .col-md-12 */
-//     width: 100%;
-//   }
-//   &:hover {
-//     background-color: #E2E4E6;
-//   }
-//   .new-list-x {
-//     line-height: 1.6em;
-//     font-size: 1.5em;
-//     margin-left: 0.2em;
-//     display: inline-block;
-//     vertical-align: bottom;
-//     opacity: 0.7;
-//     cursor: pointer;
-//   }
-//   p {
-//     font-weight: bold;
-//   }
-// }
+.new-list-form{
+  display: inline-block;
+  min-height: 3rem;
+  width: 20rem;
+  vertical-align: top;
+  .new-list {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-color: #006BA9;
+    color: #B1CBDA;
+    input {
+      color: grey;
+    }
+    font-weight: normal;
+    p {
+      margin-top: 5%;
+    }
+    &:hover {
+      background-color: #005586;
+      cursor: pointer;
+    }
+  }
+}
+
+.list {
+  width: 13.5rem;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 10px 0px 0px;
+  padding: 0.2rem;
+  color: #585858;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #E2E4E6;
+  min-height: 3rem;
+  border-radius: 3px;
+
+  .list-options {
+    background-color: #E2E4E6;
+    border: none;
+    color: #B3B5B7 !important;
+    outline: none;
+    &:hover{
+      background-color: #CDD2D4;
+    }
+  }
+
+  .list-title {
+    @include sans-serif-big;
+    margin-bottom: 7%;
+    width: 80%;
+    display: inline-block;
+
+    .edit-span {
+      padding: 0.2rem;
+      width: 100%;
+    }
+
+    .edit-input {
+      padding: 0.2rem;
+      overflow: hidden;
+      word-wrap: break-word;
+      width: 95%;
+    }
+  }
+
+  .card-container{
+    max-height: 75vh;
+    overflow-y: auto;
+    width: 100%;
+
+    &::-webkit-scrollbar-track {
+	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	    border-radius: 10px;
+	    background-color: rgb(214, 218, 220);
+    }
+
+    &::-webkit-scrollbar {
+	    width: 13px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+	    border-radius: 10px;
+	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	    background-color: rgb(196, 201, 204);
+    }
+  }
+}
+
+.list-form-container{
+  /* @extend .new-list; */
+  border: 2px solid #E2E4E6;
+  min-height: 5rem;
+  display: inline-block;
+  white-space: normal;
+  border-radius: 3px;
+  background-color: #E2E4E6;
+
+  a {
+    color: white;
+    margin-top: 1rem;
+    box-shadow: 0 1px 0 #3F6F21;
+    background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
+    &:hover {
+      color: white;
+      background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
+    }
+  }
+
+  input {
+    /* @extend .col-md-12 */
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: #E2E4E6;
+  }
+
+  .new-list-x {
+    line-height: 1.6rem;
+    font-size: 1.5rem;
+    margin-left: 0.2rem;
+    display: inline-block;
+    vertical-align: bottom;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  p {
+    font-weight: bold;
+  }
+}

@@ -1,11 +1,12 @@
 <span
-    ng-click="edit()"
-    ng-bind="value"
-    class="edit-span">
+  ng-click="edit()"
+  ng-bind="value"
+  class="edit-span">
 </span>
-<input
-    ng-model="value"
-    ng-model-options="{ updateOn: 'blur' }"
-    ng-blur="offEdit()"
-    class="edit-input">
-</input>
+<textarea
+  elastic
+  ng-model="value"
+  ng-model-options="{ updateOn: 'blur' }"
+  ng-blur="offEdit()"
+  class="edit-input">
+</textarea>

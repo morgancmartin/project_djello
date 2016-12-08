@@ -1,8 +1,9 @@
-<edit-in-place value='{{list.title}}'
-               id="{{list.id}}"
-               class="col-md-10 list-title"
-               attr-type="list"
-></edit-in-place>
+<div edit-in-place
+  value='{{list.title}}'
+  id="{{list.id}}"
+  class="list-title"
+  attr-type="list"
+></div>
 
 <span uib-dropdown dropdown-append-to-body>
   <a id="btn-append-to-body"
@@ -26,11 +27,11 @@
 </span>
 
 <div class="card-container">
-  <list-card class="card"
-    ng-repeat="card in cards[list.id]"
-    card="card"
-    list="list"
-  >
-  </list-card>
-  <new-card-form class="col-md-12 new-card-container" list="list"></new-card-form>
+  <!-- <list-card class="card" -->
+  <!-- ng-repeat="card in cards[list.id]" -->
+  <!-- card="card" -->
+  <!-- list="list" -->
+  <!-- > -->
+  <!-- </list-card> -->
+  <!-- <new-card-form class="col-md-12 new-card-container" list="list"></new-card-form> -->
 </div>
