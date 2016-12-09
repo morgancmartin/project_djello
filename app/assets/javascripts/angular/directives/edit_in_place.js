@@ -39,6 +39,17 @@ DjelloApp.directive('editInPlace', ['$rootScope', function($rootScope) {
         element.removeClass('active');
       };
 
+      $scope.attachEnterKeyListener = function(){
+        element.find("textarea").keypress(function(event) {
+          if (event.which == 13) {
+            event.preventDefault();
+            $scope.offEdit();
+          }
+        });
+      };
+
+      $scope.attachEnterKeyListener();
+
     }
   };
 }]);
