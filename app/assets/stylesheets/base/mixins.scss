@@ -112,8 +112,9 @@
 }
 
 .edit-in-place {
-  span {
+  p {
     cursor: pointer;
+    word-wrap: break-word;
   }
 
   textarea {
@@ -124,7 +125,7 @@
   }
 
   &.active {
-    span {
+    p {
       display: none;
     }
 

@@ -87,16 +87,26 @@
     display: inline-block;
 
     .edit-span {
+      /* display: block; */
+      @include sans-serif-big;
+      word-break: break-all;
+      white-space: normal;
       padding: 0.2rem;
       width: 100%;
+      font-weight: bold;
     }
 
     .edit-input {
+      @include sans-serif-big;
       padding: 0.2rem;
       overflow: hidden;
       word-wrap: break-word;
-      width: 95%;
+      width: 100%;
     }
+  }
+
+  .list-options {
+    float: right;
   }
 
   .card-container{
@@ -122,46 +132,46 @@
   }
 }
 
-.list-form-container{
-  /* @extend .new-list; */
-  border: 2px solid #E2E4E6;
-  min-height: 5rem;
-  display: inline-block;
-  white-space: normal;
-  border-radius: 3px;
-  background-color: #E2E4E6;
+/* .list-form-container{ */
+/*   /\* @extend .new-list; *\/ */
+/*   border: 2px solid #E2E4E6; */
+/*   min-height: 5rem; */
+/*   display: inline-block; */
+/*   white-space: normal; */
+/*   border-radius: 3px; */
+/*   background-color: #E2E4E6; */
 
-  a {
-    color: white;
-    margin-top: 1rem;
-    box-shadow: 0 1px 0 #3F6F21;
-    background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
-    &:hover {
-      color: white;
-      background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
-    }
-  }
+/*   a { */
+/*     color: white; */
+/*     margin-top: 1rem; */
+/*     box-shadow: 0 1px 0 #3F6F21; */
+/*     background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%); */
+/*     &:hover { */
+/*       color: white; */
+/*       background: linear-gradient(to bottom,#5AAC44 0,#519839 100%); */
+/*     } */
+/*   } */
 
-  input {
-    /* @extend .col-md-12 */
-    width: 100%;
-  }
+/*   input { */
+/*     /\* @extend .col-md-12 *\/ */
+/*     width: 100%; */
+/*   } */
 
-  &:hover {
-    background-color: #E2E4E6;
-  }
+/*   &:hover { */
+/*     background-color: #E2E4E6; */
+/*   } */
 
-  .new-list-x {
-    line-height: 1.6rem;
-    font-size: 1.5rem;
-    margin-left: 0.2rem;
-    display: inline-block;
-    vertical-align: bottom;
-    opacity: 0.7;
-    cursor: pointer;
-  }
+/*   .new-list-x { */
+/*     line-height: 1.6rem; */
+/*     font-size: 1.5rem; */
+/*     margin-left: 0.2rem; */
+/*     display: inline-block; */
+/*     vertical-align: bottom; */
+/*     opacity: 0.7; */
+/*     cursor: pointer; */
+/*   } */
 
-  p {
-    font-weight: bold;
-  }
-}
+/*   p { */
+/*     font-weight: bold; */
+/*   } */
+/* } */
