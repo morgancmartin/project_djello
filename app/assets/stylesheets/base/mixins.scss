@@ -115,6 +115,10 @@
   p {
     cursor: pointer;
     word-wrap: break-word;
+    width: 100%;
+    font-weight: bold;
+    word-break: break-all;
+    white-space: normal;
   }
 
   textarea {
@@ -122,6 +126,10 @@
     line-height: 1rem;
     outline: none;
     border: none;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 100%;
   }
 
   &.active {

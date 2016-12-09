@@ -69,68 +69,76 @@
   background-color: #E2E4E6;
   min-height: 3rem;
   border-radius: 3px;
+}
 
-  .list-options {
-    background-color: #E2E4E6;
-    border: none;
-    color: #B3B5B7 !important;
-    outline: none;
-    &:hover{
-      background-color: #CDD2D4;
-    }
-  }
+.list-title {
+  @include sans-serif-big;
+  margin-bottom: 7%;
+  width: 80%;
+  display: inline-block;
 
-  .list-title {
+  .edit-text {
     @include sans-serif-big;
-    margin-bottom: 7%;
-    width: 80%;
-    display: inline-block;
-
-    .edit-span {
-      /* display: block; */
-      @include sans-serif-big;
-      word-break: break-all;
-      white-space: normal;
-      padding: 0.2rem;
-      width: 100%;
-      font-weight: bold;
-    }
-
-    .edit-input {
-      @include sans-serif-big;
-      padding: 0.2rem;
-      overflow: hidden;
-      word-wrap: break-word;
-      width: 100%;
-    }
+    padding: 0.2rem;
   }
 
-  .list-options {
-    float: right;
-  }
-
-  .card-container{
-    max-height: 75vh;
-    overflow-y: auto;
-    width: 100%;
-
-    &::-webkit-scrollbar-track {
-	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	    border-radius: 10px;
-	    background-color: rgb(214, 218, 220);
-    }
-
-    &::-webkit-scrollbar {
-	    width: 13px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-	    border-radius: 10px;
-	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	    background-color: rgb(196, 201, 204);
-    }
+  .edit-input {
+    @include sans-serif-big;
+    padding: 0.2rem;
   }
 }
+
+.list-options {
+  display: block;
+  float: right;
+  width: 1.3rem;
+  padding-bottom: 0.2rem;
+  height: 1.3rem;
+  background-color: #E2E4E6;
+  border: none;
+  color: #B3B5B7;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 3px;
+  a {
+    padding-bottom: 0.2rem;
+    display: inline-block;
+    height: 100%;
+    .glyphicon {
+      font-size: 0.5rem;
+      vertical-align: middle;
+      margin-bottom: 0.3rem;
+    }
+  }
+  &:hover{
+    background-color: #CDD2D4;
+  }
+}
+
+.card-container{
+  max-height: 75vh;
+  overflow-y: auto;
+  width: 100%;
+
+  &::-webkit-scrollbar-track {
+	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	  border-radius: 10px;
+	  background-color: rgb(214, 218, 220);
+  }
+
+  &::-webkit-scrollbar {
+	  width: 13px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	  background-color: rgb(196, 201, 204);
+  }
+}
+
 
 /* .list-form-container{ */
 /*   /\* @extend .new-list; *\/ */

@@ -5,26 +5,25 @@
   attr-type="list"
 ></div>
 
-<span uib-dropdown dropdown-append-to-body class="list-options">
+<div uib-dropdown dropdown-append-to-body class="list-options">
   <a id="btn-append-to-body"
-          type="button"
-          class="btn btn-default btn-sm list-options"
-          uib-dropdown-toggle>
+    type="button"
+    uib-dropdown-toggle>
     <span class="glyphicon glyphicon-option-horizontal"
           aria-hidden="true">
     </span>
   </a>
   <ul class="dropdown-menu"
-      uib-dropdown-menu role="menu"
-      aria-labelledby="btn-append-to-body">
+    uib-dropdown-menu role="menu"
+    aria-labelledby="btn-append-to-body">
     <li role="menuitem">
       <a href
-         ng-click="list.delete()">
+        ng-click="list.delete()">
         Remove List...
       </a>
     </li>
   </ul>
-</span>
+</div>
 
 <div class="card-container">
   <!-- <list-card class="card" -->
