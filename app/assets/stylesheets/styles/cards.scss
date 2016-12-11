@@ -36,11 +36,14 @@
 
 .new-card-form-container {
   background-color: #E2E4E6;
+  padding: 0.3rem;
+  cursor: default;
   .new-card-form {
     background-color: #E2E4E6;
-    width: 94%;
-    margin-left: 3%;
+    width: 100%;
     textarea {
+      @include sans-serif-big;
+      font-weight: normal;
       width: 100%;
       outline: none;
       overflow: hidden;
@@ -49,15 +52,31 @@
       box-shadow: none;
       border-radius: 3px;
       max-height: 8rem;
-      min-height: 2.5rem;
+      min-height: 3.5rem;
       resize: vertical;
       color: #4d4d4d;
-      unicode-bidi: -webkit-plaintext;
-      -webkit-rtl-ordering: logical;
-      flex-direction: column;
       border-bottom: 1px solid #ccc;
       margin-bottom: 0.3rem;
     }
+  }
+}
+
+.new-card-button {
+  @include small-submit;
+  margin: 0;
+  padding: 0.4rem 0.6rem;
+  box-shadow: 0 1px 0 #3F6F21;
+  border-radius: 3px;
+}
+
+.new-card-x {
+  margin-left: 0.5rem;
+  margin-bottom: 0.3rem;
+  vertical-align: bottom;
+  opacity: 0.7;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
   }
 }
 

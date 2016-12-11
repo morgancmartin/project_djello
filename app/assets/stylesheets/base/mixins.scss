@@ -10,8 +10,11 @@
   height: 1.8rem;
   width: 5.616rem;
   padding: 0.350rem 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
   &:hover {
     background: linear-gradient(to bottom, #5aac44 0, #519839 100%);
+    text-decoration: none;
   }
 }
 
