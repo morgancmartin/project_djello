@@ -2,87 +2,150 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.card-container{
-  max-height: 75vh;
-  overflow-y: auto;
-  width: 100%;
-  &::-webkit-scrollbar-track {
-	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	  border-radius: 10px;
-	  background-color: rgb(214, 218, 220);
-  }
 
-  &::-webkit-scrollbar {
-	  width: 13px;
-  }
 
-  &::-webkit-scrollbar-thumb {
-	  border-radius: 10px;
-	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	  background-color: rgb(196, 201, 204);
+.new-card-container {
+  height: 1.7rem;
+  width: $list-width;
+  display: inline-block;
+  margin: -0.2rem -0.2rem;
+  border-radius: 0 0 3px 3px;
+  cursor: pointer;
+  &:hover {
+    background-color: #CDD2D4;
+    .new-card-text-container {
+      a {
+        text-decoration: underline;
+        color: #4d4d4d;
+      }
+    }
   }
 }
 
-new-card-form {
+.new-card-text-container {
+  display: inline-block;
+  margin-left: 0.4rem;
   width: 100%;
-  padding: 0 0 0 0 !important;
-  .new-card-form-container {
-    @extend .col-md-12;
+  height: 100%;
+  a {
+    @include sans-serif-big;
+    font-weight: normal;
     display: inline-block;
-    height: 100%;
-    .new-card-input{
-      display: inline-block;
-      width: 100%;
-      border-radius: 3px;
-      height: 5em;
-      margin-bottom: 0.5em;
-      resize: none;
-      &:focus {
-        outline: none;
-      }
-    }
-    #submission-container {
-      margin-bottom: 2em;
-      .new-card-button {
-        display: inline-block;
-        color: white;
-        margin-top: 1em;
-        width: 6em;
-        box-shadow: 0 1px 0 #3F6F21;
-        background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
-        &:hover {
-          color: white;
-          background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
-        }
-      }
-      .new-card-x {
-        line-height: 1.6em;
-        font-size: 1.5em;
-        margin-left: 0.2em;
-        display: inline-block;
-        vertical-align: bottom;
-        opacity: 0.7;
-        cursor: pointer;
-      }
-    }
   }
-  .new-card-link{
-    height: 100%;
-    line-height: 2.5em;
-    &:hover {
-      cursor: pointer;
-      background-color: #CDD2D4;
-      text-decoration: underline;
-    }
-    a {
-      margin-left: 2em;
-      color: grey;
-      &:hover {
-        color: #4D4D4D;
-      }
+}
+
+.new-card-form-container {
+  background-color: #E2E4E6;
+  .new-card-form {
+    background-color: #E2E4E6;
+    width: 94%;
+    margin-left: 3%;
+    textarea {
+      width: 100%;
+      outline: none;
+      overflow: hidden;
+      word-wrap: break-word;
+      border: none;
+      box-shadow: none;
+      border-radius: 3px;
+      max-height: 8rem;
+      min-height: 2.5rem;
+      resize: vertical;
+      color: #4d4d4d;
+      unicode-bidi: -webkit-plaintext;
+      -webkit-rtl-ordering: logical;
+      flex-direction: column;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 0.3rem;
     }
   }
 }
+
+
+/* .card-container{ */
+  /* max-height: 75vh; */
+  /* margin: -0.2rem; */
+  /* overflow-y: auto; */
+  /* width: 13.5rem; */
+  /* &::-webkit-scrollbar-track { */
+	  /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+	  /* border-radius: 10px; */
+	  /* background-color: rgb(214, 218, 220); */
+    /* } */
+/*  */
+/* &::-webkit-scrollbar { */
+/* width: 13px; */
+/* } */
+/*  */
+/* &::-webkit-scrollbar-thumb { */
+/* border-radius: 10px; */
+/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); */
+/* background-color: rgb(196, 201, 204); */
+/* } */
+/* } */
+
+/* .new-card-container { */
+/* height: 1rem; */
+/* background-color: #CDD2D4; */
+/* width: 100%; */
+/* .new-card-form-container { */
+/* display: inline-block; */
+/* height: 100%; */
+/*  */
+/* .new-card-input { */
+/* display: inline-block; */
+/* width: 100%; */
+/* border-radius: 3px; */
+/* height: 5em; */
+/* margin-bottom: 0.5em; */
+/* resize: none; */
+/* &:focus { */
+/* outline: none; */
+/* } */
+/* } */
+
+    /* #submission-container { */
+    /* margin-bottom: 2em; */
+    /* .new-card-button { */
+    /* display: inline-block; */
+    /* color: white; */
+    /* margin-top: 1em; */
+    /* width: 6em; */
+    /* box-shadow: 0 1px 0 #3F6F21; */
+    /* background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%); */
+    /* &:hover { */
+    /* color: white; */
+    /* background: linear-gradient(to bottom,#5AAC44 0,#519839 100%); */
+    /* } */
+    /* } */
+    /* .new-card-x { */
+    /* line-height: 1.6em; */
+    /* font-size: 1.5em; */
+    /* margin-left: 0.2em; */
+    /* display: inline-block; */
+    /* vertical-align: bottom; */
+    /* opacity: 0.7; */
+    /* cursor: pointer; */
+    /* } */
+    /* } */
+/* } */
+/* .new-card-link{ */
+/* height: 100%; */
+/* line-height: 2.5em; */
+/* &:hover { */
+/* cursor: pointer; */
+/* text-decoration: underline; */
+/* } */
+/* a { */
+/* @include sans-serif-big; */
+/* margin-left: 2em; */
+/* color: grey; */
+/* &:hover { */
+/* color: #4D4D4D; */
+/* } */
+/* } */
+/* } */
+/* } */
 
 // .modal {
 //   .glyphicon {

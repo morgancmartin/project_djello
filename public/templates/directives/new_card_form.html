@@ -1,29 +1,26 @@
-<div ng-show="!(showNewCardForm)">
-  <div ng-click="showNewCardForm = true" class="new-card-link">
+<div ng-show="!(showNewCardForm)" class="new-card-text-container" ng-click="showNewCardForm = true">
+  <div class="new-card-link">
     <a>Add a card...</a>
   </div>
 </div>
-<div ng-if="showNewCardForm">
-  <div class="new-card-form-container">
-    <form class="new-card-form"
-          ng-model="newCardForm">
-      <textarea class="new-card-input"
-                ng-model="newCardForm.title"
-                id="newCardInput"
-                ng-blur="focusOut()"
-      >
-      </textarea>
-    </form>
-    <div id="submission-container">
-      <a type="submit"
-        class="btn btn-success new-card-button"
-        ng-click="createNewCard(list, newCardForm.title)"
-        value="Add"><strong>Submit</strong>
-      </a>
-      <span class="glyphicon glyphicon-remove new-card-x"
-        aria-hidden="true"
-        ng-click="showNewCardForm = false">
-      </span>
-    </div>
+<div ng-if="showNewCardForm" class="new-card-form-container">
+  <form class="new-card-form"
+    ng-model="newCardForm">
+    <textarea class="new-card-input"
+      ng-model="newCardForm.title"
+      id="newCardInput"
+      ng-blur="focusOut()">
+    </textarea>
+  </form>
+  <div id="submission-container">
+    <a type="submit"
+      class="btn btn-success new-card-button"
+      ng-click="createNewCard(list, newCardForm.title)"
+      value="Add"><strong>Submit</strong>
+    </a>
+    <span class="glyphicon glyphicon-remove new-card-x"
+      aria-hidden="true"
+      ng-click="showNewCardForm = false">
+    </span>
   </div>
 </div>
