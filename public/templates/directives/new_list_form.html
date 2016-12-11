@@ -1,23 +1,21 @@
-<div ng-show="!(showNewListForm)">
-  <div class="new-list" ng-click="showNewListForm = true">
-    <p class="col-md-12">Add a list...</p>
+<div ng-if="!(showNewListForm)" class="delay">
+  <div class="new-list-text-container" ng-click="$parent.showNewListForm = true">
+    <p>Add a list...</p>
   </div>
 </div>
-<div class="new-list-form-container" ng-show="showNewListForm">
-  <div class="list-form-container">
-    <form ng-model="newListForm" class="new-list-form">
-      <input type="text" ng-model="newListForm.title" id="newListInput"
-             ng-blur="focusOut()"
-      >
-      <a type="submit"
-         class="btn new-list-button"
-         ng-click="createList(newListForm.title)"
-         value="Add"><strong>Save</strong>
-      </a>
-      <i class="glyphicon glyphicon-remove new-list-x"
-            aria-hidden="true"
-            ng-click="showNewListForm = false">
-      </i>
-    </form>
-  </div>
+<div class="new-list-form-container slide-down" ng-if="showNewListForm">
+  <form class="new-list-form">
+    <input type="text" ng-model="$parent.newListForm.title" id="newListInput"
+      ng-blur="focusOut()" placeholder="Add a list...">
+    <a type="submit"
+      class="btn new-list-button"
+      ng-click="createList($parent.newListForm.title)"
+      value="Add">
+      <strong>Save</strong>
+    </a>
+    <i class="glyphicon glyphicon-remove new-list-x"
+      aria-hidden="true"
+      ng-click="showNewListForm = false">
+    </i>
+  </form>
 </div>

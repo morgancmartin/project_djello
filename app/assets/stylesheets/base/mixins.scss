@@ -37,6 +37,20 @@
   padding: 0.6rem 1.3rem;
 }
 
+@mixin small-submit {
+  @include submit-btn;
+  @include sans-serif-big;
+  font-weight: bold;
+  height: 1.5rem;
+  width: 3.908rem;
+  padding: 0.2rem 1rem;
+  box-shadow: 0 1px 0 #3F6F21;
+  &:hover {
+    color: white;
+    background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
+  }
+}
+
 @mixin default-checkbox {}
 
 @mixin popover {
