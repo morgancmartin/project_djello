@@ -2,109 +2,87 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// @import 'bootstrap';
+.card-container{
+  max-height: 75vh;
+  overflow-y: auto;
+  width: 100%;
+  &::-webkit-scrollbar-track {
+	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	  border-radius: 10px;
+	  background-color: rgb(214, 218, 220);
+  }
 
-// .card {
-//   @extend .col-md-11;
-//   display: inline-block;
-//   margin-left: 3%;
-//   background-color: #FFFFFF;
-//   min-height: 3em;
-//   border-radius: 3px;
-//   margin-bottom: 1em;
-//   font-weight: normal;
-//   padding: 0 0.3em 0 0.3em;
-//   white-space: pre-wrap;
-//   &:hover {
-//     cursor: pointer;
-//     background-color: #EDEFF0;
-//   }
-// }
+  &::-webkit-scrollbar {
+	  width: 13px;
+  }
 
+  &::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	  background-color: rgb(196, 201, 204);
+  }
+}
 
-// .card-container{
-//   max-height: 75vh;
-//   overflow-y: auto;
-//   width: 100%;
-//   &::-webkit-scrollbar-track {
-// 	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-// 	  border-radius: 10px;
-// 	  background-color: rgb(214, 218, 220);
-//   }
-
-//   &::-webkit-scrollbar {
-// 	  width: 13px;
-//   }
-
-//   &::-webkit-scrollbar-thumb {
-// 	  border-radius: 10px;
-// 	  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-// 	  background-color: rgb(196, 201, 204);
-//   }
-// }
-
-
-// new-card-form{
-//   width: 100%;
-//   padding: 0 0 0 0 !important;
-//   .new-card-form-container {
-//     @extend .col-md-12;
-//     display: inline-block;
-//     height: 100%;
-//     .new-card-input{
-//       display: inline-block;
-//       width: 100%;
-//       border-radius: 3px;
-//       height: 5em;
-//       margin-bottom: 0.5em;
-//       resize: none;
-//       &:focus {
-//         outline: none;
-//       }
-//     }
-//     #submission-container {
-//       margin-bottom: 2em;
-//       .new-card-button {
-//         display: inline-block;
-//         color: white;
-//         margin-top: 1em;
-//         width: 6em;
-//         box-shadow: 0 1px 0 #3F6F21;
-//         background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
-//         &:hover {
-//           color: white;
-//           background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
-//         }
-
-//       }
-//       .new-card-x {
-//         line-height: 1.6em;
-//         font-size: 1.5em;
-//         margin-left: 0.2em;
-//         display: inline-block;
-//         vertical-align: bottom;
-//         opacity: 0.7;
-//         cursor: pointer;
-//       }
-//     }
-//   }
-//   .new-card-link{
-//     height: 100%;
-//     line-height: 2.5em;
-//     &:hover {
-//       cursor: pointer;
-//       background-color: #CDD2D4;
-//       text-decoration: underline;
-//     }
-//     a {
-//       margin-left: 2em;
-//       color: grey;
-//       &:hover {
-//         color: #4D4D4D;
-//       }
-//     }
-//   }
-// }
+new-card-form {
+  width: 100%;
+  padding: 0 0 0 0 !important;
+  .new-card-form-container {
+    @extend .col-md-12;
+    display: inline-block;
+    height: 100%;
+    .new-card-input{
+      display: inline-block;
+      width: 100%;
+      border-radius: 3px;
+      height: 5em;
+      margin-bottom: 0.5em;
+      resize: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    #submission-container {
+      margin-bottom: 2em;
+      .new-card-button {
+        display: inline-block;
+        color: white;
+        margin-top: 1em;
+        width: 6em;
+        box-shadow: 0 1px 0 #3F6F21;
+        background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
+        &:hover {
+          color: white;
+          background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);
+        }
+      }
+      .new-card-x {
+        line-height: 1.6em;
+        font-size: 1.5em;
+        margin-left: 0.2em;
+        display: inline-block;
+        vertical-align: bottom;
+        opacity: 0.7;
+        cursor: pointer;
+      }
+    }
+  }
+  .new-card-link{
+    height: 100%;
+    line-height: 2.5em;
+    &:hover {
+      cursor: pointer;
+      background-color: #CDD2D4;
+      text-decoration: underline;
+    }
+    a {
+      margin-left: 2em;
+      color: grey;
+      &:hover {
+        color: #4D4D4D;
+      }
+    }
+  }
+}
 
 // .modal {
 //   .glyphicon {
@@ -215,3 +193,20 @@
 //   }
 // }
 
+
+// .card {
+//   @extend .col-md-11;
+//   display: inline-block;
+//   margin-left: 3%;
+//   background-color: #FFFFFF;
+//   min-height: 3em;
+//   border-radius: 3px;
+//   margin-bottom: 1em;
+//   font-weight: normal;
+//   padding: 0 0.3em 0 0.3em;
+//   white-space: pre-wrap;
+//   &:hover {
+//     cursor: pointer;
+//     background-color: #EDEFF0;
+//   }
+// }

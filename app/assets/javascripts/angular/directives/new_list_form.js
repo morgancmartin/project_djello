@@ -23,9 +23,7 @@ DjelloApp.directive('newListForm', ['$timeout', function($timeout) {
 
       $scope.$watch('showNewListForm', function(value){
         if(value){
-          if (!$scope.attachedEnterListener) {
-            $scope.attachEnterKeyListener();
-          }
+          $scope.attachEnterKeyListener();
           $timeout(function() {
             element.find('#newListInput')[0].focus();
           });
@@ -40,7 +38,6 @@ DjelloApp.directive('newListForm', ['$timeout', function($timeout) {
 
 
       $scope.attachEnterKeyListener = function(){
-        $scope.attachedEnterListener = true;
         element.find("#newListInput").keypress(function(event) {
           if (event.which == 13) {
             event.preventDefault();
@@ -49,8 +46,6 @@ DjelloApp.directive('newListForm', ['$timeout', function($timeout) {
           }
         });
       };
-
-      $scope.attachedEnterListener = false;
 
     }
   };
